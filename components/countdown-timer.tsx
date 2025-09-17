@@ -42,17 +42,18 @@ export function CountdownTimer() {
     return () => clearInterval(timer)
   }, [])
 
-  // Definimos los estilos de cada bloque con colores alternos y hover
   const boxStyles = [
-    "bg-red-600 text-white",      // Días - Rojo
-    "bg-green-600 text-white",    // Horas - Verde
-    "bg-white text-gray-800",     // Minutos - Blanco
-    "bg-red-600 text-white",      // Segundos - Rojo (vuelve a empezar el ciclo)
+    "bg-red-600 text-white",
+    "bg-green-600 text-white",
+    "bg-white text-gray-800",
+    "bg-red-600 text-white",
   ]
 
   return (
-    <div className="relative bg-gradient-to-r from-green-700 to-red-600 text-white p-6 rounded-xl shadow-xl overflow-hidden">
-      <div className="absolute inset-0 bg-[url('/investigaci-n-cient-fica-en-laboratorio-moderno.jpg')] bg-cover bg-center opacity-20"></div>
+    <div className="relative bg-[#f1eded] text-white p-6 rounded-xl shadow-xl overflow-hidden">
+      {/* Fondo de imagen local */}
+      <div className="absolute inset-0 bg-[url('/investigacion-cientifica-en-laboratorio-moderno.jpg')] bg-cover bg-center opacity-60"></div>
+
       <div className="relative z-10">
         <h3 className="text-lg font-semibold text-center mb-4 text-green-800 bg-white/95 rounded-lg py-2 px-4 shadow-md">
           Faltan para el evento:
