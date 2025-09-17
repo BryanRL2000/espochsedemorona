@@ -73,7 +73,7 @@ export default function MainBanner() {
             <p className="text-gray-700 text-base">MORONA SANTIAGO 2025</p>
           </div>
 
-          <div className="text-center lg:text-right">
+          <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
             <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-gray-200">
               <h4 className="font-bold text-primary text-lg mb-3">Fechas del Evento</h4>
               <p className="text-gray-900 font-semibold mb-2">14 - 16 Octubre</p>
@@ -82,6 +82,7 @@ export default function MainBanner() {
               <h4 className="font-bold text-secondary text-lg mb-3">Ubicación</h4>
               <p className="text-gray-900 text-sm mb-1">Salón Azul</p>
               <p className="text-gray-900 text-sm mb-1">Consejo Provincial</p>
+              <p className="text-gray-900 text-sm mb-2 ">Espoch-Sede Macas</p>
               <p className="text-gray-900 text-sm">Morona Santiago</p>
             </div>
           </div>

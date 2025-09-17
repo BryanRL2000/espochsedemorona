@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Home, Youtube } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -115,30 +115,43 @@ export function Footer() {
                   variant="ghost"
                   size="sm"
                   className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
+                  asChild
                 >
-                  <Facebook className="h-6 w-6" />
+                  <a href="https://www.facebook.com/espochms/?ref=bookmarks" target="_blank" rel="noopener noreferrer">
+                    <Facebook className="h-8 w-8" />
+                  </a>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
+                  asChild
                 >
-                  <Twitter className="h-6 w-6" />
+                  <a href="https://x.com/EspochRio" target="_blank" rel="noopener noreferrer">
+                    <Twitter className="h-8 w-8" />
+                  </a>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
+                  asChild
                 >
-                  <Instagram className="h-6 w-6" />
+                  <a href="https://www.instagram.com/espoch.edu.ec/?hl=es" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="h-8 w-8" />
+                  </a>
                 </Button>
                 <Button
                   variant="ghost"
                   size="sm"
                   className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
+                  asChild
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <a href="https://www.youtube.com/watch?v=K7aQgWWc8uE" target="_blank" rel="noopener noreferrer">
+                    <Youtube className="h-8 w-8" />
+                  </a>
                 </Button>
+                
               </div>
             </div>
           </div>
@@ -149,7 +162,7 @@ export function Footer() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7586!2d-78.1167!3d-2.3167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTknMDAuMCJTIDc4wrAwNycwMC4wIlc!5e0!3m2!1ses!2sec!4v1640000000000!5m2!1ses!2sec"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.628592957677!2d-78.113586!3d-2.29122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f81d725080f%3A0x6b99948c4cba120!2sEscuela%20Superior%20Polit%C3%A9cnica%20de%20Chimborazo%20-%20Sede%20Morona%20Santiago!5e0!3m2!1ses-419!2sec!4v1758122536666!5m2!1ses-419!2sec"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

@@ -78,35 +78,52 @@ export default function NormativaPage() {
                 <div className="conference-card bg-white/90 backdrop-blur-sm border border-white/20">
                   <h2 className="text-red-600 text-sm font-semibold mb-4 pl-1">Documentos Oficiales</h2>
                   <div className="space-y-3">
-                    <button
-                      disabled
-                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md opacity-70 cursor-not-allowed text-red-600"
+                    {/* Reglamento del Congreso */}
+                    <a
+                      href="/docs/Normativa-articulos.pdf"
+                      download
+                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
                     >
                       <div className="flex justify-between items-center">
-                        <span>Reglamento del Congreso</span>
-                        <Download className="h-4 w-4 text-red-600" />
+                        <span>Normativa para Artículos Científicos</span>
+                        <Download className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
-                    </button>
+                    </a>
 
-                    <button
-                      disabled
-                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md opacity-70 cursor-not-allowed text-red-600"
+                    {/* Formato de Ponencias */}
+                    <a
+                      href="/docs/Normativa-ponencias.pdf"
+                      download
+                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
                     >
                       <div className="flex justify-between items-center">
                         <span>Formato de Ponencias</span>
-                        <Download className="h-4 w-4 text-red-600" />
+                        <Download className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
-                    </button>
+                    </a>
 
-                    <button
-                      disabled
-                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md opacity-70 cursor-not-allowed text-red-600"
+                    {/* Certificados de Participación */}
+                    <a
+                      href="/docs/FORMATO ANEXO 1.docx"
+                      download
+                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
                     >
                       <div className="flex justify-between items-center">
-                        <span>Certificados de Participación</span>
-                        <Download className="h-4 w-4 text-red-600" />
+                        <span>Formato Anexo 1</span>
+                        <Download className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
-                    </button>
+                    </a>
+                    {/* Certificados de Participación */}
+                    <a
+                      href="/docs/FORMATO ANEXO 2.ppt"
+                      download
+                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
+                    >
+                      <div className="flex justify-between items-center">
+                        <span>Formato Anexo 2</span>
+                        <Download className="h-4 w-4 text-red-600 hover:text-green-600" />
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>

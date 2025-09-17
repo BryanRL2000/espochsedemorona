@@ -256,11 +256,11 @@ export function AgendaSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // ✅ Auto-cambio cada 4 segundos
+  // ✅ Auto-cambio cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
-    }, 4000)
+    }, 8000)
 
     return () => clearInterval(interval)
   }, [carouselImages.length])
@@ -286,8 +286,8 @@ export function AgendaSection() {
 
   const downloadAgenda = () => {
     const link = document.createElement('a');
-    link.href = '/docs/programa-congreso-vciCTMS-2025.pdf';
-    link.download = 'programa-congreso-vciCTMS-2025.pdf';
+    link.href = '/docs/Agenda.docx';
+    link.download = 'Agenda.docx';
     link.click();
   }
 
@@ -334,7 +334,7 @@ export function AgendaSection() {
               className="gap-2 bg-red-600 hover:bg-red-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3"
             >
               <Download className="h-4 w-4" />
-              Descargar Programa Completo (PDF)
+              Descargar Agenda Completa (docx)
             </Button>
           </div>
         </div>

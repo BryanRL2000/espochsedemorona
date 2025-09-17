@@ -1,105 +1,110 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [logoLoaded, setLogoLoaded] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLogoLoaded(true)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [])
 
   const navigation = [
     { name: "Inicio", href: "/" },
     { name: "Agenda", href: "/agenda" },
-    { name: "Ponentes", href: "/ponentes" }, // Corregido href de /ponente a /ponentes
+    { name: "Ponentes", href: "/ponentes" },
     { name: "Normativa", href: "/normativa" },
     { name: "Contactos", href: "/contactos" },
   ]
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-[#c00000] text-white shadow-sm border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-4">
-            <div className="relative">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-06-21%20at%2008.34.20-JY8XLg2cEvvOvWsULfwwd2Pp56gVdf.jpeg"
-                alt="ESPOCH Logo"
-                className={`h-14 w-auto transition-all duration-1000 ease-out ${
-                  logoLoaded ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-2"
-                }`}
-              />
-            </div>
-            <div
-              className={`transition-all duration-1000 ease-out delay-300 ${
-                logoLoaded ? "opacity-100 transform translate-x-0" : "opacity-0 transform translate-x-4"
-              }`}
-            >
-              <h1 className="text-xl font-bold text-black leading-tight">VCICTMS 2025</h1>
-              <p className="text-sm text-gray-600 font-medium">ESPOCH Sede Morona Santiago</p>
+        <div className="flex justify-between items-center h-16 md:h-20">
+          {/* Logo de la ESPOCH — ✅ BLANCO FORZADO + HOVER */}
+          <Link href="/" className="flex items-center space-x-4 group">
+            <img
+              src="/logo-espoch.png"
+              alt="Logo ESPOCH"
+              className="h-14 w-auto object-contain filter brightness-0 invert-1 transition-transform duration-300 group-hover:scale-105"
+            />
+            <div>
+              <h1 className="text-lg md:text-xl font-black text-white drop-shadow-md tracking-wide">
+                VI CICTSMS
+              </h1>
+              <p className="text-sm md:text-base text-gray-200 mt-1 font-medium tracking-wide">
+                ESPOCH Sede Morona Santiago · 14-16 Octubre 2025
+              </p>
             </div>
           </Link>
 
-          <nav className="hidden md:flex space-x-1">
+          {/* Menú de navegación — ✅ EFECTO HOVER BLANCO BRILLANTE */}
+          <nav className="hidden md:flex space-x-8">
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="px-4 py-2 text-black font-medium rounded-lg transition-all duration-200 hover:text-[#c00000] hover:bg-red-50"
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative group">
+                <Link
+                  href={item.href}
+                  className="block py-3 text-white font-semibold text-sm md:text-base tracking-wide transition-all duration-300 relative hover:text-white"
+                >
+                  {item.name}
+                  {/* Línea inferior blanca en hover */}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                  {/* Brillo blanco suave al pasar el mouse */}
+                  <span className="absolute -inset-2 bg-white/0 group-hover:bg-white/10 rounded-md transition-all duration-300"></span>
+                </Link>
+                {/* Efecto de bola negra que se desplaza — opcional, lo dejamos si te gusta */}
+                <div className="absolute -bottom-1 left-0 w-2 h-2 rounded-full bg-black scale-0 group-hover:scale-100 transition-transform duration-300 origin-bottom"></div>
+              </div>
             ))}
           </nav>
 
+          {/* Botón de registro — ✅ BLANCO CON HOVER MÁS BRILLANTE */}
           <div className="hidden md:block">
             <Button
-              className="bg-[#c00000] hover:bg-red-800 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-200"
+              className="bg-white text-[#c00000] hover:bg-gray-100 hover:shadow-lg hover:shadow-white/30 font-bold px-6 py-2.5 rounded-md transition-all duration-300 shadow-md border border-transparent hover:border-white/30"
               asChild
             >
-              <Link href="/registro">Registro</Link>
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSd10lmAzo13t4ZmFTP5xqJRS2yOOaMU7M1M8lQ0eO-ghV3iBA/viewform">
+                Registro
+              </Link>
             </Button>
           </div>
 
+          {/* Menú móvil — ✅ ICONO DE MENÚ EN BLANCO */}
           <div className="md:hidden">
             <Button
               variant="ghost"
-              size="sm"
+              size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-black hover:text-[#c00000] hover:bg-red-50 p-2 rounded-lg transition-all duration-200"
+              className="text-white hover:text-white p-2 rounded-md transition-all duration-200 hover:bg-white/10"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
+        {/* Menú móvil desplegable — ✅ ESTILO COHERENTE + HOVER BLANCO */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-4 space-y-2 bg-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-4 space-y-2 bg-[#c00000] border-t border-white/20">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-3 text-black font-medium hover:text-[#c00000] hover:bg-red-50 rounded-lg transition-all duration-200"
+                  className="block px-4 py-3 text-white font-semibold text-base tracking-wide hover:bg-white/10 rounded-md transition-all duration-300 relative"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
-              <div className="px-4 pt-2">
+              <div className="px-4 pt-4">
                 <Button
-                  className="w-full bg-[#c00000] hover:bg-red-800 text-white font-semibold py-2 rounded-lg"
+                  className="w-full bg-white text-[#c00000] hover:bg-gray-100 hover:shadow-lg hover:shadow-white/30 font-bold py-3 rounded-md shadow-md transition-all duration-300"
                   asChild
                 >
-                  <Link href="/registro">Registro</Link>
+                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSd10lmAzo13t4ZmFTP5xqJRS2yOOaMU7M1M8lQ0eO-ghV3iBA/viewform">
+                    Registro
+                  </Link>
                 </Button>
               </div>
             </div>

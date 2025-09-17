@@ -48,7 +48,7 @@ export function AboutSection() {
                 <Image
                   src="/congreso-ciencia-tecnologia.jpeg"
                   alt="Logo Congreso Ciencia y Tecnología Morona Santiago 2025"
-                  width={500}
+                  width={400}
                   height={300}
                   className="w-full h-full object-contain max-h-full max-w-full drop-shadow-md"
                 />
@@ -161,7 +161,7 @@ export function AboutSection() {
               <p className="text-sm text-gray-600 mt-1">
                 Comprometidos con la excelencia académica y el desarrollo regional
               </p>
-              {/* ✅ SECCIÓN DEL VIDEO ELIMINADA COMPLETAMENTE */}
+              
             </div>
           </div>
         </div>

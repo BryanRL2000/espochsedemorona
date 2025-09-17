@@ -9,7 +9,7 @@ export function HeroSection() {
     <section id="inicio" className="relative min-h-screen">
       <div className="absolute inset-0">
         <img
-          src="/tecnologia-y-ciencia-moderna-laboratorio-digital.jpg"
+          src="/tecnologia-y-ciencia.jpg"
           alt="Tecnología y Ciencia Moderna"
           className="w-full h-full object-cover"
         />
@@ -21,9 +21,9 @@ export function HeroSection() {
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-balance leading-tight">
-                <span className="text-[#c00000]">V CONGRESO INTERNACIONAL</span>
+                <span className="text-[#f00f0f]">V CONGRESO INTERNACIONAL</span>
                 <br />
-                <span className="text-[#006400]">DE CIENCIA Y TECNOLOGÍA</span>
+                <span className="text-[#03c003]">DE CIENCIA Y TECNOLOGÍA</span>
                 <br />
                 <span className="text-white">MORONA SANTIAGO 2025</span>
               </h1>
@@ -49,7 +49,7 @@ export function HeroSection() {
                   <MapPin className="h-5 w-5" />
                   <span className="font-semibold">Ubicación</span>
                 </div>
-                <p className="text-black font-medium">Salón Azul, Consejo Provincial Morona Santiago</p>
+                <p className="text-black font-medium">Espoch Sede Macas, Salón Azul, Consejo Provincial Morona Santiago</p>
               </div>
             </div>
 

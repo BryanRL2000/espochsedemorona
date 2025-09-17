@@ -4,9 +4,9 @@ import Image from "next/image"
 
 export default function PonentesPage() {
   return (
-    <main className="min-h-screen relative">
-      {/* FONDO DE IMAGEN LOCAL */}
-      <div className="absolute inset-0">
+    <main className="min-h-screen bg-gradient-to-br from-green-50 to-red-50">
+      {/* Hero Section con Imagen Local */}
+      <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
         <Image
           src="/tecnologia.jpg" // ← Asegúrate de que este archivo exista en public/
           alt="Fondo Tecnológico - Congreso ESPOCH"
@@ -14,27 +14,36 @@ export default function PonentesPage() {
           className="object-cover"
           priority
         />
-      </div>
-
-      {/* CONTENIDO PRINCIPAL */}
-      <div className="relative z-10">
-        {/* Hero Section — Título en Rojo, Subtítulo en Verde/Negro */}
-        <div className="pt-16 pb-12">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-red-600 mb-4 drop-shadow-lg">
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg text-red-500">
               Ponentes y Expositores
             </h1>
-            <p className="text-lg md:text-xl text-green-800 max-w-3xl mx-auto font-medium drop-shadow">
-              Conoce a los expertos internacionales que compartirán sus conocimientos en el V Congreso Internacional de Ciencia y Tecnología
+            <p className="text-lg md:text-xl max-w-3xl mx-auto font-medium drop-shadow text-green-100">
+              Conoce a los expertos internacionales que compartirán sus conocimientos en el V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Contenido Principal — Envuelto en tarjeta con fondo blanco translúcido */}
-        <div className="px-4 sm:px-6 lg:px-8 pb-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-lg border border-white/20">
-              <KeynoteCarousel />
+      {/* Contenido Principal — Fondo blanco puro para legibilidad */}
+      <div className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold text-gray-800 text-center mb-2">
+                Conferencias Internacionales
+              </h2>
+              <p className="text-gray-600 text-center max-w-3xl mx-auto">
+                Expertos de Colombia, Chile, México, España, Irlanda y Ecuador compartirán las últimas tendencias en ciencia, tecnología, medio ambiente y gestión.
+              </p>
+            </div>
+
+            {/* Carrusel de conferencias clave */}
+            <KeynoteCarousel />
+
+            {/* Galería de ponentes */}
+            <div className="mt-18">
               <SpeakersGallery />
             </div>
           </div>

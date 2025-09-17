@@ -44,10 +44,6 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     description:
       "Profesor Titular y Director del Instituto de Minerales CIMEX. Líder en investigación minera y metalúrgica. Especializado en reología de suspensiones, procesamiento de minerales y geomecánica.",
     image: "/FOTOGRAFIA_OSWALDO BUSTAMANTE.png",
-    socialLinks: {
-      linkedin: "#",
-      website: "#",
-    },
   },
   {
     id: 2,
@@ -63,10 +59,6 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     description:
       "Investigadora en procesos mineros, consultora y coordinadora de convenios internacionales. Especializada en flotación de minerales y química de superficies.",
     image: "/FOTOGRAFIA_GABRIELA CONTRERAS.png",
-    socialLinks: {
-      linkedin: "#",
-      website: "#",
-    },
   },
   {
     id: 3,
@@ -82,10 +74,6 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     description:
       "Profesor e investigador con experiencia en proyectos internacionales en Latinoamérica y África. Asesor del PNUD. Especializado en voladuras mineras, sostenibilidad en pequeña minería y modelamiento geotécnico.",
     image: "/FOTOGRAFIA_JACOPO_SECCATORE.png",
-    socialLinks: {
-      linkedin: "#",
-      website: "#",
-    },
   },
   {
     id: 4,
@@ -101,10 +89,6 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     description:
       "Consultor internacional en gestión hídrica y caudales ambientales. Más de 20 años de experiencia en ecohidráulica, caudales ecológicos y modelación de contaminantes.",
     image: "/Matias-Peredo.png",
-    socialLinks: {
-      linkedin: "#",
-      website: "#",
-    },
   },
   {
     id: 5,
@@ -120,10 +104,6 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     description:
       "Profesor investigador, líder de laboratorio de nutrición animal, consultor internacional en producción bovina. Especializado en nutrición de rumiantes y ecología ruminal.",
     image: "/Hugo-Lopez.png",
-    socialLinks: {
-      linkedin: "#",
-      website: "#",
-    },
   },
 ]
 
@@ -131,13 +111,13 @@ export function KeynoteCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedSpeaker, setSelectedSpeaker] = useState<KeynoteSpeaker | null>(null)
 
-  // ✅ Auto-avance cada 4 segundos
+  // ✅ Auto-avance cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % keynoteSpeakers.length)
-    }, 4000)
+    }, 8000)
 
-    return () => clearInterval(interval) // Limpieza al desmontar
+    return () => clearInterval(interval)
   }, [])
 
   const nextSlide = () => {
@@ -163,16 +143,26 @@ export function KeynoteCarousel() {
 
         {/* Carrusel Principal */}
         <div className="relative">
-          <Card className="overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 rounded-2xl">
+          <Card className="overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl">
             <CardContent className="p-0">
               <div className="grid md:grid-cols-2 gap-0">
-                {/* ✅ IMAGEN DEL PONENTE — AJUSTADA PROPORCIONALMENTE (SIN RECORTES) */}
-                <div className="relative aspect-[4/3] h-80 md:h-96 flex items-center justify-center overflow-hidden bg-white">
+                {/* ✅ IMAGEN DEL PONENTE — SIN RECORTES, FULL SIZE, RESPONSIVE */}
+                <div className="relative aspect-[4/3] h-72 sm:h-80 md:h-96 flex items-center justify-center overflow-hidden bg-gray-100 rounded-xl shadow-sm border border-gray-200">
+                  {/* Imagen con objeto que mantiene proporción y no se recorta */}
                   <img
                     src={currentSpeaker.image || "/placeholder.svg"}
                     alt={`Foto de ${currentSpeaker.name}`}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                    style={{ aspectRatio: "4/3" }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.src = "/placeholder.svg"
+                    }}
                   />
+
+                  {/* Contorno visual sutil */}
+                  <div className="absolute inset-0 rounded-xl border-2 border-white/50 shadow-inner"></div>
+
                   {/* Badge de modalidad */}
                   <div className="absolute top-4 right-4 z-10">
                     <Badge
@@ -236,8 +226,8 @@ export function KeynoteCarousel() {
                     </div>
 
                     {/* Título de la conferencia */}
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-gray-800 mb-2">{currentSpeaker.conferenceTitle}</h4>
+                    <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+                      <h4 className="font-semibold text-red-800 mb-2">{currentSpeaker.conferenceTitle}</h4>
                     </div>
 
                     {/* Fecha y hora */}
@@ -261,7 +251,7 @@ export function KeynoteCarousel() {
                         variant="outline"
                         size="sm"
                         onClick={() => setSelectedSpeaker(currentSpeaker)}
-                        className="border-gray-300 hover:bg-gray-50 text-gray-800"
+                        className="border-red-300 hover:bg-red-50 text-red-700 hover:text-red-800"
                       >
                         <User className="h-4 w-4 mr-2" />
                         Ver Perfil Completo
@@ -301,7 +291,7 @@ export function KeynoteCarousel() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-gray-100 shadow-sm"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-red-50 shadow-sm"
             onClick={prevSlide}
             aria-label="Conferencia anterior"
           >
@@ -310,7 +300,7 @@ export function KeynoteCarousel() {
           <Button
             variant="outline"
             size="icon"
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-gray-100 shadow-sm"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-red-50 shadow-sm"
             onClick={nextSlide}
             aria-label="Siguiente conferencia"
           >
@@ -324,7 +314,7 @@ export function KeynoteCarousel() {
             <button
               key={index}
               className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                index === currentIndex ? "bg-gray-800" : "bg-gray-300"
+                index === currentIndex ? "bg-red-500" : "bg-gray-300"
               }`}
               onClick={() => setCurrentIndex(index)}
               aria-label={`Ir a la conferencia ${index + 1}`}
@@ -342,10 +332,10 @@ export function KeynoteCarousel() {
 
       {/* Modal de perfil completo */}
       {selectedSpeaker && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <Card className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-2xl border border-gray-200">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
+          <Card className="max-w-2xl w-full max-h-[80vh] overflow-y-auto rounded-2xl border border-gray-200 shadow-xl">
             <CardContent className="p-6">
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex justify-between items-start mb-6">
                 <h3 className="text-2xl font-bold text-gray-900">{selectedSpeaker.name}</h3>
                 <Button
                   variant="ghost"
@@ -356,25 +346,46 @@ export function KeynoteCarousel() {
                   ✕
                 </Button>
               </div>
+
               <div className="space-y-4">
-                <p className="text-gray-700"><strong>Título:</strong> {selectedSpeaker.title}</p>
-                <p className="text-gray-700"><strong>Institución:</strong> {selectedSpeaker.institution}</p>
-                <p className="text-gray-700"><strong>País:</strong> {selectedSpeaker.country}</p>
-                <p className="text-gray-700"><strong>Modalidad:</strong> {selectedSpeaker.modality}</p>
-                <p className="text-gray-700"><strong>Fecha y hora:</strong> {selectedSpeaker.date} a las {selectedSpeaker.time}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Título</p>
+                    <p className="text-gray-700">{selectedSpeaker.title}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Institución</p>
+                    <p className="text-gray-700">{selectedSpeaker.institution}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">País</p>
+                    <p className="text-gray-700">{selectedSpeaker.country}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Modalidad</p>
+                    <p className="text-gray-700">{selectedSpeaker.modality}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500 font-medium">Fecha y hora</p>
+                    <p className="text-gray-700">{selectedSpeaker.date} a las {selectedSpeaker.time}</p>
+                  </div>
+                </div>
+
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-2">Tema</h4>
                   <p className="text-gray-600">{selectedSpeaker.conferenceTitle}</p>
                 </div>
+
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-2">Biografía</h4>
-                  <p className="text-gray-600">{selectedSpeaker.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{selectedSpeaker.description}</p>
                 </div>
               </div>
+
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <Button
                   onClick={() => setSelectedSpeaker(null)}
-                  className="w-full bg-gray-800 hover:bg-gray-900 text-white py-3 rounded-xl transition-colors"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl transition-colors"
                 >
                   Cerrar
                 </Button>

@@ -34,7 +34,7 @@ export default function ContactosPage() {
               <div className="mb-12">
                 <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-md">
                   <CardHeader>
-                    <CardTitle className="text-red-600 text-center">ESPOCH Sede Morona Santiago</CardTitle>
+                    <CardTitle className="text-[#c00000] text-center">ESPOCH Sede Morona Santiago</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -46,21 +46,21 @@ export default function ContactosPage() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h3 className="text-xl font-semibold text-red-600">Nuestra Sede en Macas</h3>
+                        <h3 className="text-xl font-semibold text-[#c00000]">Nuestra Sede en Macas</h3>
                         <p className="text-gray-700 leading-relaxed">
                           La ESPOCH Sede Morona Santiago se encuentra ubicada en la ciudad de Macas, capital de la provincia de Morona Santiago. Nuestra sede ofrece un entorno único de aprendizaje con modernas instalaciones y tecnología de vanguardia.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-sm text-gray-700">
-                            <MapPin className="h-4 w-4 text-red-600" />
+                            <MapPin className="h-4 w-4 text-[#c00000]" />
                             <span>Macas, Morona Santiago, Ecuador</span>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-gray-700">
-                            <Phone className="h-4 w-4 text-red-600" />
+                            <Phone className="h-4 w-4 text-[#c00000]" />
                             <span>+593 (03) 2998-200</span>
                           </div>
                           <div className="flex items-center gap-2 text-sm text-gray-700">
-                            <Mail className="h-4 w-4 text-red-600" />
+                            <Mail className="h-4 w-4 text-[#c00000]" />
                             <span>vcictms2025@espoch.edu.ec</span>
                           </div>
                         </div>
@@ -76,7 +76,7 @@ export default function ContactosPage() {
                 <div className="space-y-6">
                   <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
                     <CardHeader>
-                      <CardTitle className="text-red-600 flex items-center gap-2">
+                      <CardTitle className="text-[#c00000] flex items-center gap-2">
                         <Globe className="h-5 w-5" />
                         Sobre la Sede
                       </CardTitle>
@@ -88,7 +88,7 @@ export default function ContactosPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="border-red-500 text-red-600 hover:border-green-500 hover:text-green-600 hover:bg-green-50 transition-colors duration-300"
+                        className="border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 transition-colors duration-300"
                         asChild
                       >
                         <a
@@ -106,12 +106,12 @@ export default function ContactosPage() {
 
                   <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
                     <CardHeader>
-                      <CardTitle className="text-red-600">Recursos Adicionales</CardTitle>
+                      <CardTitle className="text-[#c00000]">Recursos Adicionales</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
                       <Button
                         variant="outline"
-                        className="w-full justify-between border-red-500 text-red-600 hover:border-green-500 hover:text-green-600 hover:bg-green-50 transition-colors duration-300"
+                        className="w-full justify-between border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 transition-colors duration-300"
                         asChild
                       >
                         <a
@@ -125,7 +125,7 @@ export default function ContactosPage() {
                       </Button>
                       <Button
                         variant="outline"
-                        className="w-full justify-between border-red-500 text-red-600 hover:border-green-500 hover:text-green-600 hover:bg-green-50 transition-colors duration-300"
+                        className="w-full justify-between border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 transition-colors duration-300"
                         asChild
                       >
                         <a
@@ -143,24 +143,24 @@ export default function ContactosPage() {
 
                 {/* Columna Derecha: INSCRIPCIÓN DEL CONGRESO (destacada) */}
                 <div className="space-y-6">
-                  <Card className="bg-white/90 backdrop-blur-sm border-2 border-red-500 shadow-md">
+                  <Card className="bg-white/90 backdrop-blur-sm border-2 border-[#c00000] shadow-md">
                     <CardHeader>
-                      <CardTitle className="text-red-600 text-center">🎓 Inscripción al Congreso</CardTitle>
+                      <CardTitle className="text-[#c00000] text-center">🎓 Inscripción al Congreso</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="text-center space-y-6 py-6">
                         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                          <h3 className="text-xl font-bold text-red-600 mb-3">¡Únete al V Congreso Internacional!</h3>
+                          <h3 className="text-xl font-bold text-[#c00000] mb-3">¡Únete al V Congreso Internacional!</h3>
                           <p className="text-gray-700 mb-6 text-sm leading-relaxed">
                             Participa en este evento único de ciencia y tecnología. Conecta con expertos internacionales y forma parte de la comunidad científica más importante de la región amazónica.
                           </p>
                           <div className="space-y-3">
                             <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                              <Calendar className="h-4 w-4 text-red-600" />
+                              <Calendar className="h-4 w-4 text-[#c00000]" />
                               <span>14, 15 y 16 de Octubre 2025</span>
                             </div>
                             <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                              <MapPin className="h-4 w-4 text-red-600" />
+                              <MapPin className="h-4 w-4 text-[#c00000]" />
                               <span>ESPOCH Sede Morona Santiago - Macas</span>
                             </div>
                           </div>
@@ -170,7 +170,7 @@ export default function ContactosPage() {
                           <h4 className="text-lg font-semibold text-gray-800">¿Cómo participar?</h4>
                           <div className="grid gap-4 text-left">
                             <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
-                              <div className="w-7 h-7 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs">
+                              <div className="w-7 h-7 bg-[#c00000] text-white rounded-full flex items-center justify-center font-bold text-xs">
                                 1
                               </div>
                               <div>
@@ -179,7 +179,7 @@ export default function ContactosPage() {
                               </div>
                             </div>
                             <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
-                              <div className="w-7 h-7 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs">
+                              <div className="w-7 h-7 bg-[#006400] text-white rounded-full flex items-center justify-center font-bold text-xs">
                                 2
                               </div>
                               <div>
@@ -192,7 +192,7 @@ export default function ContactosPage() {
 
                         <div className="space-y-3 pt-4">
                           <Button
-                            className="w-full bg-gradient-to-r from-red-600 to-green-600 hover:from-red-700 hover:to-green-700 text-white py-5 font-bold text-lg shadow-lg transition-all duration-300"
+                            className="w-full bg-gradient-to-r from-[#c00000] to-[#006400] hover:from-[#990000] hover:to-[#004d00] text-white py-5 font-bold text-lg shadow-lg transition-all duration-300"
                             asChild
                           >
                             <a
@@ -208,7 +208,7 @@ export default function ContactosPage() {
 
                           <Button
                             variant="outline"
-                            className="w-full border-red-500 text-red-600 hover:border-green-500 hover:text-green-600 hover:bg-green-50 py-3 bg-transparent font-medium transition-colors duration-300"
+                            className="w-full border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 py-3 bg-transparent font-medium transition-colors duration-300"
                             asChild
                           >
                             <a
@@ -217,7 +217,7 @@ export default function ContactosPage() {
                               rel="noopener noreferrer"
                               className="flex items-center justify-center gap-2"
                             >
-                              <span className="text-red-600">📱</span>
+                              <span className="text-[#c00000]">📱</span>
                               Unirse al Grupo de WhatsApp
                             </a>
                           </Button>
@@ -228,11 +228,11 @@ export default function ContactosPage() {
                 </div>
               </div>
 
-              {/* Mapa de Ubicación */}
+              {/* Mapa de Ubicación — ✅ ADAPTADO Y RESPONSIVO */}
               <div className="mt-12">
                 <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
                   <CardHeader>
-                    <CardTitle className="text-red-600 flex items-center gap-2 justify-center">
+                    <CardTitle className="text-[#c00000] flex items-center gap-2 justify-center">
                       <MapPin className="h-6 w-6" />
                       Ubicación del Evento
                     </CardTitle>
@@ -240,29 +240,31 @@ export default function ContactosPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <p className="text-gray-700 text-center">
-                        ESPOCH Sede Morona Santiago - Macas, Morona Santiago, Ecuador
+                        Consejo Provincial de Morona Santiago  Salon Azul-Macas, Ecuador
                       </p>
                       <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
                         <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7586!2d-78.1167!3d-2.3167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTknMDAuMCJTIDc4wrAwNycwMC4wIlc!5e0!3m2!1ses!2sec!4v1640000000000!5m2!1ses!2sec"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.6477974245697!2d-78.11914812773465!3d-2.3046162572125053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f644265d61b%3A0x940c0bdc9aa02b83!2sGobierno%20Autonomo%20Descentralizado%20de%20Morona%20Santiago!5e0!3m2!1ses-419!2sec!4v1758116346207!5m2!1ses-419!2sec"
                           width="100%"
-                          height="450"
+                          height="400"
                           style={{ border: 0 }}
                           allowFullScreen
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
-                          title="Ubicación ESPOCH Sede Morona Santiago"
-                        />
+                          title="Ubicación de ESPOCH Sede Morona Santiago en Macas, Ecuador"
+                          aria-label="Mapa de ubicación del congreso"
+                          className="w-full h-80 sm:h-96 rounded-lg"
+                        ></iframe>
                       </div>
                       <div className="text-center mt-4">
                         <Button
                           variant="outline"
                           size="lg"
-                          className="border-red-500 text-red-600 hover:border-green-500 hover:text-green-600 hover:bg-green-50 transition-colors duration-300"
+                          className="border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 transition-colors duration-300"
                           asChild
                         >
                           <a
-                            href="https://maps.app.goo.gl/qs56dV6xugWFaFWP9"
+                            href="https://maps.app.goo.gl/ipjuFJpMg6MnBXQE9"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2"

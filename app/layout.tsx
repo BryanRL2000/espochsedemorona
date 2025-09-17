@@ -12,7 +12,7 @@ import WhatsAppButton from "@/components/whatsapp-button"
 export const metadata: Metadata = {
   title: "V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025",
   description: "Innovación, Conocimiento y Sostenibilidad para el Desarrollo Amazónico - ESPOCH Sede Morona Santiago",
-  generator: "v0.app",
+  generator: "bryan.rivadeneira",
   keywords: "congreso, ciencia, tecnología, ESPOCH, Morona Santiago, Amazon, investigación, innovación",
   authors: [{ name: "ESPOCH Sede Morona Santiago" }],
   openGraph: {
