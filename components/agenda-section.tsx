@@ -42,12 +42,12 @@ const agendaData = {
     {
       id: "3",
       time: "10:00 - 12:00",
-      title: "Workshop: Ataques DDoS y Técnicas de Protección",
+      title: "Workshop: Área Ambiental",
       type: "workshop" as const,
-      speaker: "Katherine Merino",
+      speaker: "Matías Peredo Parada",
       modality: "Presencial" as const,
       location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
-      description: "Taller especializado en seguridad informática y protección contra ataques DDoS",
+      description: "Taller especializado en temas ambientales y caudal ecológico",
     },
     {
       id: "4",
@@ -111,12 +111,12 @@ const agendaData = {
     {
       id: "10",
       time: "10:00 - 12:00",
-      title: "Workshop: Área Ambiental",
+      title: "Workshop: Ataques DDoS y Técnicas de Protección",
       type: "workshop" as const,
-      speaker: "Matias Peredo Parada",
+      speaker: "Katherine Merino",
       modality: "Presencial" as const,
       location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
-      description: "Taller especializado en temas ambientales",
+      description: "Taller especializado en seguridad informática y protección contra ataques DDoS",
     },
     {
       id: "11",
@@ -138,7 +138,7 @@ const agendaData = {
     },
     {
       id: "13",
-      time: "17:30 - 18:00",
+      time: "18:00 - ...",
       title: "Noche Cultural",
       type: "networking" as const,
       modality: "Presencial" as const,
@@ -147,6 +147,8 @@ const agendaData = {
     },
   ],
 }
+
+// ✅ El resto del componente (funciones, estilos, JSX) se mantiene EXACTAMENTE IGUAL
 
 const getTypeIcon = (type: AgendaItem["type"]) => {
   switch (type) {
@@ -223,7 +225,6 @@ const getTypeLabel = (type: AgendaItem["type"]) => {
   }
 }
 
-// ✅ Imágenes del carrusel (reales desde public/)
 const carouselImages = [
   {
     src: "/espoch1.png",
@@ -256,7 +257,6 @@ export function AgendaSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // ✅ Auto-cambio cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
@@ -265,7 +265,6 @@ export function AgendaSection() {
     return () => clearInterval(interval)
   }, [carouselImages.length])
 
-  // ✅ Manejo de tecla ESC y scroll para el modal
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsModalOpen(false)
@@ -286,12 +285,11 @@ export function AgendaSection() {
 
   const downloadAgenda = () => {
     const link = document.createElement('a');
-    link.href = '/docs/Agenda.docx';
-    link.download = 'Agenda.docx';
+    link.href = '/docs/Agenda.pdf';
+    link.download = 'Agenda.pdf';
     link.click();
   }
 
-  // ✅ Fondo dinámico por día
   const getBackgroundByDay = (day: string) => {
     switch (day) {
       case "2025-10-14":
@@ -305,7 +303,6 @@ export function AgendaSection() {
     }
   };
 
-  // ✅ Funciones para navegar en el carrusel
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
   }
@@ -319,7 +316,6 @@ export function AgendaSection() {
 
   return (
     <section id="programa" className="section-padding relative">
-      {/* ✅ Fondo dinámico */}
       <div className={`absolute inset-0 bg-gradient-to-br ${getBackgroundByDay(selectedDay)}`}></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -334,19 +330,17 @@ export function AgendaSection() {
               className="gap-2 bg-red-600 hover:bg-red-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-3"
             >
               <Download className="h-4 w-4" />
-              Descargar Agenda Completa (docx)
+              Descargar Agenda Completa (pdf)
             </Button>
           </div>
         </div>
 
-        {/* Contador de eventos */}
         <div className="text-center mb-4">
           <p className="text-sm text-gray-500 font-medium">
             {agendaData[selectedDay as keyof typeof agendaData].length} eventos programados para este día
           </p>
         </div>
 
-        {/* ✅ Tabs mejorados con colores rojo, verde y blanco */}
         <Tabs value={selectedDay} onValueChange={setSelectedDay} className="w-full">
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/40 p-2 mb-8">
             <TabsList className="grid w-full grid-cols-3 bg-white border-b border-gray-200">
@@ -376,9 +370,7 @@ export function AgendaSection() {
 
           {Object.entries(agendaData).map(([date, items]) => (
             <TabsContent key={date} value={date} className="space-y-4">
-              {/* ✅ Carrusel de imágenes — CON AUTOPLAY Y MODAL */}
               <div className="mb-8 relative">
-                {/* Contenedora clickeable para abrir modal */}
                 <div
                   className="relative overflow-hidden rounded-2xl shadow-xl border border-white/30 bg-white flex items-center justify-center cursor-pointer hover:shadow-2xl transition-shadow duration-300"
                   onClick={openModal}
@@ -390,7 +382,6 @@ export function AgendaSection() {
                   />
                 </div>
 
-                {/* Flechas de navegación */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
@@ -410,7 +401,6 @@ export function AgendaSection() {
                   →
                 </button>
 
-                {/* Indicadores */}
                 <div className="flex justify-center mt-4 space-x-3">
                   {carouselImages.map((_, index) => (
                     <button
@@ -435,7 +425,6 @@ export function AgendaSection() {
                   >
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row md:items-start gap-4">
-                        {/* Time and Type */}
                         <div className="flex-shrink-0 md:w-48">
                           <div className="flex items-center gap-2 mb-2">
                             <Clock className="h-4 w-4 text-gray-500" />
@@ -447,7 +436,6 @@ export function AgendaSection() {
                           </Badge>
                         </div>
 
-                        {/* Content */}
                         <div className="flex-1">
                           <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">
                             {item.title}
@@ -565,7 +553,6 @@ export function AgendaSection() {
         </div>
       </div>
 
-      {/* ✅ Modal de Imagen Completa */}
       {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
@@ -575,7 +562,6 @@ export function AgendaSection() {
             className="relative max-w-6xl w-full max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Botón de cerrar */}
             <button
               onClick={closeModal}
               className="absolute top-4 right-4 z-10 bg-black/20 hover:bg-black/40 text-white p-2 rounded-full transition-colors"
@@ -584,7 +570,6 @@ export function AgendaSection() {
               ✕
             </button>
 
-            {/* Imagen en grande */}
             <div className="h-full flex items-center justify-center p-6">
               <img
                 src={carouselImages[currentImageIndex].src}
@@ -593,7 +578,6 @@ export function AgendaSection() {
               />
             </div>
 
-            {/* Indicadores en el modal */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
               {carouselImages.map((_, index) => (
                 <button

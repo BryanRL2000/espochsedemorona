@@ -16,7 +16,6 @@ import {
   ChevronUp,
 } from "lucide-react"
 
-// ✅ Interfaz actualizada con campo photo
 interface Speaker {
   id: number
   name: string
@@ -35,7 +34,6 @@ interface Speaker {
   photo?: string
 }
 
-// ✅ Datos completos y corregidos según el PDF
 export const speakers: Speaker[] = [
   // =============== MARTES 14 DE OCTUBRE ===============
   {
@@ -66,7 +64,7 @@ export const speakers: Speaker[] = [
     day: "2025-10-14",
     time: "09:30 – 10:30",
     topic: "Caracterización química superficial de minerales",
-    modality: "Virtual",
+    modality: "Presencial", // ✅ Corregido: era Virtual, ahora Presencial
     expertise: ["Flotación de minerales", "Química de superficies", "Procesamiento de minerales"],
     bio: "Gabriela Contreras Sinchi es Ingeniera en Minas por la Universidad del Azuay y Magíster en Ingeniería – Recursos Minerales por la Universidad Nacional de Colombia. Actualmente se desempeña como investigadora e ingeniera de procesos en el Instituto de Minerales CIMEX. Su experiencia abarca flotación de minerales, caracterización fisicoquímica, reprocesamiento de relaves y optimización de procesos. Ha participado como consultora y coordinadora de cooperación interinstitucional en convenios entre universidades de Colombia y Ecuador. También colabora como docente asistente en áreas como química de superficies y sistemas particulados.",
     email: "gcontrerass@unal.edu.co",
@@ -91,26 +89,26 @@ export const speakers: Speaker[] = [
   },
   {
     id: 4,
-    name: "Josué González Coronel",
-    photo: "/images/speakers/josue-gonzalez.jpg",
-    title: "Estudiante de Doctorado",
+    name: "Josué David González Coronel", // ✅ Nombre corregido
+    photo: "/josue_gonzales.jpg",
+    title: "Magíster en Minas, Estudiante de Doctorado",
     institution: "Universidad de Chile",
-    country: "Chile",
-    countryCode: "CL",
+    country: "Ecuador",
+    countryCode: "EC",
     day: "2025-10-14",
     time: "12:00 – 13:00",
     topic: "Planificación Minera",
     modality: "Virtual",
-    expertise: ["Planificación Minera", "Optimización", "Investigación"],
-    bio: "Estudiante de Doctorado en la Universidad de Chile, especializado en planificación minera y optimización de procesos.",
+    expertise: ["Planificación Minera", "Optimización", "Procesos metalúrgicos", "IPCC"],
+    bio: "Josué David González Coronel es Ingeniero en Minas por la Universidad del Azuay (Ecuador) y Magíster en Minería por la Universidad de Chile. Actualmente es estudiante de Doctorado en Minas. Ha sido Jefe de Operaciones en EMICOR C.A., liderando procesos de flotación y lixiviación, y colaboró como investigador en el AMTC de la Universidad de Chile en proyectos sobre planificación minera y tecnologías IPCC. Sus áreas de interés abarcan los procesos metalúrgicos, la optimización de operaciones, la innovación tecnológica en minería y la formación de nuevos profesionales.",
     email: "josue.gonzalez.cor@gmail.com",
   },
   {
     id: 5,
     name: "Katharina Hecht",
-    photo: "/images/speakers/katharina-hecht.jpg",
+    photo: "/kathrina.jpeg",
     title: "Especialista en Área Ambiental",
-    institution: "Universidad Internacional",
+    institution: "Internacional",
     country: "Internacional",
     day: "2025-10-14",
     time: "14:00 – 15:00",
@@ -122,7 +120,7 @@ export const speakers: Speaker[] = [
   {
     id: 6,
     name: "Douglas Guzmán Amoroso",
-    photo: "/images/speakers/douglas-guzman.jpg",
+    photo: "douglas_guzman.jpg",
     title: "Doctor en Dirección de Proyectos",
     institution: "GAD del Cantón Pastaza, Ecuador",
     country: "Ecuador",
@@ -131,7 +129,7 @@ export const speakers: Speaker[] = [
     time: "15:00 – 16:00",
     topic: "Implementación de estrategias sostenibles en proyectos de ingeniería ambiental en zonas amazónicas",
     modality: "Presencial",
-    expertise: ["Gestión ambiental", "Sostenibilidad", "Dirección de proyectos"],
+    expertise: ["Gestión ambiental", "Sostenibilidad", "Dirección de proyectos", "Remediación"],
     bio: "Douglas Guzmán es Ingeniero Ambiental con amplia trayectoria en gestión ambiental, sostenibilidad y dirección de proyectos. Posee maestrías en Gestión de Proyectos y en Gestión Ambiental mención Sostenibilidad, además de un doctorado en Dirección de Proyectos. Ha ejercido cargos de liderazgo en instituciones públicas y privadas, incluyendo su actual función como Director del GAD del Cantón Pastaza. Su experiencia combina la gestión territorial, la consultoría ambiental y la docencia universitaria. Ha participado en proyectos de remediación, conservación de cuencas y desarrollo sostenible, así como en eventos académicos internacionales. Autor de publicaciones sobre desarrollo socioeconómico de comunidades indígenas amazónicas, destaca por su compromiso con la sostenibilidad y la innovación en la gestión ambiental.",
     email: "douguzman9@gmail.com",
     phone: "+593 987899818",
@@ -139,9 +137,9 @@ export const speakers: Speaker[] = [
   {
     id: 7,
     name: "Ana Lucía Martínez Toledo",
-    photo: "/images/speakers/ana-lucia-martinez.jpg",
+    photo: "/ana-lucia-martinez.jpg",
     title: "Especialista en Innovación Tecnológica",
-    institution: "Universidad Internacional",
+    institution: "Internacional",
     country: "Internacional",
     day: "2025-10-14",
     time: "17:00 – 18:00",
@@ -163,8 +161,8 @@ export const speakers: Speaker[] = [
     day: "2025-10-15",
     time: "08:00 – 09:00",
     topic: "Caudal Ambiental: la forma más robusta de dotar de seguridad hídrica a los ecosistemas acuáticos",
-    modality: "Virtual",
-    expertise: ["Ecohidráulica", "Caudales ambientales", "Gestión hídrica"],
+    modality: "Presencial", // ✅ Corregido: era Virtual, ahora Presencial
+    expertise: ["Ecohidráulica", "Caudales ambientales", "Gestión hídrica", "Modelación de contaminantes"],
     bio: "Matías Peredo Parada es Ingeniero Civil Hidráulico por la Universidad de Chile y Doctor en Ingeniería Hidráulica y Medio Ambiente por la Universidad Politécnica de Valencia. Se desempeña como Gerente General de EcoHyd y consultor UNESCO en caudales ambientales, ecohidrología y soluciones basadas en la naturaleza. Cuenta con más de 20 años de experiencia en proyectos nacionales e internacionales de gestión hídrica, energía, minería y conservación ambiental. Ha liderado numerosos estudios de modelación de calidad de agua, dispersión de contaminantes y determinación de caudales ecológicos. Sus publicaciones científicas en revistas indexadas y congresos internacionales consolidan su trayectoria académica y profesional.",
   },
   {
@@ -187,7 +185,7 @@ export const speakers: Speaker[] = [
   {
     id: 10,
     name: "Jorge Ricardo Guerrero López",
-    photo: "/images/speakers/jorge-guerrero.jpg",
+    photo: "Jorge-Guerrero.png",
     title: "Magíster en Producción Animal con mención en Nutrición Animal",
     institution: "Universidad Técnica de Ambato",
     country: "Ecuador",
@@ -196,7 +194,7 @@ export const speakers: Speaker[] = [
     time: "10:30 – 11:30",
     topic: "Alternativas de antibióticos promotores del crecimiento y resistencia bacteriana",
     modality: "Presencial",
-    expertise: ["Producción Animal", "Patología Aviar", "Resistencia microbiana"],
+    expertise: ["Producción Animal", "Patología Aviar", "Resistencia microbiana", "Probióticos"],
     bio: "El Profesor Jorge Ricardo Guerrero López es un Ingeniero Zootecnista con una destacada trayectoria en el ámbito académico y profesional. Posee un Magíster en Producción Animal con mención en Nutrición Animal, y Diplomas Superiores en Patología Aviar e Informática Educativa Universitaria. Desde 2001, se desempeña como Profesor Titular en la Facultad de Ciencias Agropecuarias de la Universidad Técnica de Ambato. Su vasta experiencia abarca el sector avícola, con experticia en sanidad y producción animal. Ha realizado importantes contribuciones a través de numerosas publicaciones científicas sobre nutrición, resistencia microbiana y probióticos, y es coautor de libros en avicultura y reproducción. Es reconocido como un referente en el sector agropecuario.",
     email: "jr.guerrero@uta.edu.ec",
     phone: "+593 99 715 0013",
@@ -237,73 +235,119 @@ export const speakers: Speaker[] = [
   },
   {
     id: 13,
-    name: "Victor Vimos",
-    photo: "/images/speakers/victor-vimos.jpg",
-    title: "PhD en Interculturalidad",
-    institution: "Universidad Internacional",
-    country: "Perú",
-    countryCode: "PE",
+    name: "Ruth Barba Vera",
+    photo: "/ruth.jpg", // ✅ Nuevo ponente
+    title: "PhD en Ciberseguridad",
+    institution: "ESPOCH, Ecuador",
+    country: "Ecuador",
+    countryCode: "EC",
     day: "2025-10-15",
-    time: "15:00 – 15:30",
-    topic: "Interculturalidad",
-    modality: "Virtual",
-    expertise: ["Interculturalidad", "Diversidad Cultural", "Investigación Social"],
-    bio: "Doctor especializado en estudios interculturales con amplia experiencia en investigación sobre diversidad cultural y social.",
+    time: "15:00 – 16:00",
+    topic: "Cuando la amenaza está dentro: riesgos internos en intranets universitarias – Lecciones desde la ESPOCH (Ecuador)",
+    modality: "Presencial",
+    expertise: ["Ciberseguridad", "Riesgos internos", "Seguridad informática", "Intranets universitarias"],
+    bio: "Dra. Ruth Barba Vera es experta en ciberseguridad con enfoque en riesgos internos en entornos académicos. Su investigación se centra en la protección de infraestructuras digitales universitarias y la gestión de amenazas internas en redes institucionales.",
+  },
+  {
+    id: 14,
+    name: "José Ascencio Atupaña Tocto",
+    photo: "/jose_atupaña.jpg", // ✅ Nuevo ponente
+    title: "Magíster en Educación Intercultural",
+    institution: "Secretaría de Educación Intercultural Bilingüe",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2025-10-15",
+    time: "16:00 – 17:00",
+    topic: "Educación Intercultural Bilingüe y Etnoeducación",
+    modality: "Presencial",
+    expertise: ["Educación Intercultural", "Etnoeducación", "Políticas educativas"],
+    bio: "Magíster José Ascencio Atupaña Tocto es Secretario de Educación Intercultural Bilingüe y la Etnoeducación. Su labor se enfoca en la promoción de modelos educativos inclusivos que respeten y fortalezcan las identidades culturales y lingüísticas de los pueblos indígenas del Ecuador.",
+  },
+  {
+    id: 15,
+    name: "Miguel Ángel Osorio Rivera",
+    photo: "/miguel_osorio.jpg", // ✅ Nuevo ponente
+    title: "Ingeniero Ambiental, Doctorando",
+    institution: "Universidad Miguel Hernández, España",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2025-10-15",
+    time: "17:00 – 17:30",
+    topic: "Artículo Científico: Calidad del agua amazónica con aprendizaje automático",
+    modality: "Presencial",
+    expertise: ["Gestión ambiental", "Aprendizaje automático", "Calidad del agua", "Reciclaje electrónico"],
+    bio: "Miguel Ángel Osorio Rivera es Ingeniero Ambiental por la UNACH, Magíster en Italia (Universidad della Calabria) y actualmente cursa su doctorado en España (Universidad Miguel Hernández). Sus investigaciones abarcan ISO 27001, reciclaje electrónico, virtualización y aplicaciones de aprendizaje automático para monitoreo ambiental en la Amazonía.",
   },
 
   // =============== JUEVES 16 DE OCTUBRE ===============
   {
-    id: 14,
+    id: 16,
     name: "María Dolores Santos Vidal",
-    photo: "/images/speakers/maria-dolores-santos.jpg",
+    photo: "/maria_santos.jpg",
     title: "Magíster en Relaciones Internacionales",
-    institution: "Universidad Internacional",
+    institution: "ISOCMONITOREO CIA. LTDA.",
     country: "España",
     countryCode: "ES",
     day: "2025-10-16",
     time: "08:00 – 09:00",
     topic: "Fuerza laboral en tiempos de Inteligencia Artificial: Desafíos, habilidades clave y oportunidades",
     modality: "Virtual",
-    expertise: ["Inteligencia Artificial", "Mercado Laboral", "Relaciones Internacionales"],
-    bio: "Especialista en relaciones internacionales con enfoque en el impacto de la inteligencia artificial en el mercado laboral global.",
+    expertise: ["Inteligencia Artificial", "Mercado Laboral", "Relaciones Internacionales", "Ciberseguridad"],
+    bio: "Magíster en relaciones internacionales e ingeniera en sistemas informáticos. Experta en administración empresarial, políticas cibernéticas y seguridad multidimensional. Ha publicado en Springer y es presidenta de AFCEA Internacional - Capítulo Ecuador. Certificada en ciberseguridad, terrorismo, crimen organizado y género en operaciones de paz.",
     email: "mariadolores.santos.v@gmail.com",
     phone: "0984577604",
   },
   {
-    id: 15,
+    id: 17,
     name: "Mary Carmen Vargas Cisneros",
-    photo: "/images/speakers/mary-carmen-vargas.jpg",
+    photo: "/mary_vargas.jpg",
     title: "Magíster en Seguridad Informática",
-    institution: "Universidad Especializada",
+    institution: "Sector Eléctrico y Energético, Ecuador",
     country: "Ecuador",
     countryCode: "EC",
     day: "2025-10-16",
     time: "09:00 – 10:00",
     topic: "Gestión de Incidentes de Seguridad",
     modality: "Virtual",
-    expertise: ["Seguridad Informática", "Gestión de Incidentes", "Ciberseguridad"],
-    bio: "Especialista en seguridad informática con amplia experiencia en gestión de incidentes y ciberseguridad.",
+    expertise: ["Seguridad Informática", "Gestión de Incidentes", "Ciberseguridad Industrial", "ISO 27001"],
+    bio: "Ingeniera Informática con más de 20 años de trayectoria en ciberseguridad IT/OT, gestión de riesgos y control interno en sectores críticos. Directora de TIC y Coordinadora del Centro de Ciberseguridad Industrial en Ecuador. Ponente internacional en foros de ciberseguridad en infraestructuras críticas. Reconocida como Líder Destacada en Seguridad de la Información (2022, 2024) y Women in Energy (2023).",
     email: "mcvc75@gmail.com",
     phone: "0984340202",
   },
   {
-    id: 16,
+    id: 18,
+    name: "Katherine Merino",
+    photo: "/katherine_merino.jpg", // ✅ Nuevo ponente
+    title: "Ingeniera en Electrónica, Magíster en Seguridad Telemática",
+    institution: "ESPOCH, Sede Morona Santiago",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2025-10-16",
+    time: "10:00 – 12:00",
+    topic: "Ataques DDoS y Técnicas de Protección",
+    modality: "Presencial",
+    expertise: ["Ciberseguridad", "Ataques DDoS", "Seguridad Telemática", "Conectividad en la Amazonía"],
+    bio: "Ingeniera en Electrónica, Telecomunicaciones y Redes por la ESPOCH, Magíster en Seguridad Telemática y Máster en Dirección y Gestión de TIC por la Universidad Europea de Madrid. Profesora a tiempo completo en la ESPOCH, sede Morona Santiago. Integra el grupo de investigación ESPOCH IA, con publicaciones en revistas indexadas sobre ISO 27001, reciclaje electrónico y calidad del agua amazónica con aprendizaje automático.",
+    phone: "+593 983270118", // opcional, no proporcionado
+  },
+  {
+    id: 19,
     name: "Alejandra Guerrón",
-    photo: "/images/speakers/alejandra-guerron.jpg",
+    photo: "/alejandra_guerron.jpg",
     title: "MSc. en Electrónica e Ingeniería Artificial",
-    institution: "Tyndall National Institute",
+    institution: "Tyndall National Institute, Irlanda",
     country: "Irlanda",
     countryCode: "IE",
     day: "2025-10-16",
     time: "10:30 – 11:30",
     topic: "Electrónica e ingeniería Artificial",
     modality: "Virtual",
-    expertise: ["Electrónica", "Inteligencia Artificial", "Ingeniería"],
-    bio: "Ingeniera especializada en electrónica e inteligencia artificial, investigadora en el prestigioso Tyndall National Institute.",
+    expertise: ["Electrónica", "Inteligencia Artificial", "Sensores ambientales", "Monitoreo de calidad del aire"],
+    bio: "Ingeniera Electrónica por la USFQ (Cum Laude) y Magíster en Business Intelligence y Big Data Analytics. Actualmente estudiante de doctorado en la Universidad de Calabria con estancia en Tyndall National Institute (Irlanda). Su investigación se centra en sistemas de monitoreo de calidad del aire de bajo costo y bajo consumo energético basados en sensores electroquímicos.",
     email: "alejandra.guerron@tyndall.ie",
   },
   {
-    id: 17,
+    id: 20,
     name: "Maritza Fernanda Santillán Escobar",
     photo: "/Maritza-Santillan.png",
     title: "Magíster en Contabilidad y Auditoría",
@@ -314,13 +358,13 @@ export const speakers: Speaker[] = [
     time: "11:30 – 12:30",
     topic: "Importancia del Control Interno en las organizaciones financieras reguladas por la SEPS",
     modality: "Virtual",
-    expertise: ["Control Interno", "Auditoría", "Riesgo Operativo"],
+    expertise: ["Control Interno", "Auditoría", "Riesgo Operativo", "Normativa SEPS"],
     bio: "Mgs. Maritza Fernanda Santillán Escobar es Licenciada en Auditoría y Contabilidad, es Contadora Pública Autorizada con una Maestría en Auditoría y Contabilidad en la Universidad Nacional de Chimborazo. Cuenta con más de 5 años de experiencia en auditoría interna y externa, especialmente en cooperativas de los segmentos 1, 3 y 4. Está especializada NIA, control interno y cumplimiento normativo SEPS. Ha liderado procesos de implementación de Estructuración de Procesos y Continuidad del Negocios. Actualmente, se desempeña como Auditora Interna en una Cooperativa de Ahorro y Crédito del segmento 3 y es consultora Junior en una empresa de servicios complementarios.",
     email: "maritzasantillane@gmail.com",
     phone: "0993520532",
   },
   {
-    id: 18,
+    id: 21,
     name: "Donal Raúl Gavilanes Aucay",
     photo: "/DONAL.jpeg",
     title: "Magíster en Auditoría Gubernamental y Control",
@@ -331,13 +375,13 @@ export const speakers: Speaker[] = [
     time: "14:00 – 15:00",
     topic: "Normas de Control Interno en la Administración Pública",
     modality: "Presencial",
-    expertise: ["Auditoría Gubernamental", "Control Interno", "Gestión Pública"],
+    expertise: ["Auditoría Gubernamental", "Control Interno", "Gestión Pública", "Peculado"],
     bio: "Especialista Provincial de Auditoría con amplia experiencia en planificación de auditoría, gestión financiera y control en el sector público. Ex Director Provincial de la Contraloría en Morona Santiago. Autor de publicaciones como 'Gestión Financiera y Peculado en GAD Municipal'.",
     email: "donal.gavilanes@hotmail.com",
     phone: "0980097122",
   },
   {
-    id: 19,
+    id: 22,
     name: "Carlos Gabriel López Bravo",
     photo: "/Carlos-Lopez.png",
     title: "Magíster en Administración de Empresas",
@@ -348,13 +392,13 @@ export const speakers: Speaker[] = [
     time: "15:00 – 16:00",
     topic: "Gestión Cooperativa y Administración Financiera",
     modality: "Presencial",
-    expertise: ["Administración de Empresas", "Gestión Cooperativa", "Riesgos Financieros"],
+    expertise: ["Administración de Empresas", "Gestión Cooperativa", "Riesgos Financieros", "Transformación Digital"],
     bio: "Gerente General de Cooperativa Gualaquiza con amplia experiencia en gestión de riesgos, inteligencia de negocios y administración cooperativa. Magíster en Administración de Empresas por la PUCE. Ha implementado modelos de análisis y prevención de riesgos conforme a normativa de la SEPS. Certificado en Transformación Digital y Gerencia de Cooperativas.",
     email: "karlopez_14@hotmail.es",
     phone: "+593 99 139 3075",
   },
   {
-    id: 20,
+    id: 23,
     name: "Jhonnatan Fabián Carguaytongo Silva",
     photo: "/JHONATAN.JPG",
     title: "Magíster en Gestión Financiera y Riesgos",
@@ -365,10 +409,27 @@ export const speakers: Speaker[] = [
     time: "16:00 – 17:00",
     topic: "Gestión de Riesgos en Cooperativas de Ahorro y Crédito",
     modality: "Presencial",
-    expertise: ["Auditoría", "Gestión de Riesgos", "Análisis Financiero"],
+    expertise: ["Auditoría", "Gestión de Riesgos", "Análisis Financiero", "Normas SEPS"],
     bio: "Jhonnatan Fabián Carguaytongo Silva es Ingeniero en Contabilidad y Auditoría por la ESPOCH, Magíster en Contabilidad y Auditoría por la UTA y Magíster en Gestión Financiera y Riesgos por la UESS. Actualmente cursa el Doctorado en Economía y Finanzas. Cuenta con amplia experiencia como auditor interno y externo en cooperativas y empresas del sector financiero. Es presidente fundador de la firma de Auditoría CONSULTORES Y AUDITORES C&SCONAUD CIA.LTDA. Ha impartido talleres en temas de auditoría, control interno y análisis financiero. Autor del artículo 'La presión fiscal y la rentabilidad en las cooperativas de ahorro y crédito'.",
     email: "jcarguaytongo@hotmail.com",
     phone: "0967708388",
+  },
+  {
+    id: 24,
+    name: "Victor Vimos",
+    photo: "/victor_vimos.jpg",
+    title: "Candidato Doctoral en Estudios Literarios y Culturales Latinoamericanos",
+    institution: "The Ohio State University",
+    country: "Perú",
+    countryCode: "PE",
+    day: "2025-10-16",
+    time: "17:00 – 18:00",
+    topic: "Relación entre especies y sus contextos de diálogo con el medioambiente y la cultura",
+    modality: "Virtual",
+    expertise: ["Estudios indígenas", "Humanidades en el Antropoceno", "Ritualidad andina", "Literatura latinoamericana"],
+    bio: "Víctor Vimos es candidato a doctor en el programa de Estudios Literarios y Culturales Latinoamericanos en The Ohio State University. Sus áreas de especialización son la cultura y la literatura en Latinoamérica en el siglo XXI, y los rituales y la violencia en la región andina. Sus principales intereses de investigación incluyen el enfoque interdisciplinario entre la antropología y la literatura para la investigación de la actividad ritual en comunidades indígenas. Específicamente, investiga cómo el ritual media la interacción entre humanos y no humanos.",
+    email: "vimosvimos.1@buckeyemail.osu.edu",
+    phone: "+1 513 629 0540",
   },
 ]
 
@@ -435,7 +496,7 @@ export function SpeakersGallery() {
           </div>
         </div>
 
-        {/* ✅ BOTONES DE DÍA — SIMPLIFICADOS, SIN CONTENEDOR EXTERNO */}
+        {/* Botones de día */}
         <div className="flex justify-center mb-12">
           <div className="grid grid-cols-3 gap-2 p-1 bg-white rounded-xl shadow-sm border border-gray-200 max-w-md w-full">
             {[
@@ -461,7 +522,7 @@ export function SpeakersGallery() {
           </div>
         </div>
 
-        {/* ✅ CONTENIDO DEL DÍA SELECCIONADO — EN UN DIV SEPARADO, DEBAJO */}
+        {/* Contenido */}
         <div className="mt-8">
           {filteredSpeakers.length === 0 ? (
             <div className="text-center py-24 bg-white rounded-3xl shadow-lg border border-dashed border-gray-300">
@@ -480,7 +541,6 @@ export function SpeakersGallery() {
                     key={speaker.id}
                     className="group cursor-pointer overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 relative"
                   >
-                    {/* Imagen del ponente — CENTRADA Y RESPONSIVA */}
                     <div className="relative h-56 bg-gradient-to-br from-green-50 to-gray-100 flex items-center justify-center">
                       {speaker.photo ? (
                         <img
@@ -501,7 +561,6 @@ export function SpeakersGallery() {
                         </div>
                       )}
 
-                      {/* Badge de modalidad */}
                       <div className="absolute top-4 right-4">
                         <Badge
                           className={`px-3 py-1.5 text-xs font-medium rounded-full ${
@@ -582,7 +641,6 @@ export function SpeakersGallery() {
                         )}
                       </Button>
 
-                      {/* Panel expandido — SIN RECORTES, TEXTO COMPLETO */}
                       {expandedSpeaker === speaker.id && (
                         <div className="mt-4 p-5 bg-red-50 rounded-xl border border-red-200 space-y-5 animate-in fade-in slide-in-from-top-2 duration-500">
                           <div>

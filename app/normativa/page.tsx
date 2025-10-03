@@ -57,7 +57,7 @@ export default function NormativaPage() {
                       className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
                     >
                       <div className="flex justify-between items-center">
-                        <span>Registro de Participantes</span>
+                        <span>Inscripción de Participantes</span>
                         <ExternalLink className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
                     </a>
