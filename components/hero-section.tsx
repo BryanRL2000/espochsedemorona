@@ -3,7 +3,6 @@ import { Calendar, MapPin } from "lucide-react"
 import Link from "next/link"
 import { CountdownTimer } from "./countdown-timer"
 
-
 export function HeroSection() {
   return (
     <section id="inicio" className="relative min-h-screen">
@@ -36,20 +35,30 @@ export function HeroSection() {
               <CountdownTimer />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg border hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center space-x-3 text-[#006400] mb-2">
-                  <Calendar className="h-5 w-5" />
-                  <span className="font-semibold">Fechas del Evento</span>
+            {/* Tarjetas de Fechas y Ubicación — centradas con hover resaltado */}
+            <div className="flex justify-center gap-6 max-w-2xl mx-auto">
+              {/* Tarjeta: Fechas del Evento */}
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:bg-green-100 hover:shadow-xl hover:border-green-300 transition-all duration-300 ease-in-out transform hover:scale-105">
+                <div className="flex items-center justify-center space-x-3 text-[#006400] mb-3">
+                  <Calendar className="h-6 w-6" />
+                  <span className="font-semibold text-lg md:text-xl">Fechas del Evento</span>
                 </div>
-                <p className="text-black font-medium">14 - 16 Octubre 2025</p>
+                <p className="text-black font-medium text-xl md:text-2xl text-center">
+                  14 - 16 Octubre 2025
+                </p>
               </div>
-              <div className="bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-lg border hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center space-x-3 text-[#c00000] mb-2">
-                  <MapPin className="h-5 w-5" />
-                  <span className="font-semibold">Ubicación</span>
+
+              {/* Tarjeta: Ubicación con lista */}
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:bg-green-100 hover:shadow-xl hover:border-green-300 transition-all duration-300 ease-in-out transform hover:scale-105">
+                <div className="flex items-center justify-center space-x-3 text-[#c00000] mb-3">
+                  <MapPin className="h-6 w-6" />
+                  <span className="font-semibold text-lg md:text-xl">Ubicación</span>
                 </div>
-                <p className="text-black font-medium">Espoch Sede Macas, Salón Azul, Consejo Provincial Morona Santiago</p>
+                <ul className="text-black font-medium text-base md:text-lg space-y-2 text-center">
+                  <li>• Espoch Sede Macas: Talleres</li>
+                  <li>• Salón Azul: Ponencias</li>
+                  <li>• Coliseo 29 de mayo: Feria de emprendimientos</li>
+                </ul>
               </div>
             </div>
 
@@ -64,7 +73,7 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-[#006400] text-[#006400] hover:bg-[#006400] hover:text-white px-8 py-3 font-semibold bg-white/95 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="border-2 border-[#006400] text-[#006400] hover:bg-[#006400] hover:text-white px-8 py-3 font-semibold bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
                 <Link href="/ponentes">Conocer Expositores</Link>

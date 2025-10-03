@@ -1,13 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronLeft, ChevronRight, MapPin, Globe, Calendar, User, Clock } from "lucide-react"
+import { ChevronLeft, ChevronRight, MapPin, Globe, Calendar, Clock } from "lucide-react"
 import CountryFlag from "react-country-flag"
 
-// ✅ Interfaz bien definida
 interface KeynoteSpeaker {
   id: number
   name: string
@@ -28,7 +27,6 @@ interface KeynoteSpeaker {
   }
 }
 
-// ✅ Datos de los ponentes, tipados correctamente
 const keynoteSpeakers: KeynoteSpeaker[] = [
   {
     id: 1,
@@ -68,8 +66,8 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     country: "Italia / Brasil / Chile",
     countryCode: ["IT", "BR", "CL"],
     conferenceTitle: "A new variable for tunnel drill & blast efficiency: the angles of breakage",
-    date: "Martes 14 de octubre",
-    time: "11:00 – 12:00",
+    date: "Miércoles 15 de octubre",
+    time: "10:00 – 12:00",
     modality: "Presencial",
     description:
       "Profesor e investigador con experiencia en proyectos internacionales en Latinoamérica y África. Asesor del PNUD. Especializado en voladuras mineras, sostenibilidad en pequeña minería y modelamiento geotécnico.",
@@ -83,8 +81,8 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     country: "Chile",
     countryCode: "CL",
     conferenceTitle: "Caudal Ambiental: la forma más robusta de dotar de seguridad hídrica a los ecosistemas acuáticos en una gestión integrada de recursos hídricos",
-    date: "Miércoles 15 de octubre",
-    time: "08:00 – 09:00",
+    date: "Martes 14 de octubre",
+    time: "10:00 – 12:00",
     modality: "Virtual",
     description:
       "Consultor internacional en gestión hídrica y caudales ambientales. Más de 20 años de experiencia en ecohidráulica, caudales ecológicos y modelación de contaminantes.",
@@ -109,14 +107,13 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
 
 export function KeynoteCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [selectedSpeaker, setSelectedSpeaker] = useState<KeynoteSpeaker | null>(null)
+  const touchStartX = useRef(0)
+  const touchEndX = useRef(0)
 
-  // ✅ Auto-avance cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % keynoteSpeakers.length)
     }, 8000)
-
     return () => clearInterval(interval)
   }, [])
 
@@ -128,72 +125,92 @@ export function KeynoteCarousel() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + keynoteSpeakers.length) % keynoteSpeakers.length)
   }
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].screenX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].screenX
+    const diff = touchStartX.current - touchEndX.current
+
+    if (Math.abs(diff) > 30) {
+      if (diff > 0) {
+        nextSlide()
+      } else {
+        prevSlide()
+      }
+    }
+  }
+
   const currentSpeaker = keynoteSpeakers[currentIndex]
 
   return (
-    <section id="conferencias" className="py-12 sm:py-16 bg-white">
+    <section id="conferencias" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Título */}
-        <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Conferencias Magistrales
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-light text-gray-800 mb-4 tracking-tight">
+            Conferencias
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2">
-            Expertos internacionales compartirán sus conocimientos en las últimas tendencias de ciencia y tecnología.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Expertos internacionales comparten sus hallazgos en las últimas tendencias de ciencia, tecnología e innovación.
           </p>
         </div>
 
-        {/* Carrusel Principal */}
-        <div className="relative">
-          <Card className="overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-2xl">
+        {/* Carrusel con soporte táctil */}
+        <div
+          className="relative"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          style={{ userSelect: "none" }}
+        >
+          <Card className="overflow-hidden border-none shadow-none rounded-2xl bg-white">
             <CardContent className="p-0">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                {/* IMAGEN DEL PONENTE — RESPONSIVE */}
-                <div className="relative w-full flex items-center justify-center overflow-hidden bg-gray-100 border-b md:border-b-0 md:border-r border-gray-200">
-                  <div className="w-full p-4 md:p-6">
-                    <div className="relative aspect-[4/3] max-h-[300px] flex items-center justify-center">
-                      <img
-                        src={currentSpeaker.image || "/placeholder.svg"}
-                        alt={`Foto de ${currentSpeaker.name}`}
-                        className="w-full h-full object-contain"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement
-                          target.src = "/placeholder.svg"
-                        }}
-                      />
-                      {/* Badge de modalidad */}
-                      <div className="absolute top-2 right-2 z-10">
-                        <Badge
-                          className={`px-2.5 py-1 text-xs font-medium rounded-full border ${
-                            currentSpeaker.modality === "Presencial"
-                              ? "bg-red-100 text-red-800 border-red-300"
-                              : "bg-blue-100 text-blue-800 border-blue-300"
-                          }`}
-                        >
-                          {currentSpeaker.modality === "Presencial" ? (
-                            <MapPin className="h-3 w-3 mr-1 inline" />
-                          ) : (
-                            <Globe className="h-3 w-3 mr-1 inline" />
-                          )}
-                          {currentSpeaker.modality}
-                        </Badge>
-                      </div>
+                {/* IMAGEN */}
+                <div className="relative w-full flex items-start justify-center p-6 md:p-8">
+                  <div className="relative w-full max-w-[360px]">
+                    <img
+                      src={currentSpeaker.image || "/placeholder.svg"}
+                      alt={`Foto de ${currentSpeaker.name}`}
+                      className="w-full h-auto max-h-[400px] object-contain rounded-lg"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.src = "/placeholder.svg"
+                      }}
+                    />
+                    <div className="absolute top-2 right-2 z-10">
+                      <Badge
+                        variant="secondary"
+                        className={`px-2 py-0.5 text-xs font-medium rounded-full ${
+                          currentSpeaker.modality === "Presencial"
+                            ? "bg-red-100 text-red-800 border-red-300"
+                            : "bg-blue-100 text-blue-800 border-blue-300"
+                        }`}
+                      >
+                        {currentSpeaker.modality === "Presencial" ? (
+                          <MapPin className="h-3 w-3 mr-1 inline" />
+                        ) : (
+                          <Globe className="h-3 w-3 mr-1 inline" />
+                        )}
+                        {currentSpeaker.modality}
+                      </Badge>
                     </div>
                   </div>
                 </div>
 
-                {/* Información del ponente */}
-                <div className="p-5 sm:p-6 md:p-8 flex flex-col justify-center">
-                  <div className="space-y-4 min-w-0">
+                {/* Información */}
+                <div className="p-6 md:p-8 flex flex-col justify-start">
+                  <div className="space-y-5">
                     <div>
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 break-words">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 leading-tight break-words">
                         {currentSpeaker.name}
                       </h3>
-                      <p className="text-gray-700 font-medium text-sm sm:text-base">
+                      <p className="text-sm sm:text-base text-gray-700 font-medium mt-1">
                         {currentSpeaker.title}
                       </p>
-                      <div className="flex items-center flex-wrap gap-1 text-xs sm:text-sm text-gray-600 mt-1">
-                        <span className="break-words">{currentSpeaker.institution}</span>
+                      <div className="flex items-center flex-wrap gap-1 text-xs sm:text-sm text-gray-500 mt-2">
+                        <span>{currentSpeaker.institution}</span>
                         <span>•</span>
                         {Array.isArray(currentSpeaker.countryCode) ? (
                           <div className="flex items-center gap-1">
@@ -203,10 +220,10 @@ export function KeynoteCarousel() {
                                 countryCode={code}
                                 svg
                                 style={{
-                                  width: '1.2em',
-                                  height: '1.2em',
-                                  borderRadius: '3px',
-                                  boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                                  width: '1.1em',
+                                  height: '1.1em',
+                                  borderRadius: '2px',
+                                  boxShadow: '0 1px 1px rgba(0,0,0,0.05)',
                                 }}
                                 title={code}
                               />
@@ -217,10 +234,10 @@ export function KeynoteCarousel() {
                             countryCode={currentSpeaker.countryCode}
                             svg
                             style={{
-                              width: '1.4em',
-                              height: '1.4em',
-                              borderRadius: '3px',
-                              boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                              width: '1.2em',
+                              height: '1.2em',
+                              borderRadius: '2px',
+                              boxShadow: '0 1px 1px rgba(0,0,0,0.05)',
                             }}
                             title={currentSpeaker.countryCode}
                           />
@@ -229,21 +246,21 @@ export function KeynoteCarousel() {
                       </div>
                     </div>
 
-                    {/* Título de la conferencia */}
-                    <div className="bg-red-50 p-3 sm:p-4 rounded-lg border border-red-200">
-                      <h4 className="font-semibold text-red-800 text-sm sm:text-base break-words">
+                    {/* Título de conferencia en verde clarito */}
+                    <div className="bg-green-50 p-3 rounded-lg border border-green-200">
+                      <h4 className="font-medium text-green-800 text-sm sm:text-base leading-tight break-words">
                         {currentSpeaker.conferenceTitle}
                       </h4>
                     </div>
 
                     {/* Fecha y hora */}
-                    <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-gray-600">
+                    <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-gray-600">
                       <div className="flex items-center gap-1">
-                        <Calendar className="h-3.5 w-3.5 text-gray-500" />
+                        <Calendar className="h-4 w-4 text-gray-400" />
                         <span>{currentSpeaker.date}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Clock className="h-3.5 w-3.5 text-gray-500" />
+                        <Clock className="h-4 w-4 text-gray-400" />
                         <span>{currentSpeaker.time}</span>
                       </div>
                     </div>
@@ -253,75 +270,62 @@ export function KeynoteCarousel() {
                       {currentSpeaker.description}
                     </p>
 
-                    {/* Botones */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => setSelectedSpeaker(currentSpeaker)}
-                        className="border-red-300 hover:bg-red-50 text-red-700 hover:text-red-800"
-                      >
-                        <User className="h-4 w-4 mr-2" />
-                        Ver Perfil Completo
-                      </Button>
-
-                      {/* Enlaces sociales */}
-                      {currentSpeaker.socialLinks && (
-                        <div className="flex flex-wrap gap-2">
-                          {Object.entries(currentSpeaker.socialLinks).map(([platform, url]) => (
-                            <Button
-                              key={platform}
-                              variant="outline"
-                              size="sm"
-                              asChild
-                              className="border-gray-300 hover:bg-gray-50 text-gray-800 text-xs"
+                    {/* Enlaces sociales */}
+                    {currentSpeaker.socialLinks && (
+                      <div className="flex flex-wrap gap-2 pt-3">
+                        {Object.entries(currentSpeaker.socialLinks).map(([platform, url]) => (
+                          <Button
+                            key={platform}
+                            variant="ghost"
+                            size="sm"
+                            asChild
+                            className="text-gray-600 hover:text-gray-800 hover:bg-gray-50 text-xs"
+                          >
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`${platform} de ${currentSpeaker.name}`}
                             >
-                              <a
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${platform} de ${currentSpeaker.name}`}
-                              >
-                                {platform.charAt(0).toUpperCase() + platform.slice(1)}
-                              </a>
-                            </Button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                              {platform.charAt(0).toUpperCase() + platform.slice(1)}
+                            </a>
+                          </Button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Flechas de navegación — solo en desktop */}
+          {/* Flechas de navegación (solo en desktop) */}
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
-            className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-red-50 shadow-sm"
+            className="hidden md:block absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-full transition-colors duration-200"
             onClick={prevSlide}
             aria-label="Conferencia anterior"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-6 w-6" />
           </Button>
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
-            className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm border border-gray-300 hover:bg-red-50 shadow-sm"
+            className="hidden md:block absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-900 hover:bg-gray-200 rounded-full transition-colors duration-200"
             onClick={nextSlide}
             aria-label="Siguiente conferencia"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-6 w-6" />
           </Button>
         </div>
 
-        {/* Indicadores de progreso */}
-        <div className="flex justify-center space-x-2 mt-6 sm:mt-8">
+        {/* Indicadores de diapositivas */}
+        <div className="flex justify-center space-x-2 mt-8">
           {keynoteSpeakers.map((_, index) => (
             <button
               key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-colors duration-200 ${
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
                 index === currentIndex ? "bg-red-500" : "bg-gray-300"
               }`}
               onClick={() => setCurrentIndex(index)}
@@ -330,86 +334,12 @@ export function KeynoteCarousel() {
           ))}
         </div>
 
-        {/* Contador */}
         <div className="text-center mt-4">
-          <p className="text-xs sm:text-sm text-gray-500">
-            {currentIndex + 1} de {keynoteSpeakers.length} conferencias magistrales
+          <p className="text-sm text-gray-500">
+            {currentIndex + 1} de {keynoteSpeakers.length} conferencias
           </p>
         </div>
       </div>
-
-      {/* Modal de perfil completo */}
-      {selectedSpeaker && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <Card className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-gray-200 shadow-xl">
-            <CardContent className="p-5 sm:p-6">
-              <div className="flex justify-between items-start mb-5">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 break-words">
-                  {selectedSpeaker.name}
-                </h3>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => setSelectedSpeaker(null)}
-                  aria-label="Cerrar modal"
-                >
-                  ✕
-                </Button>
-              </div>
-
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">Título</p>
-                    <p className="text-gray-700 text-sm sm:text-base">{selectedSpeaker.title}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">Institución</p>
-                    <p className="text-gray-700 text-sm sm:text-base">{selectedSpeaker.institution}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">País</p>
-                    <p className="text-gray-700 text-sm sm:text-base">{selectedSpeaker.country}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">Modalidad</p>
-                    <p className="text-gray-700 text-sm sm:text-base">{selectedSpeaker.modality}</p>
-                  </div>
-                  <div className="sm:col-span-2">
-                    <p className="text-xs sm:text-sm text-gray-500 font-medium">Fecha y hora</p>
-                    <p className="text-gray-700 text-sm sm:text-base">
-                      {selectedSpeaker.date} a las {selectedSpeaker.time}
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Tema</h4>
-                  <p className="text-gray-600 text-sm sm:text-base break-words">
-                    {selectedSpeaker.conferenceTitle}
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Biografía</h4>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    {selectedSpeaker.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <Button
-                  onClick={() => setSelectedSpeaker(null)}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-2.5 sm:py-3 rounded-xl transition-colors text-sm sm:text-base"
-                >
-                  Cerrar
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
     </section>
   )
 }

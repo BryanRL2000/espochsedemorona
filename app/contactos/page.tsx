@@ -1,8 +1,8 @@
-import { Navigation } from "@/components/navigation"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MapPin, Phone, Mail, Clock, ExternalLink, Globe, Calendar } from "lucide-react"
-import Image from "next/image"
+import { Navigation } from "@/components/navigation";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { MapPin, Phone, Mail, Globe, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactosPage() {
   return (
@@ -26,15 +26,21 @@ export default function ContactosPage() {
             <div className="max-w-6xl mx-auto">
               {/* Título Principal */}
               <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">Contactos e Información</h1>
-                <p className="text-lg text-gray-200 drop-shadow">Información de contacto y registro para el congreso</p>
+                <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
+                  Contactos e Información
+                </h1>
+                <p className="text-lg text-gray-200 drop-shadow">
+                  Información sobre nuestra sede y recursos adicionales
+                </p>
               </div>
 
               {/* Tarjeta Principal con Imagen y Datos de la Sede */}
               <div className="mb-12">
                 <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-md">
                   <CardHeader>
-                    <CardTitle className="text-[#c00000] text-center">ESPOCH Sede Morona Santiago</CardTitle>
+                    <CardTitle className="text-[#c00000] text-center">
+                      ESPOCH Sede Morona Santiago
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -46,9 +52,9 @@ export default function ContactosPage() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <h3 className="text-xl font-semibold text-[#c00000]">Nuestra Sede en Macas</h3>
+                        
                         <p className="text-gray-700 leading-relaxed">
-                          La ESPOCH Sede Morona Santiago se encuentra ubicada en la ciudad de Macas, capital de la provincia de Morona Santiago. Nuestra sede ofrece un entorno único de aprendizaje con modernas instalaciones y tecnología de vanguardia.
+                          Se encuentra ubicada en la ciudad de Macas, capital de la provincia de Morona Santiago. Nuestra sede ofrece un entorno único de aprendizaje con modernas instalaciones y tecnología de vanguardia.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-sm text-gray-700">
@@ -70,20 +76,21 @@ export default function ContactosPage() {
                 </Card>
               </div>
 
-              {/* Grid: Información a la izquierda, Inscripción destacada a la derecha */}
+              {/* Grid: Información a la izquierda, Video a la derecha */}
               <div className="grid gap-8 lg:grid-cols-2">
-                {/* Columna Izquierda: Información General */}
-                <div className="space-y-6">
-                  <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
+                {/* Columna Izquierda: Dos tarjetas en una columna vertical */}
+                <div className="flex flex-col space-y-6">
+                  {/* Tarjeta 1: Sobre la Sede */}
+                  <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm flex flex-col h-full">
                     <CardHeader>
                       <CardTitle className="text-[#c00000] flex items-center gap-2">
                         <Globe className="h-5 w-5" />
                         Sobre la Sede
                       </CardTitle>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                       <p className="text-gray-700 mb-4">
-                        La ESPOCH Sede Morona Santiago se ubica en Macas en un entorno de aprendizaje único y estimulante. Cuenta con carreras de Tecnologías de la Información, Minas, Contabilidad y Auditoría, Ambiental y Zootecnia.
+                        La ESPOCH Sede Morona Santiago, ofrece un entorno de aprendizaje único y enriquecedor. Imparte carreras en áreas estratégicas como Tecnologías de la Información, Ingeniería en Minas, Contabilidad y Auditoría, Gestión Ambiental y Zootecnia.
                       </p>
                       <Button
                         variant="outline"
@@ -104,7 +111,8 @@ export default function ContactosPage() {
                     </CardContent>
                   </Card>
 
-                  <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
+                  {/* Tarjeta 2: Recursos Adicionales */}
+                  <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm flex flex-col h-full">
                     <CardHeader>
                       <CardTitle className="text-[#c00000]">Recursos Adicionales</CardTitle>
                     </CardHeader>
@@ -141,148 +149,35 @@ export default function ContactosPage() {
                   </Card>
                 </div>
 
-                {/* Columna Derecha: INSCRIPCIÓN DEL CONGRESO (destacada) */}
-                <div className="space-y-6">
-                  <Card className="bg-white/90 backdrop-blur-sm border-2 border-[#c00000] shadow-md">
+                {/* Columna Derecha: Video de YouTube */}
+                <div className="flex flex-col">
+                  <Card className="bg-white/90 backdrop-blur-sm border-2 border-[#c00000] shadow-md h-full flex flex-col">
                     <CardHeader>
-                      <CardTitle className="text-[#c00000] text-center">🎓 Inscripción al Congreso</CardTitle>
+                      <CardTitle className="text-[#c00000] text-center">
+                        🎥 Video de la ESPOCH - Sede Morona Santiago
+                      </CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <div className="text-center space-y-6 py-6">
-                        <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                          <h3 className="text-xl font-bold text-[#c00000] mb-3">¡Únete al V Congreso Internacional!</h3>
-                          <p className="text-gray-700 mb-6 text-sm leading-relaxed">
-                            Participa en este evento único de ciencia y tecnología. Conecta con expertos internacionales y forma parte de la comunidad científica más importante de la región amazónica.
-                          </p>
-                          <div className="space-y-3">
-                            <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                              <Calendar className="h-4 w-4 text-[#c00000]" />
-                              <span>14, 15 y 16 de Octubre 2025</span>
-                            </div>
-                            <div className="flex items-center justify-center gap-2 text-sm text-gray-600">
-                              <MapPin className="h-4 w-4 text-[#c00000]" />
-                              <span>ESPOCH Sede Morona Santiago - Macas</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="space-y-4">
-                          <h4 className="text-lg font-semibold text-gray-800">¿Cómo participar?</h4>
-                          <div className="grid gap-4 text-left">
-                            <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
-                              <div className="w-7 h-7 bg-[#c00000] text-white rounded-full flex items-center justify-center font-bold text-xs">
-                                1
-                              </div>
-                              <div>
-                                <p className="font-medium text-sm">Regístrate en el congreso</p>
-                                <p className="text-xs text-gray-500">Completa tu inscripción oficial</p>
-                              </div>
-                            </div>
-                            <div className="flex items-start gap-3 p-3 bg-white rounded-lg border border-gray-200">
-                              <div className="w-7 h-7 bg-[#006400] text-white rounded-full flex items-center justify-center font-bold text-xs">
-                                2
-                              </div>
-                              <div>
-                                <p className="font-medium text-sm">Únete a nuestro grupo de WhatsApp</p>
-                                <p className="text-xs text-gray-500">Mantente informado y conéctate</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="space-y-3 pt-4">
-                          <Button
-                            className="w-full bg-gradient-to-r from-[#c00000] to-[#006400] hover:from-[#990000] hover:to-[#004d00] text-white py-5 font-bold text-lg shadow-lg transition-all duration-300"
-                            asChild
-                          >
-                            <a
-                              href="https://docs.google.com/forms/d/1nnXSRjBYi_sJkxxJMIBRNQjL3hW44hCP5CcGuMBysUw/viewform"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2"
-                            >
-                              📝 REGISTRARSE AHORA
-                              <ExternalLink className="h-5 w-5" />
-                            </a>
-                          </Button>
-
-                          <Button
-                            variant="outline"
-                            className="w-full border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 py-3 bg-transparent font-medium transition-colors duration-300"
-                            asChild
-                          >
-                            <a
-                              href="https://chat.whatsapp.com/JxqjrlIA4etFjefs2Lhvlc"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2"
-                            >
-                              <span className="text-[#c00000]">📱</span>
-                              Unirse al Grupo de WhatsApp
-                            </a>
-                          </Button>
-                        </div>
+                    <CardContent className="flex flex-col items-center justify-center p-4 flex-grow">
+                      <div className="w-full max-w-[580px] h-full flex items-center justify-center">
+                        <iframe
+                          src="https://www.youtube.com/embed/lNye4q8wN6M?si=xD95Oo4uPfPYc2W2"
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                          className="w-full h-full aspect-video rounded-lg"
+                          style={{ minHeight: '300px' }}
+                        ></iframe>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-              </div>
-
-              {/* Mapa de Ubicación — ✅ ADAPTADO Y RESPONSIVO */}
-              <div className="mt-12">
-                <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-sm">
-                  <CardHeader>
-                    <CardTitle className="text-[#c00000] flex items-center gap-2 justify-center">
-                      <MapPin className="h-6 w-6" />
-                      Ubicación del Evento
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <p className="text-gray-700 text-center">
-                        Consejo Provincial de Morona Santiago  Salon Azul-Macas, Ecuador
-                      </p>
-                      <div className="bg-white rounded-lg overflow-hidden shadow-sm border">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.6477974245697!2d-78.11914812773465!3d-2.3046162572125053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f644265d61b%3A0x940c0bdc9aa02b83!2sGobierno%20Autonomo%20Descentralizado%20de%20Morona%20Santiago!5e0!3m2!1ses-419!2sec!4v1758116346207!5m2!1ses-419!2sec"
-                          width="100%"
-                          height="400"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title="Ubicación de ESPOCH Sede Morona Santiago en Macas, Ecuador"
-                          aria-label="Mapa de ubicación del congreso"
-                          className="w-full h-80 sm:h-96 rounded-lg"
-                        ></iframe>
-                      </div>
-                      <div className="text-center mt-4">
-                        <Button
-                          variant="outline"
-                          size="lg"
-                          className="border-[#c00000] text-[#c00000] hover:border-[#006400] hover:text-[#006400] hover:bg-green-50 transition-colors duration-300"
-                          asChild
-                        >
-                          <a
-                            href="https://maps.app.goo.gl/ipjuFJpMg6MnBXQE9"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
-                          >
-                            <MapPin className="h-5 w-5" />
-                            Ver en Google Maps
-                            <ExternalLink className="h-5 w-5" />
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </section>
         </div>
       </div>
     </main>
-  )
+  );
 }

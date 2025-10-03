@@ -193,13 +193,13 @@ export function Footer() {
               © 2025 V Congreso Internacional de Ciencia y Tecnología Morona Santiago. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-white/60 hover:text-secondary transition-colors">
+              <a className="text-white/60 hover:text-secondary transition-colors">
                 Política de Privacidad
               </a>
-              <a href="#" className="text-white/60 hover:text-secondary transition-colors">
+              <a  className="text-white/60 hover:text-secondary transition-colors">
                 Términos de Uso
               </a>
-              <a href="#" className="text-white/60 hover:text-secondary transition-colors">
+              <a className="text-white/60 hover:text-secondary transition-colors">
                 Código de Conducta
               </a>
             </div>

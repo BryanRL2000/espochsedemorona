@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import {
   Search,
   MapPin,
@@ -14,24 +14,24 @@ import {
   Clock,
   ChevronDown,
   ChevronUp,
-} from "lucide-react"
+} from "lucide-react";
 
 interface Speaker {
-  id: number
-  name: string
-  title: string
-  institution: string
-  country: string
-  countryCode?: string
-  day: "2025-10-14" | "2025-10-15" | "2025-10-16"
-  time: string
-  topic: string
-  modality: "Presencial" | "Virtual"
-  expertise: string[]
-  bio: string
-  email?: string
-  phone?: string
-  photo?: string
+  id: number;
+  name: string;
+  title: string;
+  institution: string;
+  country: string;
+  countryCode?: string;
+  day: "2025-10-14" | "2025-10-15" | "2025-10-16";
+  time: string;
+  topic: string;
+  modality: "Presencial" | "Virtual";
+  expertise: string[];
+  bio: string;
+  email?: string;
+  phone?: string;
+  photo?: string;
 }
 
 export const speakers: Speaker[] = [
@@ -431,43 +431,32 @@ export const speakers: Speaker[] = [
     email: "vimosvimos.1@buckeyemail.osu.edu",
     phone: "+1 513 629 0540",
   },
-]
+];
 
 export function SpeakersGallery() {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [selectedDay, setSelectedDay] = useState("2025-10-14")
-  const [expandedSpeaker, setExpandedSpeaker] = useState<number | null>(null)
+  const [selectedDay, setSelectedDay] = useState("2025-10-14");
+  const [expandedSpeaker, setExpandedSpeaker] = useState<number | null>(null);
 
-  const filteredSpeakers = speakers.filter((speaker) => {
-    const matchesSearch =
-      speaker.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      speaker.institution.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      speaker.topic.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      speaker.expertise.some((exp) => exp.toLowerCase().includes(searchTerm.toLowerCase()))
-
-    const matchesDay = speaker.day === selectedDay
-
-    return matchesSearch && matchesDay
-  })
+  const filteredSpeakers = speakers.filter((speaker) => speaker.day === selectedDay);
 
   const getDayLabel = (day: string) => {
     switch (day) {
       case "2025-10-14":
-        return "Martes 14 de Octubre"
+        return "Martes 14 de Octubre";
       case "2025-10-15":
-        return "Miércoles 15 de Octubre"
+        return "Miércoles 15 de Octubre";
       case "2025-10-16":
-        return "Jueves 16 de Octubre"
+        return "Jueves 16 de Octubre";
       default:
-        return day
+        return day;
     }
-  }
+  };
 
-  const getDayCount = (day: string) => speakers.filter((s) => s.day === day).length
+  const getDayCount = (day: string) => speakers.filter((s) => s.day === day).length;
 
   const toggleExpand = (id: number) => {
-    setExpandedSpeaker(expandedSpeaker === id ? null : id)
-  }
+    setExpandedSpeaker(expandedSpeaker === id ? null : id);
+  };
 
   return (
     <section id="expositores" className="py-16 bg-gradient-to-br from-green-50 to-red-50">
@@ -475,25 +464,12 @@ export function SpeakersGallery() {
         {/* Hero */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Ponentes Destacados
+            Ponentes 
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Expertos internacionales que compartirán conocimiento, innovación y experiencias durante los tres días del
             congreso.
           </p>
-        </div>
-
-        {/* Search Bar */}
-        <div className="mb-8 max-w-2xl mx-auto">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-            <Input
-              placeholder="Buscar por nombre, institución, tema o especialidad..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-12 py-4 text-lg bg-white border border-gray-200 shadow-sm focus:ring-2 focus:ring-[#006400] focus:border-transparent rounded-xl transition-all duration-300 placeholder:text-gray-400"
-            />
-          </div>
         </div>
 
         {/* Botones de día */}
@@ -528,7 +504,7 @@ export function SpeakersGallery() {
             <div className="text-center py-24 bg-white rounded-3xl shadow-lg border border-dashed border-gray-300">
               <User className="h-16 w-16 text-gray-400 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold text-gray-700 mb-2">No se encontraron ponentes</h3>
-              <p className="text-gray-500 text-lg">Prueba con otros términos o cambia de día.</p>
+              <p className="text-gray-500 text-lg">Prueba cambiando de día.</p>
             </div>
           ) : (
             <div className="space-y-8">
@@ -548,8 +524,8 @@ export function SpeakersGallery() {
                           alt={`Foto de ${speaker.name}`}
                           className="max-h-full max-w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => {
-                            const target = e.target as HTMLImageElement
-                            target.style.display = "none"
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = "none";
                           }}
                         />
                       ) : (
@@ -625,8 +601,8 @@ export function SpeakersGallery() {
                         variant="ghost"
                         size="sm"
                         onClick={(e) => {
-                          e.stopPropagation()
-                          toggleExpand(speaker.id)
+                          e.stopPropagation();
+                          toggleExpand(speaker.id);
                         }}
                         className="w-full mt-2 text-[#006400] hover:text-[#004d00] hover:bg-green-50 font-medium rounded-xl border border-green-200 transition-all duration-300 flex items-center justify-center gap-1"
                       >
@@ -677,5 +653,5 @@ export function SpeakersGallery() {
         </div>
       </div>
     </section>
-  )
+  );
 }
