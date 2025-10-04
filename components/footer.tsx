@@ -158,7 +158,7 @@ export function Footer() {
         </div>
 
         <div className="py-8 border-t border-white/20">
-          <h3 className="text-lg font-semibold text-center mb-6">Ubicación de la sede</h3>
+          <h3 className="text-lg font-semibold text-center mb-6">Ubicación del Evento</h3>
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg overflow-hidden shadow-lg">
               <iframe
@@ -193,13 +193,13 @@ export function Footer() {
               © 2025 V Congreso Internacional de Ciencia y Tecnología Morona Santiago. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a className="text-white/60 hover:text-secondary transition-colors">
+              <a  className="text-white/60 hover:text-secondary transition-colors">
                 Política de Privacidad
               </a>
-              <a  className="text-white/60 hover:text-secondary transition-colors">
+              <a className="text-white/60 hover:text-secondary transition-colors">
                 Términos de Uso
               </a>
-              <a className="text-white/60 hover:text-secondary transition-colors">
+              <a  className="text-white/60 hover:text-secondary transition-colors">
                 Código de Conducta
               </a>
             </div>
