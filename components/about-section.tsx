@@ -326,8 +326,8 @@ export function AboutSection() {
                     <TreePine className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-purple-800">Noche Cultural</p>
-                    <p className="text-purple-700 mt-1">Evento cultural de cierre para celebrar el final del congreso</p>
+                    <p className="font-bold text-lg text-purple-800">Gala cultural de cierre </p>
+                    <p className="text-purple-700 mt-1">Culminamos el congreso con un evento cultural y social creando un espacio de relajación y camaradería</p>
                   </div>
                 </div>
               </div>

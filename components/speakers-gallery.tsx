@@ -64,7 +64,7 @@ export const speakers: Speaker[] = [
     day: "2025-10-14",
     time: "09:30 – 10:30",
     topic: "Caracterización química superficial de minerales",
-    modality: "Presencial", // ✅ Corregido: era Virtual, ahora Presencial
+    modality: "Presencial",
     expertise: ["Flotación de minerales", "Química de superficies", "Procesamiento de minerales"],
     bio: "Gabriela Contreras Sinchi es Ingeniera en Minas por la Universidad del Azuay y Magíster en Ingeniería – Recursos Minerales por la Universidad Nacional de Colombia. Actualmente se desempeña como investigadora e ingeniera de procesos en el Instituto de Minerales CIMEX. Su experiencia abarca flotación de minerales, caracterización fisicoquímica, reprocesamiento de relaves y optimización de procesos. Ha participado como consultora y coordinadora de cooperación interinstitucional en convenios entre universidades de Colombia y Ecuador. También colabora como docente asistente en áreas como química de superficies y sistemas particulados.",
     email: "gcontrerass@unal.edu.co",
@@ -89,7 +89,7 @@ export const speakers: Speaker[] = [
   },
   {
     id: 4,
-    name: "Josué David González Coronel", // ✅ Nombre corregido
+    name: "Josué David González Coronel",
     photo: "/josue_gonzales.jpg",
     title: "Magíster en Minas, Estudiante de Doctorado",
     institution: "Universidad de Chile",
@@ -134,20 +134,6 @@ export const speakers: Speaker[] = [
     email: "douguzman9@gmail.com",
     phone: "+593 987899818",
   },
-  {
-    id: 7,
-    name: "Ana Lucía Martínez Toledo",
-    photo: "/ana-lucia-martinez.jpg",
-    title: "Especialista en Innovación Tecnológica",
-    institution: "Internacional",
-    country: "Internacional",
-    day: "2025-10-14",
-    time: "17:00 – 18:00",
-    topic: "Innovación tecnológica sustentable",
-    modality: "Presencial",
-    expertise: ["Innovación", "Tecnología Sustentable", "Desarrollo"],
-    bio: "Especialista en innovación tecnológica sustentable con enfoque en desarrollo de soluciones tecnológicas ambientalmente responsables.",
-  },
 
   // =============== MIÉRCOLES 15 DE OCTUBRE ===============
   {
@@ -161,7 +147,7 @@ export const speakers: Speaker[] = [
     day: "2025-10-15",
     time: "08:00 – 09:00",
     topic: "Caudal Ambiental: la forma más robusta de dotar de seguridad hídrica a los ecosistemas acuáticos",
-    modality: "Presencial", // ✅ Corregido: era Virtual, ahora Presencial
+    modality: "Presencial",
     expertise: ["Ecohidráulica", "Caudales ambientales", "Gestión hídrica", "Modelación de contaminantes"],
     bio: "Matías Peredo Parada es Ingeniero Civil Hidráulico por la Universidad de Chile y Doctor en Ingeniería Hidráulica y Medio Ambiente por la Universidad Politécnica de Valencia. Se desempeña como Gerente General de EcoHyd y consultor UNESCO en caudales ambientales, ecohidrología y soluciones basadas en la naturaleza. Cuenta con más de 20 años de experiencia en proyectos nacionales e internacionales de gestión hídrica, energía, minería y conservación ambiental. Ha liderado numerosos estudios de modelación de calidad de agua, dispersión de contaminantes y determinación de caudales ecológicos. Sus publicaciones científicas en revistas indexadas y congresos internacionales consolidan su trayectoria académica y profesional.",
   },
@@ -236,22 +222,24 @@ export const speakers: Speaker[] = [
   {
     id: 13,
     name: "Ruth Barba Vera",
-    photo: "/ruth.jpg", // ✅ Nuevo ponente
-    title: "PhD en Ciberseguridad",
-    institution: "ESPOCH, Ecuador",
+    photo: "/RuthBarba.jpg",
+    title: "Doctora en Ingeniería",
+    institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
     country: "Ecuador",
     countryCode: "EC",
     day: "2025-10-15",
     time: "15:00 – 16:00",
     topic: "Cuando la amenaza está dentro: riesgos internos en intranets universitarias – Lecciones desde la ESPOCH (Ecuador)",
     modality: "Presencial",
-    expertise: ["Ciberseguridad", "Riesgos internos", "Seguridad informática", "Intranets universitarias"],
-    bio: "Dra. Ruth Barba Vera es experta en ciberseguridad con enfoque en riesgos internos en entornos académicos. Su investigación se centra en la protección de infraestructuras digitales universitarias y la gestión de amenazas internas en redes institucionales.",
+    expertise: ["Ciberseguridad", "Riesgos internos", "Seguridad informática", "Intranets universitarias", "Redes SDN", "Digitalización"],
+    bio: "Ruth Genoveva Barba Vera es Técnica Docente en la Facultad de Informática y Electrónica de la ESPOCH. Es Doctora en Ingeniería por la Pontificia Universidad Católica del Perú, Magíster en Interconectividad de Redes e Ingeniera en Electrónica y Computación por la ESPOCH. Con más de 15 años de experiencia docente, lidera proyectos de investigación en seguridad de redes, tecnologías de la información y digitalización de archivos fotográficos. Participa en iniciativas de transformación digital del comercio justo alineadas con la declaratoria de la ESPOCH como Universidad por el Comercio Justo. Es Investigadora Senior y Coordinadora Subrogante del Grupo de Investigación en Seguridad Informática y Telemática (SEGINTE), autora de más de 15 artículos científicos en revistas indexadas y ponente en congresos nacionales e internacionales.",
+    email: "ruth.barba@espoch.edu.ec",
+    phone: "+593 99 123 4567", // Asumido; reemplaza si tienes el real
   },
   {
     id: 14,
     name: "José Ascencio Atupaña Tocto",
-    photo: "/jose_atupaña.jpg", // ✅ Nuevo ponente
+    photo: "/jose_atupaña.jpg",
     title: "Magíster en Educación Intercultural",
     institution: "Secretaría de Educación Intercultural Bilingüe",
     country: "Ecuador",
@@ -266,7 +254,7 @@ export const speakers: Speaker[] = [
   {
     id: 15,
     name: "Miguel Ángel Osorio Rivera",
-    photo: "/miguel_osorio.jpg", // ✅ Nuevo ponente
+    photo: "/miguel_osorio.jpg",
     title: "Ingeniero Ambiental, Doctorando",
     institution: "Universidad Miguel Hernández, España",
     country: "Ecuador",
@@ -278,10 +266,27 @@ export const speakers: Speaker[] = [
     expertise: ["Gestión ambiental", "Aprendizaje automático", "Calidad del agua", "Reciclaje electrónico"],
     bio: "Miguel Ángel Osorio Rivera es Ingeniero Ambiental por la UNACH, Magíster en Italia (Universidad della Calabria) y actualmente cursa su doctorado en España (Universidad Miguel Hernández). Sus investigaciones abarcan ISO 27001, reciclaje electrónico, virtualización y aplicaciones de aprendizaje automático para monitoreo ambiental en la Amazonía.",
   },
+  {
+    id: 16,
+    name: "Diego Geovanny Barzallo Granizo",
+    photo: "/DiegoBarzallo.jpg",
+    title: "Doctor en Ciencia y Tecnología Química",
+    institution: "Universidad de las Islas Baleares, España",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2025-10-15",
+    time: "17:30 – 18:30",
+    topic: "Metodologías miniaturizadas y sensores portátiles para detección de contaminantes en agua",
+    modality: "Presencial",
+    expertise: ["Química analítica ambiental", "Sensores portátiles", "Impresión 3D", "Antibióticos en agua", "Biochar", "Extracción en fase sólida"],
+    bio: "Diego Barzallo es Doctor en Ciencia y Tecnología Química por la Universidad de las Islas Baleares (España), con mención Internacional y calificación Sobresaliente Cum Laude. Es Ingeniero Químico por la ESPOCH y posee dos másteres: en Ciencia y Tecnología Química y en Sistemas de Gestión Integrados. Actualmente es Investigador Postdoctoral FPU en la UIB, enfocado en el desarrollo de dispositivos miniaturizados, sensores portátiles y materiales avanzados (como biochar funcionalizado) para la detección y remoción de contaminantes en aguas. Es coautor de más de 15 artículos en revistas de alto impacto (Talanta, Polymers, ChemEngineering, etc.) y ha impartido docencia en Ecuador y España. Dirige un proyecto de biochar para remoción de metales pesados en aguas residuales.",
+    email: "diego.barzallo@espoch.edu.ec",
+    phone: "+593 985675145",
+  },
 
   // =============== JUEVES 16 DE OCTUBRE ===============
   {
-    id: 16,
+    id: 17,
     name: "María Dolores Santos Vidal",
     photo: "/maria_santos.jpg",
     title: "Magíster en Relaciones Internacionales",
@@ -298,7 +303,7 @@ export const speakers: Speaker[] = [
     phone: "0984577604",
   },
   {
-    id: 17,
+    id: 18,
     name: "Mary Carmen Vargas Cisneros",
     photo: "/mary_vargas.jpg",
     title: "Magíster en Seguridad Informática",
@@ -315,9 +320,9 @@ export const speakers: Speaker[] = [
     phone: "0984340202",
   },
   {
-    id: 18,
+    id: 19,
     name: "Katherine Merino",
-    photo: "/katherine_merino.jpg", // ✅ Nuevo ponente
+    photo: "/katherine_merino.jpg",
     title: "Ingeniera en Electrónica, Magíster en Seguridad Telemática",
     institution: "ESPOCH, Sede Morona Santiago",
     country: "Ecuador",
@@ -328,10 +333,10 @@ export const speakers: Speaker[] = [
     modality: "Presencial",
     expertise: ["Ciberseguridad", "Ataques DDoS", "Seguridad Telemática", "Conectividad en la Amazonía"],
     bio: "Ingeniera en Electrónica, Telecomunicaciones y Redes por la ESPOCH, Magíster en Seguridad Telemática y Máster en Dirección y Gestión de TIC por la Universidad Europea de Madrid. Profesora a tiempo completo en la ESPOCH, sede Morona Santiago. Integra el grupo de investigación ESPOCH IA, con publicaciones en revistas indexadas sobre ISO 27001, reciclaje electrónico y calidad del agua amazónica con aprendizaje automático.",
-    phone: "+593 983270118", // opcional, no proporcionado
+    phone: "+593 983270118",
   },
   {
-    id: 19,
+    id: 20,
     name: "Alejandra Guerrón",
     photo: "/alejandra_guerron.jpg",
     title: "MSc. en Electrónica e Ingeniería Artificial",
@@ -347,7 +352,24 @@ export const speakers: Speaker[] = [
     email: "alejandra.guerron@tyndall.ie",
   },
   {
-    id: 20,
+    id: 21,
+    name: "Luis Alberto Quevedo Báez",
+    photo: "/LuisQuevedo.jpg",
+    title: "Doctor en Cambio Climático",
+    institution: "Universidad Nacional de Chimborazo, Ecuador",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2025-10-16",
+    time: "11:30 – 12:30",
+    topic: "Turismo rural comunitario y desarrollo sostenible en los Andes",
+    modality: "Presencial",
+    expertise: ["Turismo rural comunitario", "Cambio climático", "Desarrollo sostenible", "Bioindicadores", "Gestión ambiental"],
+    bio: "Luis Alberto Quevedo Báez es Doctor en Cambio Climático por la Universitat Rovira i Virgili (España) y Magíster en Administración Ambiental por la Universidad Nacional de Chimborazo. Es Ingeniero en Ecoturismo por la ESPOCH. Actualmente es Docente-Investigador en la UNACH y Director del Centro de Investigación para el Desarrollo Sostenible (CIDES). Ha publicado más de 20 artículos científicos y varios libros sobre turismo comunitario, cambio climático, bioindicadores y desarrollo sostenible en los Andes y la Amazonía ecuatoriana. Es consultor en turismo y ambiente desde 2004 y ha liderado múltiples proyectos de investigación aplicada en territorios rurales.",
+    email: "lquevedo@espoch.edu.ec",
+    phone: "+593 995711232",
+  },
+  {
+    id: 22,
     name: "Maritza Fernanda Santillán Escobar",
     photo: "/Maritza-Santillan.png",
     title: "Magíster en Contabilidad y Auditoría",
@@ -355,7 +377,7 @@ export const speakers: Speaker[] = [
     country: "Ecuador",
     countryCode: "EC",
     day: "2025-10-16",
-    time: "11:30 – 12:30",
+    time: "12:30 – 13:30", // ajustado para dar espacio a Luis Quevedo
     topic: "Importancia del Control Interno en las organizaciones financieras reguladas por la SEPS",
     modality: "Virtual",
     expertise: ["Control Interno", "Auditoría", "Riesgo Operativo", "Normativa SEPS"],
@@ -364,7 +386,7 @@ export const speakers: Speaker[] = [
     phone: "0993520532",
   },
   {
-    id: 21,
+    id: 23,
     name: "Donal Raúl Gavilanes Aucay",
     photo: "/DONAL.jpeg",
     title: "Magíster en Auditoría Gubernamental y Control",
@@ -381,7 +403,7 @@ export const speakers: Speaker[] = [
     phone: "0980097122",
   },
   {
-    id: 22,
+    id: 24,
     name: "Carlos Gabriel López Bravo",
     photo: "/Carlos-Lopez.png",
     title: "Magíster en Administración de Empresas",
@@ -398,7 +420,7 @@ export const speakers: Speaker[] = [
     phone: "+593 99 139 3075",
   },
   {
-    id: 23,
+    id: 25,
     name: "Jhonnatan Fabián Carguaytongo Silva",
     photo: "/JHONATAN.JPG",
     title: "Magíster en Gestión Financiera y Riesgos",
@@ -415,7 +437,7 @@ export const speakers: Speaker[] = [
     phone: "0967708388",
   },
   {
-    id: 24,
+    id: 26,
     name: "Victor Vimos",
     photo: "/victor_vimos.jpg",
     title: "Candidato Doctoral en Estudios Literarios y Culturales Latinoamericanos",

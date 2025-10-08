@@ -26,7 +26,7 @@ export function HeroSection() {
             <Image
               src="/Logo_Sectei_fondo.png"
               alt="Logo SECTEI - Semana de la Ciencia, Tecnología, Emprendimiento e Innovación"
-              width={400} // Ajustado para alta resolución
+              width={400}
               height={300}
               className="mx-auto object-contain w-full max-w-[200px] sm:max-w-[200px] md:max-w-[400px]"
             />
@@ -49,27 +49,38 @@ export function HeroSection() {
             <CountdownTimer />
           </div>
 
-          {/* Tarjetas de Fechas y Ubicación */}
+          {/* Tarjetas de Fechas y Ubicación (CORREGIDAS - compactas y alineadas) */}
           <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-4xl mx-auto mb-10">
-            <div className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-200 hover:bg-green-100 hover:shadow-xl hover:border-green-300 transition-all duration-300 ease-in-out transform hover:scale-[1.02] w-full sm:w-auto">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-[#006400] mb-2 sm:mb-3">
-                <Calendar className="h-5 w-5 sm:h-6 sm:w-6" />
-                <span className="font-semibold text-base sm:text-lg md:text-xl">Fechas del Evento</span>
+            {/* Tarjeta Fechas - Compacta */}
+            <div className="bg-white p-5 rounded-xl shadow-lg border-2 border-[#c00000] hover:shadow-xl transition-all duration-300 ease-in-out w-full sm:w-auto">
+              <div className="flex items-center gap-2 text-[#c00000] mb-2">
+                <Calendar className="h-5 w-5" />
+                <h3 className="font-bold text-base sm:text-lg">Fechas del Evento</h3>
               </div>
-              <p className="text-black font-medium text-lg sm:text-xl md:text-2xl text-center">
-                14 - 16 Octubre 2025
+              <p className="text-black font-bold text-xl sm:text-2xl mt-2 leading-tight">
+                14-15 y 16 de Octubre 2025
               </p>
             </div>
 
-            <div className="bg-white p-5 sm:p-6 rounded-xl shadow-lg border border-gray-200 hover:bg-green-100 hover:shadow-xl hover:border-green-300 transition-all duration-300 ease-in-out transform hover:scale-[1.02] w-full sm:w-auto">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-[#c00000] mb-2 sm:mb-3">
-                <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
-                <span className="font-semibold text-base sm:text-lg md:text-xl">Ubicación</span>
+            {/* Tarjeta Ubicación - Compacta */}
+            <div className="bg-white p-5 rounded-xl shadow-lg border-2 border-[#006400] hover:shadow-xl transition-all duration-300 ease-in-out w-full sm:w-auto">
+              <div className="flex items-center gap-2 text-[#006400] mb-2">
+                <MapPin className="h-5 w-5" />
+                <h3 className="font-bold text-base sm:text-lg">Ubicación</h3>
               </div>
-              <ul className="text-black font-medium text-sm sm:text-base md:text-lg space-y-1 sm:space-y-2 text-center">
-                <li>• Espoch Sede Macas: Talleres</li>
-                <li>• Salón Azul: Ponencias</li>
-                <li>• Coliseo 29 de mayo: Feria de emprendimientos</li>
+              <ul className="text-black font-medium text-sm sm:text-base space-y-1 mt-2">
+                <li className="flex items-start gap-1">
+                  <span className="text-[#006400] mt-1">•</span>
+                  <span>Acto Inaugural y Ponencias: Salón Azul del Consejo Provincial de Morona Santiago</span>
+                </li>
+                <li className="flex items-start gap-1">
+                  <span className="text-[#006400] mt-1">•</span>
+                  <span>Salón Azul: Ponencias</span>
+                </li>
+                <li className="flex items-start gap-1">
+                  <span className="text-[#006400] mt-1">•</span>
+                  <span>Feria de emprendimientos: Coliseo 29 de mayo</span>
+                </li>
               </ul>
             </div>
           </div>

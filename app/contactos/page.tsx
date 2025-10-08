@@ -39,22 +39,21 @@ export default function ContactosPage() {
                 <Card className="bg-white/90 backdrop-blur-sm border border-gray-200 shadow-md">
                   <CardHeader>
                     <CardTitle className="text-[#c00000] text-center">
-                      ESPOCH Sede Morona Santiago
+                      ESPOCH sede Morona Santiago
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       <div>
                         <img
-                          src="/espoch-macas.jpg"
+                          src="/SEDE.jpg"
                           alt="ESPOCH Sede Morona Santiago - Campus Macas"
                           className="w-full h-64 object-cover rounded-lg shadow-md"
                         />
                       </div>
                       <div className="space-y-4">
-                        
                         <p className="text-gray-700 leading-relaxed">
-                          Se encuentra ubicada en la ciudad de Macas, capital de la provincia de Morona Santiago. Nuestra sede ofrece un entorno único de aprendizaje con modernas instalaciones y tecnología de vanguardia.
+                          Le damos la bienvenida a nuestra sede en Macas, la joya de Morona Santiago. Aquí, la naturaleza se fusiona con la excelencia académica. Disfrute de un entorno de aprendizaje incomparable, equipado con instalaciones de diseño moderno y tecnología de vanguardia para potenciar su formación.
                         </p>
                         <div className="space-y-2">
                           <div className="flex items-center gap-2 text-sm text-gray-700">
@@ -85,13 +84,36 @@ export default function ContactosPage() {
                     <CardHeader>
                       <CardTitle className="text-[#c00000] flex items-center gap-2">
                         <Globe className="h-5 w-5" />
-                        Sobre la Sede
+                        Oferta académica
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className="text-gray-700 mb-4">
-                        La ESPOCH Sede Morona Santiago, ofrece un entorno de aprendizaje único y enriquecedor. Imparte carreras en áreas estratégicas como Tecnologías de la Información, Ingeniería en Minas, Contabilidad y Auditoría, Gestión Ambiental y Zootecnia.
+                    <CardContent className="flex-grow space-y-4">
+                      <p className="text-gray-700 leading-relaxed">
+                        La ESPOCH Sede Morona Santiago se ubica en Macas en un entorno de aprendizaje único y estimulante que te brindará las herramientas para alcanzar tus metas académicas y profesionales.
                       </p>
+
+                      <div>
+                        <h4 className="font-semibold text-lg text-[#c00000] mb-2">Carreras de pregrado ofrecidas:</h4>
+                        <ul className="space-y-1.5 pl-1">
+                          {[
+                            "Tecnologías de la Información",
+                            "Minas",
+                            "Contabilidad y Auditoría",
+                            "Ambiental",
+                            "Zootecnia"
+                          ].map((carrera, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-[#c00000] mt-0.5">•</span>
+                              <span className="font-medium">{carrera}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <p className="text-gray-700 leading-relaxed">
+                        Estas carreras están respaldadas por un equipo de profesionales apasionados y comprometidos con los objetivos institucionales de la ESPOCH.
+                      </p>
+
                       <Button
                         variant="outline"
                         size="sm"
@@ -160,7 +182,7 @@ export default function ContactosPage() {
                     <CardContent className="flex flex-col items-center justify-center p-4 flex-grow">
                       <div className="w-full max-w-[580px] h-full flex items-center justify-center">
                         <iframe
-                          src="https://www.youtube.com/embed/lNye4q8wN6M?si=xD95Oo4uPfPYc2W2"
+                          src="https://www.youtube.com/embed/lNye4q8wN6M"
                           title="YouTube video player"
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
