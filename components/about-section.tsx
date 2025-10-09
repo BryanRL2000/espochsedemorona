@@ -66,7 +66,7 @@ export function AboutSection() {
           </div>
           <div className="relative">
             <Image
-              src="/espoch-macas.jpg"
+              src="/sedemacas.jpeg"
               alt="Campus ESPOCH Sede Morona Santiago"
               width={600}
               height={400}

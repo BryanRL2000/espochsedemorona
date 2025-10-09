@@ -542,9 +542,9 @@ export function AgendaSection() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-gray-800">🎉 Noche Cultural</p>
+                  <p className="font-medium text-gray-800">🎉 Gala cultural de cierre  </p>
                   <p className="text-sm text-gray-600">
-                    Evento cultural de cierre para celebrar el final del congreso
+                    Culminamos el congreso con un evento cultural y social creando un espacio de relajación y camaradería
                   </p>
                 </div>
               </div>

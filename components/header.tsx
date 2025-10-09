@@ -32,7 +32,7 @@ export default function Header() {
                 V CICTSMS
               </h1>
               <p className="text-[10px] md:text-sm text-gray-200 mt-0.5 md:mt-1 font-medium tracking-wide">
-                ESPOCH Sede Morona Santiago · 14-16 Octubre 2025
+                ESPOCH Sede Morona Santiago · 14,15 y 16 Octubre 2025
               </p>
             </div>
           </Link>

@@ -49,37 +49,37 @@ export function HeroSection() {
             <CountdownTimer />
           </div>
 
-          {/* Tarjetas de Fechas y Ubicación (CORREGIDAS - compactas y alineadas) */}
+          {/* Tarjetas de Fechas y Ubicación (con hover animado y texto centrado) */}
           <div className="flex flex-col sm:flex-row justify-center gap-6 max-w-4xl mx-auto mb-10">
-            {/* Tarjeta Fechas - Compacta */}
-            <div className="bg-white p-5 rounded-xl shadow-lg border-2 border-[#c00000] hover:shadow-xl transition-all duration-300 ease-in-out w-full sm:w-auto">
-              <div className="flex items-center gap-2 text-[#c00000] mb-2">
+            {/* Tarjeta Fechas - con hover animado y texto centrado verticalmente */}
+            <div className="bg-white p-4 sm:p-5 rounded-xl shadow-md border-2 border-[#c00000] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out w-full sm:w-auto min-w-[280px] flex flex-col justify-center">
+              <div className="flex items-center gap-2 text-[#c00000] mb-2 justify-center sm:justify-start">
                 <Calendar className="h-5 w-5" />
                 <h3 className="font-bold text-base sm:text-lg">Fechas del Evento</h3>
               </div>
-              <p className="text-black font-bold text-xl sm:text-2xl mt-2 leading-tight">
-                14-15 y 16 de Octubre 2025
+              <p className="text-black font-bold text-xl sm:text-2xl leading-tight text-center sm:text-left">
+                14, 15 y 16 de Octubre 2025
               </p>
             </div>
 
-            {/* Tarjeta Ubicación - Compacta */}
-            <div className="bg-white p-5 rounded-xl shadow-lg border-2 border-[#006400] hover:shadow-xl transition-all duration-300 ease-in-out w-full sm:w-auto">
+            {/* Tarjeta Ubicación - con hover animado y texto profesional */}
+            <div className="bg-white p-4 sm:p-5 rounded-xl shadow-md border-2 border-[#006400] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-out w-full sm:w-auto min-w-[280px] flex flex-col justify-between">
               <div className="flex items-center gap-2 text-[#006400] mb-2">
                 <MapPin className="h-5 w-5" />
                 <h3 className="font-bold text-base sm:text-lg">Ubicación</h3>
               </div>
-              <ul className="text-black font-medium text-sm sm:text-base space-y-1 mt-2">
-                <li className="flex items-start gap-1">
-                  <span className="text-[#006400] mt-1">•</span>
-                  <span>Acto Inaugural y Ponencias: Salón Azul del Consejo Provincial de Morona Santiago</span>
+              <ul className="text-black font-medium text-sm sm:text-base space-y-2 mt-2">
+                <li className="flex items-start gap-2 pt-0.5">
+                  <span className="text-[#006400]">•</span>
+                  <span className="text-balance">Acto inaugural y ponencias: Salón Azul – Consejo Provincial</span>
                 </li>
-                <li className="flex items-start gap-1">
-                  <span className="text-[#006400] mt-1">•</span>
-                  <span>Salón Azul: Ponencias</span>
+                <li className="flex items-start gap-2 pt-0.5">
+                  <span className="text-[#006400]">•</span>
+                  <span className="text-balance">Workshop y talleres: ESPOCH Sede Morona Santiago</span>
                 </li>
-                <li className="flex items-start gap-1">
-                  <span className="text-[#006400] mt-1">•</span>
-                  <span>Feria de emprendimientos: Coliseo 29 de mayo</span>
+                <li className="flex items-start gap-2 pt-0.5">
+                  <span className="text-[#006400]">•</span>
+                  <span className="text-balance">Feria de emprendimientos: Coliseo 29 de mayo</span>
                 </li>
               </ul>
             </div>
