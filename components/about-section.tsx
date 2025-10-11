@@ -11,7 +11,7 @@ export function AboutSection() {
 
         {/* === 1. TÍTULO PRINCIPAL === */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">"V CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO CICTMS 2025"</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">V CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO VCICTMS 2025</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Un foro académico que fortalece la cultura científica y promueve la innovación tecnológica en la región amazónica ecuatoriana
           </p>
@@ -75,7 +75,25 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* === 6. CONFERENCIAS MAGISTRALES (Key Features) - ESTILO MEJORADO === */}
+        {/* === 4. VIDEO PROMOCIONAL (NUEVO) === */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-[#006400] text-center mb-6">🎥 ¡Mira el video promocional del congreso!</h3>
+          <div className="aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-black">
+            <iframe
+              src="https://www.youtube.com/embed/dxL1qDP132c?autoplay=0&mute=0&rel=0&showinfo=0&controls=1"
+              title="Video promocional VCICTMS 2025"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+          <p className="text-center mt-4 text-sm text-gray-600">
+            Haz clic en play para ver el video oficial del V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025.
+          </p>
+        </div>
+
+        {/* === 5. CONFERENCIAS MAGISTRALES (Key Features) - ESTILO MEJORADO === */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {/* Tarjeta 1: Excelencia Académica */}
           <div className="relative group bg-white rounded-lg shadow-sm border-l-4 border-l-[#006400] hover:border-l-6 hover:border-l-[#009600] hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
@@ -122,7 +140,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* === 4. LOGO ESPOCH - ESTILO CENTRADO Y LIMPIO === */}
+        {/* === 6. LOGO ESPOCH - ESTILO CENTRADO Y LIMPIO === */}
         <div className="text-center mb-16">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             <div className="bg-gradient-to-br from-green-100 to-red-100 p-4 rounded-lg shadow-md">
@@ -144,7 +162,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* === 5. SECCIÓN DE UBICACIONES (con mapas interactivos) === */}
+        {/* === 7. SECCIÓN DE UBICACIONES (con mapas interactivos) === */}
         <div className="mb-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200">
             <h3 className="text-2xl font-bold text-[#c00000] mb-6 flex items-center gap-2">
