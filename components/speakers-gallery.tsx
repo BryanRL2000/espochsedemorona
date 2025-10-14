@@ -114,7 +114,7 @@ export const speakers: Speaker[] = [
     day: "2025-10-14",
     time: "14:00 – 15:00",
     topic: "Materiales avanzados y tecnologías de impresión 3D para la detección y eliminación sostenible de contaminantes emergentes en aguas",
-    modality: "Presencial",
+    modality: "Virtual",
     expertise: ["Química analítica ambiental", "Sensores portátiles", "Impresión 3D", "Antibióticos en agua", "Biochar", "Extracción en fase sólida"],
     bio: "Diego Barzallo es Doctor en Ciencia y Tecnología Química por la Universidad de las Islas Baleares (España), con calificación Sobresaliente Cum Laude y Mención Internacional. Realizó una estancia de investigación en la Universidade Estadual Paulista (Brasil) enfocada en el desarrollo de metodologías miniaturizadas y materiales avanzados para la detección de antibióticos en aguas. Posee dos maestrías en Ciencia y Tecnología Química, y en Sistemas de Gestión de la Calidad, Medio Ambiente y Responsabilidad Social. Es Ingeniero Químico por la Escuela Superior Politécnica de Chimborazo (Ecuador). Ha sido docente universitario e investigador en España y Ecuador, autor de múltiples artículos científicos en revistas indexadas y conferencista en eventos internacionales. Actualmente se desempeña como investigador postdoctoral en la Universidad de las Islas Baleares, donde trabaja en sensores portátiles y métodos de extracción basados en materiales avanzados.",
     email: "diego.barzallo@espoch.edu.ec",

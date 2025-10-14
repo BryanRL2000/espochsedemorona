@@ -148,8 +148,6 @@ const agendaData = {
   ],
 }
 
-// ✅ El resto del componente (funciones, estilos, JSX) se mantiene EXACTAMENTE IGUAL
-
 const getTypeIcon = (type: AgendaItem["type"]) => {
   switch (type) {
     case "keynote":
@@ -534,6 +532,24 @@ export function AgendaSection() {
                   <p className="text-sm text-gray-600">
                     Participación presencial y virtual disponible para las sesiones principales
                   </p>
+                  {/* ✅ Botón de Zoom agregado aquí */}
+                  <div className="mt-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-blue-600 text-blue-600 hover:bg-blue-100 hover:text-blue-800"
+                      asChild
+                    >
+                      <a
+                        href="https://cedia.zoom.us/j/89891762102"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        🖥️ Unirse a la sesión virtual
+                      </a>
+                    </Button>
+                  </div>
                 </div>
                 <div>
                   <p className="font-medium text-gray-800">🔧 Workshops Especializados</p>
@@ -544,7 +560,7 @@ export function AgendaSection() {
                 <div>
                   <p className="font-medium text-gray-800">🎉 Gala cultural de cierre  </p>
                   <p className="text-sm text-gray-600">
-                    Culminamos el congreso con un evento cultural y social creando un espacio de relajación y camaradería
+                    Culminamos el congreso con un evento cultural y social
                   </p>
                 </div>
               </div>

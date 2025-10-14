@@ -19,7 +19,7 @@ export function CountdownTimer() {
   const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    const eventDate = new Date("2025-10-14T09:00:00-05:00") // 9 AM, Ecuador time
+    const eventDate = new Date("2025-10-14T08:00:00-05:00") // 9 AM, Ecuador time
 
     const calculateTimeLeft = () => {
       const now = new Date()

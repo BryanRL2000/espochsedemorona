@@ -328,6 +328,23 @@ export function AboutSection() {
                   <div>
                     <p className="font-bold text-lg text-blue-800">Modalidad Híbrida</p>
                     <p className="text-blue-700 mt-1">Participación presencial y virtual disponible para las sesiones principales</p>
+                    <div className="mt-3">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="border-blue-600 text-blue-600 hover:bg-blue-100 hover:text-blue-800"
+                        asChild
+                      >
+                        <a
+                          href="https://cedia.zoom.us/j/89891762102"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          🖥️ Unirse a la sesión virtual
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-green-50 rounded-lg border border-green-200">
@@ -345,7 +362,7 @@ export function AboutSection() {
                   </div>
                   <div>
                     <p className="font-bold text-lg text-purple-800">Gala cultural de cierre </p>
-                    <p className="text-purple-700 mt-1">Culminamos el congreso con un evento cultural y social creando un espacio de relajación y camaradería</p>
+                    <p className="text-purple-700 mt-1">Culminamos el congreso con un evento cultural y social</p>
                   </div>
                 </div>
               </div>
