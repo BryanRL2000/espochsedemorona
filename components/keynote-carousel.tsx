@@ -38,7 +38,7 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     conferenceTitle: "Conminución",
     date: "Martes 14 de octubre",
     time: "08:30 – 09:30",
-    modality: "Presencial",
+    modality: "Virtual",
     description:
       "Profesor Titular y Director del Instituto de Minerales CIMEX. Líder en investigación minera y metalúrgica. Especializado en reología de suspensiones, procesamiento de minerales y geomecánica.",
     image: "/FOTOGRAFIA_OSWALDO BUSTAMANTE.png",
@@ -53,7 +53,7 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     conferenceTitle: "Caracterización química superficial de minerales",
     date: "Martes 14 de octubre",
     time: "09:30 – 10:30",
-    modality: "Virtual",
+    modality: "Presencial",
     description:
       "Investigadora en procesos mineros, consultora y coordinadora de convenios internacionales. Especializada en flotación de minerales y química de superficies.",
     image: "/FOTOGRAFIA_GABRIELA CONTRERAS.png",
@@ -83,7 +83,7 @@ const keynoteSpeakers: KeynoteSpeaker[] = [
     conferenceTitle: "Caudal Ambiental: la forma más robusta de dotar de seguridad hídrica a los ecosistemas acuáticos en una gestión integrada de recursos hídricos",
     date: "Martes 14 de octubre",
     time: "10:00 – 12:00",
-    modality: "Virtual",
+    modality: "Presencial",
     description:
       "Consultor internacional en gestión hídrica y caudales ambientales. Más de 20 años de experiencia en ecohidráulica, caudales ecológicos y modelación de contaminantes.",
     image: "/Matias-Peredo.png",

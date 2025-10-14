@@ -45,7 +45,7 @@ const agendaData = {
       title: "Workshop: Área Ambiental",
       type: "workshop" as const,
       speaker: "Matías Peredo Parada",
-      modality: "Presencial" as const,
+      modality: "Virtual" as const,
       location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
       description: "Taller especializado en temas ambientales y caudal ecológico",
     },
