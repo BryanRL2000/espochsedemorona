@@ -353,6 +353,45 @@ export function AboutSection() {
           </div>
         </div>
 
+        {/* === 8. SECCIÓN DE AUSPICIANTES === */}
+        <div className="mb-16">
+          <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200">
+            <h3 className="text-2xl font-bold text-[#006400] mb-6 text-center flex items-center justify-center gap-2">
+              🤝 Auspiciantes del Congreso
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+              {/* Auspiciante 1 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/PAPELERIA.png"
+                  alt="Papelería y Bazar La Politécnica"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Auspiciante 2 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/CACPE.png"
+                  alt="Cooperativa Gualaquiza"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+
+              {/* Puedes agregar más auspiciantes aquí */}
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-gray-600 text-sm">
+                ¡Gracias a nuestros auspiciantes por su apoyo al desarrollo científico y tecnológico en Morona Santiago!
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   )
