@@ -1,0 +1,250 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Fondo y texto principal */
+  --background: oklch(1 0 0); /* Blanco puro */
+  --foreground: oklch(0.2 0 0); /* Gris oscuro (#333) */
+
+  /* Tarjetas y popovers */
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.2 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0 0);
+
+  /* 🔴 Rojo ESPOCH oficial: #c00000 → oklch(0.49 0.24 25.5) */
+  --primary: oklch(0.49 0.24 25.5);
+  --primary-foreground: oklch(1 0 0); /* Blanco */
+
+  /* 🟢 Verde ESPOCH oficial: #006400 → oklch(0.3 0.13 136) */
+  --secondary: oklch(0.3 0.13 136);
+  --secondary-foreground: oklch(1 0 0); /* Blanco */
+
+  /* Elementos secundarios */
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.3 0.13 136); /* Verde como acento */
+  --accent-foreground: oklch(1 0 0);
+
+  /* Estados destructivos (opcional) */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Bordes, inputs y anillos de foco */
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.98 0 0);
+  --ring: oklch(0.49 0.24 25.5 / 0.5); /* Rojo semitransparente para foco */
+
+  /* Colores para gráficos */
+  --chart-1: oklch(0.49 0.24 25.5); /* Rojo */
+  --chart-2: oklch(0.3 0.13 136);   /* Verde */
+  --chart-3: oklch(0.35 0.2 250);   /* Azul */
+  --chart-4: oklch(0.65 0.2 85);    /* Amarillo */
+  --chart-5: oklch(0.55 0.2 25);    /* Naranja */
+
+  /* Sidebar */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.2 0 0);
+  --sidebar-primary: oklch(0.98 0 0);
+  --sidebar-primary-foreground: oklch(0.2 0 0);
+  --sidebar-accent: oklch(0.49 0.24 25.5); /* Rojo para acento */
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.49 0.24 25.5 / 0.5);
+
+  /* Radio de bordes */
+  --radius: 0.5rem;
+}
+
+/* 🌙 Modo oscuro — versión más seria y con alto contraste */
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+
+  /* Rojo más intenso en modo oscuro */
+  --primary: oklch(0.58 0.26 25.5);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Verde más brillante en modo oscuro */
+  --secondary: oklch(0.4 0.16 136);
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.4 0.16 136);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.55 0.25 25.5);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.58 0.26 25.5 / 0.6);
+
+  --chart-1: oklch(0.58 0.26 25.5);
+  --chart-2: oklch(0.4 0.16 136);
+
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.58 0.26 25.5);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.58 0.26 25.5 / 0.5);
+}
+
+/* 🎨 Variables de tema para Tailwind */
+@theme inline {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  /* Mapeo de colores para componentes */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radios responsivos */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* 🧱 Estilos base — institucionales y limpios */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply text-primary hover:underline underline-offset-4;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  a:hover {
+    @apply opacity-80;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Botones personalizados */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 py-2 px-4 rounded font-medium transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 py-2 px-4 rounded font-medium transition-colors;
+  }
+
+  /* Secciones con padding institucional */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Tarjetas de conferencia o contenido */
+  .conference-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
+    border-left: 4px solid var(--primary);
+  }
+
+  /* Hero/Banner institucional */
+  .hero-section {
+    @apply bg-primary text-primary-foreground py-20 px-4 text-center;
+  }
+
+  .hero-section h1 {
+    @apply text-4xl md:text-5xl font-extrabold;
+  }
+
+  .hero-section p {
+    @apply text-lg md:text-xl max-w-3xl mx-auto mt-4;
+  }
+
+  /* Scroll suave */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mejoras tipográficas */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
