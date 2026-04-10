@@ -7,7 +7,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <HeroSection />
       <AboutSection />
-      <KeynoteCarousel />
+      {/* <KeynoteCarousel /> */}
     </main>
   )
 }

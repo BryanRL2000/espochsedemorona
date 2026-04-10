@@ -11,19 +11,20 @@ export function Footer() {
           {/* Event Info */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-lg font-semibold mb-4">V CICTMS 2025</h3>
+              <h3 className="text-lg font-semibold mb-4">VI CICTMS 2026</h3>
               <p className="text-white/80 text-sm leading-relaxed">
-                V Congreso Internacional de Ciencia y Tecnología Morona Santiago
+                VI Congreso Internacional de Ciencia y Tecnología Morona Santiago
               </p>
             </div>
             <div className="space-y-2 text-sm">
+
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-secondary" />
                 <span className="text-white/80">Macas, Morona Santiago</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-secondary" />
-                <span className="text-white/80">14-16 Octubre 2025</span>
+                <span className="text-white/80">14 de Abril 2026</span>
               </div>
             </div>
           </div>

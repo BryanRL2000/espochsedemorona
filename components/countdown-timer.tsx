@@ -19,7 +19,8 @@ export function CountdownTimer() {
   const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    const eventDate = new Date("2025-10-14T08:00:00-05:00") // 9 AM, Ecuador time
+    // 🗓️ Fecha actualizada: 14 de abril de 2026, 8:00 AM, Ecuador (UTC-5)
+    const eventDate = new Date("2026-04-14T08:00:00-05:00")
 
     const calculateTimeLeft = () => {
       const now = new Date()
@@ -63,7 +64,7 @@ export function CountdownTimer() {
               🎉 ¡El congreso está en curso!
             </h3>
             <p className="mt-2 text-gray-800 bg-white/90 py-2 px-4 rounded-lg font-medium">
-              Únete a las actividades del VCICTMS 2025.
+              Únete a las actividades del VCICTMS 2026.
             </p>
           </div>
         ) : (

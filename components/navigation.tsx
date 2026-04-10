@@ -40,7 +40,7 @@ export function Navigation() {
               <GraduationCap className="h-6 w-6 text-primary-foreground" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-foreground">VCICTMS 2025</h1>
+              <h1 className="text-lg font-bold text-foreground">VI CICTMS 2026</h1>
               <p className="text-xs text-muted-foreground">ESPOCH Sede Morona Santiago</p>
             </div>
           </Link>

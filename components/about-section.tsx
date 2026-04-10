@@ -11,7 +11,7 @@ export function AboutSection() {
 
         {/* === 1. TÍTULO PRINCIPAL === */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">V CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO VCICTMS 2025</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">VI CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO VCICTMS 2025</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Un foro académico que fortalece la cultura científica y promueve la innovación tecnológica en la región amazónica ecuatoriana
           </p>
@@ -58,10 +58,10 @@ export function AboutSection() {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-[#006400]">Fortaleciendo la Ciencia en la Amazonía</h3>
             <p className="text-gray-700 leading-relaxed">
-              El V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025 (VCICTMS 2025) es un foro académico organizado por la Sede Morona Santiago de la Escuela Superior Politécnica de Chimborazo (ESPOCH), que busca fortalecer la cultura científica, promover la innovación tecnológica y generar espacios de intercambio entre investigadores, docentes, estudiantes y actores regionales.
+              El VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026 (VCICTMS 2026) es un foro académico organizado por la Sede Morona Santiago de la Escuela Superior Politécnica de Chimborazo (ESPOCH), que busca fortalecer la cultura científica, promover la innovación tecnológica y generar espacios de intercambio entre investigadores, docentes, estudiantes y actores regionales.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              A través de conferencias magistrales, talleres, ferias de emprendimiento y presentaciones de artículos científicos, se pretende construir conocimiento aplicable a los desafíos locales y globales, con especial énfasis en el desarrollo sostenible de la región amazónica.
+              A través de conferencias magistrales,presentaciones de artículos científicos, se pretende construir conocimiento aplicable a los desafíos locales y globales, con especial énfasis en el desarrollo sostenible de la región amazónica.
             </p>
           </div>
           <div className="relative">
@@ -75,7 +75,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* === 4. VIDEO PROMOCIONAL (NUEVO) === */}
+        {/* === 4. VIDEO PROMOCIONAL (NUEVO) === 
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-[#006400] text-center mb-6">🎥 ¡Mira el video promocional del congreso!</h3>
           <div className="aspect-video rounded-xl overflow-hidden shadow-lg border border-gray-200 bg-black">
@@ -91,7 +91,7 @@ export function AboutSection() {
           <p className="text-center mt-4 text-sm text-gray-600">
             Haz clic en play para ver el video oficial del V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025.
           </p>
-        </div>
+        </div>*/}
 
         {/* === 5. CONFERENCIAS MAGISTRALES (Key Features) - ESTILO MEJORADO === */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -162,7 +162,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* === 7. SECCIÓN DE UBICACIONES (con mapas interactivos) === */}
+        {/* === 7. SECCIÓN DE UBICACIONES (con mapas interactivos) === 
         <div className="mb-16">
           <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 border border-gray-200">
             <h3 className="text-2xl font-bold text-[#c00000] mb-6 flex items-center gap-2">
@@ -170,7 +170,7 @@ export function AboutSection() {
               Ubicaciones del Evento
             </h3>
 
-            {/* Salón Azul – Consejo Provincial */}
+            {/* Salón Azul – Consejo Provincial 
             <div className="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -219,7 +219,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* ESPOCH Sede Morona Santiago */}
+            {/* ESPOCH Sede Morona Santiago 
             <div className="mb-8 p-6 bg-white rounded-lg shadow-sm border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -267,7 +267,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Coliseo 29 de Mayo */}
+            {/* Coliseo 29 de Mayo 
             <div className="p-6 bg-white rounded-lg shadow-sm border border-gray-200">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -315,7 +315,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Información Adicional */}
+            {/* Información Adicional 
             <div className="mt-8 pt-6 border-t border-gray-200">
               <h4 className="text-2xl font-extrabold text-[#c00000] mb-5 flex items-center gap-2">
                 📌 Información Adicional
@@ -393,6 +393,26 @@ export function AboutSection() {
                 <Image
                   src="/CACPE.png"
                   alt="Cooperativa Gualaquiza"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+               {/* Auspiciante 3 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/LATINDEX.png"
+                  alt="Latindex"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+               {/* Auspiciante 4 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/LOGO-INVESTIGO.png"
+                  alt="Investigo"
                   width={200}
                   height={100}
                   className="max-w-full h-auto object-contain"

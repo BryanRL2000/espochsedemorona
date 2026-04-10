@@ -10,8 +10,8 @@ export default function Header() {
 
   const navigation = [
     { name: "Inicio", href: "/" },
-    { name: "Agenda", href: "/agenda" },
-    { name: "Ponentes", href: "/ponentes" },
+    // { name: "Agenda", href: "/agenda" },           // ⏸️ Comentado temporalmente
+    // { name: "Ponentes", href: "/ponentes" },        // ⏸️ Comentado temporalmente
     { name: "Normativa", href: "/normativa" },
     { name: "Contactos", href: "/contactos" },
   ]
@@ -29,10 +29,10 @@ export default function Header() {
             />
             <div>
               <h1 className="text-xs md:text-lg font-black text-white drop-shadow-md tracking-wide">
-                V CICTSMS
+                VI CICTSMS
               </h1>
               <p className="text-[10px] md:text-sm text-gray-200 mt-0.5 md:mt-1 font-medium tracking-wide">
-                ESPOCH Sede Morona Santiago · 14,15 y 16 Octubre 2025
+                ESPOCH Sede Morona Santiago · 14 de Abril de 2026
               </p>
             </div>
           </Link>
@@ -54,6 +54,7 @@ export default function Header() {
           </nav>
 
           {/* Botón de registro — ✅ Oculto en móvil */}
+          {/* ⏸️ Comentado temporalmente hasta tener la información lista
           <div className="hidden md:block">
             <Button
               className="bg-white text-[#c00000] hover:bg-gray-100 hover:shadow-lg hover:shadow-white/30 font-bold px-6 py-2.5 rounded-md transition-all duration-300 shadow-md border border-transparent hover:border-white/30"
@@ -64,6 +65,7 @@ export default function Header() {
               </Link>
             </Button>
           </div>
+          */}
 
           {/* Menú móvil — ✅ Icono blanco, mejor espaciado */}
           <div className="md:hidden">
@@ -92,6 +94,7 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
+              {/* ⏸️ Botón de inscripción móvil comentado temporalmente
               <div className="px-4 pt-4">
                 <Button
                   className="w-full bg-white text-[#c00000] hover:bg-gray-100 hover:shadow-lg hover:shadow-white/30 font-bold py-3 rounded-md shadow-md transition-all duration-300"
@@ -102,6 +105,7 @@ export default function Header() {
                   </Link>
                 </Button>
               </div>
+              */}
             </div>
           </div>
         )}
