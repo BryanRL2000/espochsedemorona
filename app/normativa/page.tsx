@@ -58,7 +58,7 @@ export default function NormativaPage() {
                     </div>
                     <div className="relative w-full max-w-xs aspect-[2/1]">
                       <Image
-                        src="/latindex-logo.png"
+                        src="/LATINDEX.png"
                         alt="LATINDEX 2.0 - Sistema Regional de Información en Línea"
                         fill
                         className="object-contain"
