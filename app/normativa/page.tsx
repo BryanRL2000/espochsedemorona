@@ -175,7 +175,7 @@ export default function NormativaPage() {
                 </div>
               </div>
 
-              {/* Costo de Publicación */}
+              {/* Costo de Publicación 
               <div className="conference-card bg-gradient-to-r from-green-50 to-emerald-50 backdrop-blur-sm border border-green-300 mb-8 p-6">
                 <div className="flex items-center justify-center gap-3 mb-3">
                   <DollarSign className="h-8 w-8 text-green-700" />
