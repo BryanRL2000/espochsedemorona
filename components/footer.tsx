@@ -24,7 +24,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-secondary" />
-                <span className="text-white/80">14 de Abril 2026</span>
+                <span className="text-white/80"> Lanzamiento 14 de Abril 2026</span>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@ export function Footer() {
                   Inicio
                 </Link>
               </li>
-              <li>
+              {/*<li> Quick Links 
                 <Link href="/agenda" className="text-white/80 hover:text-secondary transition-colors">
                   Agenda
                 </Link>
@@ -47,7 +47,7 @@ export function Footer() {
                 <Link href="/ponente" className="text-white/80 hover:text-secondary transition-colors">
                   Ponentes
                 </Link>
-              </li>
+              </li>*/}
               <li>
                 <Link href="/normativa" className="text-white/80 hover:text-secondary transition-colors">
                   Normativa
@@ -88,7 +88,7 @@ export function Footer() {
                   href="mailto:vcictms2025@espoch.edu.ec"
                   className="text-white/80 hover:text-secondary transition-colors"
                 >
-                  vcictms2025@espoch.edu.ec
+                  investigo@istra.edu.ec / carlav.haro@espoch.edu.ec
                 </a>
               </div>
               <div className="flex items-start space-x-2">
@@ -191,7 +191,7 @@ export function Footer() {
         <div className="py-6 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
-              © 2025 V Congreso Internacional de Ciencia y Tecnología Morona Santiago. Todos los derechos reservados.
+              © 2026 VI Congreso Internacional de Ciencia y Tecnología Morona Santiago. Todos los derechos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
               <a  className="text-white/60 hover:text-secondary transition-colors">
