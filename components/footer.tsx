@@ -66,7 +66,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">ESPOCH Sede Morona Santiago</h3>
             <p className="text-white/80 text-sm leading-relaxed mb-3">
               Ubicada en Macas, ofrece un entorno único de aprendizaje con carreras en Tecnologías de la Información,
-              Minas, Contabilidad y Auditoría, Ambiental y Zootecnia.
+              Minas, Contabilidad y Auditoría, Ambiental, Zootecnia y Derecho.
             </p>
             <a
               href="https://www.espoch.edu.ec/sms-2/"

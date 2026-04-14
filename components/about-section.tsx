@@ -58,7 +58,7 @@ export function AboutSection() {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-[#006400]">Fortaleciendo la Ciencia en la Amazonía</h3>
             <p className="text-gray-700 leading-relaxed">
-              El VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026 (VCICTMS 2026) es un foro académico organizado por la Sede Morona Santiago de la Escuela Superior Politécnica de Chimborazo (ESPOCH), que busca fortalecer la cultura científica, promover la innovación tecnológica y generar espacios de intercambio entre investigadores, docentes, estudiantes y actores regionales.
+              El VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026 (VICICTMS 2026) es un foro académico organizado por la Sede Morona Santiago de la Escuela Superior Politécnica de Chimborazo (ESPOCH), que busca fortalecer la cultura científica, promover la innovación tecnológica y generar espacios de intercambio entre investigadores, docentes, estudiantes y actores regionales.
             </p>
             <p className="text-gray-700 leading-relaxed">
               A través de conferencias magistrales,presentaciones de artículos científicos, se pretende construir conocimiento aplicable a los desafíos locales y globales, con especial énfasis en el desarrollo sostenible de la región amazónica.
