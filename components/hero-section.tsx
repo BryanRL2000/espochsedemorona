@@ -42,7 +42,7 @@ export function HeroSection() {
               {/* Logo VI CICTMS - Sin fondo blanco */}
               <div className="p-2 sm:p-3">
                 <Image
-                  src="/logo-cictms-vi.jpeg" 
+                  src="/Logo-cictms-vi.jpeg" 
                   alt="VI Congreso Internacional de Ciencia y Tecnología - CICTMS Morona Santiago 2026"
                   width={500}
                   height={200}

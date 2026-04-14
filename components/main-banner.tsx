@@ -50,7 +50,7 @@ export default function MainBanner() {
         {/* Logo derecho: Congreso de Investigación */}
         <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center bg-white/60 backdrop-blur-sm rounded-xl p-2 shadow-sm">
           <img
-            src="/espoch1_banner.png"
+            src="/Logo-cictms-vi.jpeg"
             alt="Logo Congreso de Investigación"
             className="h-full w-auto object-contain"
           />
