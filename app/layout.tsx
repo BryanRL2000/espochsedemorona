@@ -10,13 +10,13 @@ import { Footer } from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
 
 export const metadata: Metadata = {
-  title: "V Congreso Internacional de Ciencia y Tecnología Morona Santiago 2025",
+  title: "VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026",
   description: "Innovación, Conocimiento y Sostenibilidad para el Desarrollo Amazónico - ESPOCH Sede Morona Santiago",
   generator: "bryan.rivadeneira",
   keywords: "congreso, ciencia, tecnología, ESPOCH, Morona Santiago, Amazon, investigación, innovación",
   authors: [{ name: "ESPOCH Sede Morona Santiago" }],
   openGraph: {
-    title: "VCICTMS 2025 - V Congreso Internacional de Ciencia y Tecnología",
+    title: "VICICTMS 2026 - VI Congreso Internacional de Ciencia y Tecnología",
     description: "Innovación, Conocimiento y Sostenibilidad para el Desarrollo Amazónico",
     type: "website",
     locale: "es_EC",

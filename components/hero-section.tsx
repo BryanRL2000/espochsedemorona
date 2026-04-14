@@ -92,34 +92,56 @@ export function HeroSection() {
             <CountdownTimer />
           </div>
 
-          {/* Tarjetas de Fechas y Ubicación mejoradas */}
-          <div className="flex flex-col lg:flex-row justify-center gap-6 max-w-5xl mx-auto mb-10">
-            {/* Tarjeta Fechas */}
-            <div className="bg-white/95 backdrop-blur-sm p-5 sm:p-6 rounded-2xl shadow-2xl border-4 border-[#c00000] hover:shadow-[0_0_30px_rgba(192,0,0,0.4)] hover:-translate-y-2 transition-all duration-300 ease-out w-full lg:w-auto min-w-[280px] flex flex-col justify-center">
-              <div className="flex items-center gap-3 text-[#c00000] mb-3 justify-center">
-                <Calendar className="h-6 w-6" />
-                <h3 className="font-bold text-lg sm:text-xl">Lanzamiento del evento</h3>
+          {/* Tarjetas de Fechas y Ubicación - COMPACTAS Y LLAMATIVAS */}
+          <div className="flex flex-col lg:flex-row justify-center gap-4 max-w-5xl mx-auto mb-10">
+            
+            {/* Tarjeta 1: Lanzamiento - Compacta */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-red-600 to-red-800 p-4 sm:p-5 rounded-xl shadow-2xl hover:shadow-[0_0_40px_rgba(220,38,38,0.6)] hover:-translate-y-1 transition-all duration-300 flex-1 min-w-[250px] group">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="flex items-center gap-2 text-white mb-2">
+                  <Calendar className="h-5 w-5" />
+                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Lanzamiento</h3>
+                </div>
+                <p className="text-white font-black text-xl sm:text-2xl leading-tight mb-1">
+                  14 de Abril 2026
+                </p>
+                <p className="text-red-100 text-xs sm:text-sm font-semibold">
+                  12:00  • Macas
+                </p>
               </div>
-              <p className="text-[#c00000] font-black text-2xl sm:text-3xl leading-tight text-center">
-                14 de Abril de 2026
-              </p>
-              <p className="text-gray-600 text-sm mt-2 text-center font-medium">
-                12:00 PM - Hora de Ecuador
-              </p>
             </div>
 
-            {/* Tarjeta Ubicación */}
-            <div className="bg-white/95 backdrop-blur-sm p-5 sm:p-6 rounded-2xl shadow-2xl border-4 border-[#006400] hover:shadow-[0_0_30px_rgba(0,100,0,0.4)] hover:-translate-y-2 transition-all duration-300 ease-out w-full lg:w-auto min-w-[280px]">
-              <div className="flex items-center gap-3 text-[#006400] mb-3 justify-center lg:justify-start">
-                <MapPin className="h-6 w-6" />
-                <h3 className="font-bold text-lg sm:text-xl">Ubicación</h3>
-              </div>
-              <div className="text-center lg:text-left">
-                <p className="text-[#006400] font-bold text-xl sm:text-2xl leading-tight mb-2">
-                  Salón Azul del Consejo Provincial
+            {/* Tarjeta 2: Ubicación - Compacta */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-green-600 to-green-800 p-4 sm:p-5 rounded-xl shadow-2xl hover:shadow-[0_0_40px_rgba(22,163,74,0.6)] hover:-translate-y-1 transition-all duration-300 flex-1 min-w-[250px] group">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="flex items-center gap-2 text-white mb-2">
+                  <MapPin className="h-5 w-5" />
+                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Ubicación</h3>
+                </div>
+                <p className="text-white font-black text-lg sm:text-xl leading-tight mb-1">
+                  Salón Azul Consejo Provincial
                 </p>
-                <p className="text-gray-600 text-sm font-medium">
-                  Morona Santiago - Ecuador
+                <p className="text-green-100 text-xs sm:text-sm font-semibold">
+                  Morona Santiago • Ecuador
+                </p>
+              </div>
+            </div>
+
+            {/* Tarjeta 3: Fechas del Congreso - Compacta */}
+            <div className="relative overflow-hidden bg-gradient-to-br from-yellow-500 via-amber-500 to-yellow-600 p-4 sm:p-5 rounded-xl shadow-2xl hover:shadow-[0_0_40px_rgba(245,158,11,0.6)] hover:-translate-y-1 transition-all duration-300 flex-1 min-w-[250px] group">
+              <div className="absolute top-0 right-0 w-20 h-20 bg-white/20 rounded-full -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="relative">
+                <div className="flex items-center gap-2 text-white mb-2">
+                  <Calendar className="h-5 w-5" />
+                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Congreso</h3>
+                </div>
+                <p className="text-white font-black text-2xl sm:text-3xl leading-tight mb-1">
+                  02, 03 y 04 Junio
+                </p>
+                <p className="text-yellow-100 text-xs sm:text-sm font-semibold">
+                  08:00  • Morona Santiago
                 </p>
               </div>
             </div>
