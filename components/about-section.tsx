@@ -11,7 +11,7 @@ export function AboutSection() {
 
         {/* === 1. TÍTULO PRINCIPAL === */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">VI CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO VCICTMS 2025</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">VI CONGRESO INTERNACIONAL DE CIENCIA Y TECNOLOGÍA MORONA SANTIAGO CICTMS 2026</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Un foro académico que fortalece la cultura científica y promueve la innovación tecnológica en la región amazónica ecuatoriana
           </p>

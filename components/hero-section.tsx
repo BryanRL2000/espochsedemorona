@@ -56,7 +56,7 @@ export function HeroSection() {
           {/* Título principal mejorado */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-balance leading-tight mb-4 sm:mb-6">
             <span className="text-white block drop-shadow-lg">
-              VI CONGRESO INTERNACIONAL
+              LANZAMIENTO DEL VI CONGRESO INTERNACIONAL
             </span>
             <span className="text-[#f0c000] block drop-shadow-lg mt-1">
               DE CIENCIA Y TECNOLOGÍA
@@ -98,13 +98,13 @@ export function HeroSection() {
             <div className="bg-white/95 backdrop-blur-sm p-5 sm:p-6 rounded-2xl shadow-2xl border-4 border-[#c00000] hover:shadow-[0_0_30px_rgba(192,0,0,0.4)] hover:-translate-y-2 transition-all duration-300 ease-out w-full lg:w-auto min-w-[280px] flex flex-col justify-center">
               <div className="flex items-center gap-3 text-[#c00000] mb-3 justify-center">
                 <Calendar className="h-6 w-6" />
-                <h3 className="font-bold text-lg sm:text-xl">Fecha del Evento</h3>
+                <h3 className="font-bold text-lg sm:text-xl">Lanzamiento del evento</h3>
               </div>
               <p className="text-[#c00000] font-black text-2xl sm:text-3xl leading-tight text-center">
                 14 de Abril de 2026
               </p>
               <p className="text-gray-600 text-sm mt-2 text-center font-medium">
-                08:00 AM - Hora de Ecuador
+                12:00 PM - Hora de Ecuador
               </p>
             </div>
 

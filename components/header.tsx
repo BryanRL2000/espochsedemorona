@@ -29,7 +29,7 @@ export default function Header() {
             />
             <div>
               <h1 className="text-xs md:text-lg font-black text-white drop-shadow-md tracking-wide">
-                VI CICTSMS
+                VI CICTMS
               </h1>
               <p className="text-[10px] md:text-sm text-gray-200 mt-0.5 md:mt-1 font-medium tracking-wide">
                 ESPOCH Sede Morona Santiago · 14 de Abril de 2026

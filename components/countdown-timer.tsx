@@ -19,8 +19,8 @@ export function CountdownTimer() {
   const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    // 🗓️ Fecha actualizada: 14 de abril de 2026, 8:00 AM, Ecuador (UTC-5)
-    const eventDate = new Date("2026-04-14T08:00:00-05:00")
+    // 🗓️ Fecha actualizada: 14 de abril de 2026, 12:00 PM, Ecuador (UTC-5)
+    const eventDate = new Date("2026-04-14T12:00:00-05:00")
 
     const calculateTimeLeft = () => {
       const now = new Date()
@@ -61,7 +61,7 @@ export function CountdownTimer() {
         {hasStarted ? (
           <div className="text-center">
             <h3 className="text-lg font-semibold mb-4 text-green-800 bg-white/95 rounded-lg py-2 px-4 shadow-md inline-block">
-              🎉 ¡El congreso está en curso!
+              🎉 ¡El Lanzamiento del congreso está en curso!
             </h3>
             <p className="mt-2 text-gray-800 bg-white/90 py-2 px-4 rounded-lg font-medium">
               Únete a las actividades del VCICTMS 2026.
@@ -70,7 +70,7 @@ export function CountdownTimer() {
         ) : (
           <>
             <h3 className="text-lg font-semibold text-center mb-4 text-green-800 bg-white/95 rounded-lg py-2 px-4 shadow-md">
-              Faltan para el evento:
+              Lanzamiento del VCICTMS 2026 en:
             </h3>
             <div className="grid grid-cols-4 gap-4 text-center">
               {[

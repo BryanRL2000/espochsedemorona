@@ -1,5 +1,5 @@
 import { Navigation } from "@/components/navigation"
-import { Download, ExternalLink, BookOpen, FileText } from "lucide-react"
+import { Download, ExternalLink, BookOpen, FileText, Calendar, Mail, Phone, DollarSign } from "lucide-react"
 import Image from "next/image"
 
 export default function NormativaPage() {
@@ -25,22 +25,41 @@ export default function NormativaPage() {
               {/* Título Principal */}
               <div className="text-center mb-10">
                 <h1 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-lg">
-                  Publicación en Revista Indexada
+                  VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026
                 </h1>
                 <p className="text-gray-200 text-sm md:text-base drop-shadow">
-                  Los trabajos aceptados serán publicados en nuestra revista científica
+                  Publicación en Revista Científica Multidisciplinaria InvestiGo - CICTMS 2026
                 </p>
               </div>
 
-              {/* Sección ERIH PLUS */}
+              {/* Alerta de Convocatoria Abierta */}
+              <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg mb-8 shadow-lg border border-blue-400">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <Calendar className="h-6 w-6" />
+                  <h2 className="text-xl font-bold">¡Convocatoria Oficial Abierta!</h2>
+                </div>
+                <p className="text-center text-blue-100">
+                  XIII Semana de la Ciencia, Tecnología, Emprendimiento e Innovación (SECTEI ESPOCH 2026)
+                </p>
+              </div>
+
+              {/* Sección de Indexación */}
               <div className="conference-card bg-white/95 backdrop-blur-sm border border-white/30 mb-8 p-6 md:p-8">
                 <div className="flex flex-col md:flex-row items-center gap-6">
-                  {/* Logo ERIH PLUS */}
-                  <div className="w-full md:w-1/3 flex justify-center">
+                  {/* Logos de Indexación */}
+                  <div className="w-full md:w-1/3 flex flex-col gap-4 justify-center">
                     <div className="relative w-full max-w-xs aspect-[2/1]">
                       <Image
                         src="/erih-plus-logo.png"
                         alt="ERIH PLUS - European Reference Index"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="relative w-full max-w-xs aspect-[2/1]">
+                      <Image
+                        src="/latindex-logo.png"
+                        alt="LATINDEX 2.0 - Sistema Regional de Información en Línea"
                         fill
                         className="object-contain"
                       />
@@ -50,24 +69,126 @@ export default function NormativaPage() {
                   {/* Información de la Revista */}
                   <div className="w-full md:w-2/3 text-center md:text-left">
                     <h2 className="text-2xl font-bold text-[#c00000] mb-3">
-                      Revista VI CICTSMS
+                      Revista Científica Multidisciplinaria InvestiGo
                     </h2>
                     <p className="text-gray-700 mb-3">
                       Los artículos científicos aprobados serán publicados en nuestra revista institucional, 
-                      indexada en <strong>ERIH PLUS</strong> (European Reference Index for the Humanities and Social Sciences).
+                      indexada en <strong>ERIH PLUS</strong> (European Reference Index for the Humanities and Social Sciences) 
+                      y <strong>LATINDEX 2.0</strong> (Sistema Regional de Información en Línea para Revistas Científicas de América Latina, el Caribe, España y Portugal).
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                       <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
                         Indexación Europea
                       </span>
                       <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">
-                        Revisión por Pares
+                        Catálogo LATINDEX 2.0
                       </span>
                       <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">
+                        Revisión por Pares
+                      </span>
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold">
                         Acceso Abierto
                       </span>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Cronograma */}
+              <div className="conference-card bg-white/95 backdrop-blur-sm border border-white/30 mb-8 p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-[#c00000] mb-6 flex items-center gap-2">
+                  <Calendar className="h-6 w-6" />
+                  Cronograma de la Convocatoria
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg border-l-4 border-blue-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-blue-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-blue-900">Inicio de Convocatoria</h3>
+                        <p className="text-blue-800 font-bold text-lg">10 de abril de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-red-50 to-red-100 p-4 rounded-lg border-l-4 border-red-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-red-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-red-900">Fecha Límite de Envío</h3>
+                        <p className="text-red-800 font-bold text-lg">11 de mayo de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-yellow-50 to-yellow-100 p-4 rounded-lg border-l-4 border-yellow-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-yellow-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-yellow-900">Notificación 1era Revisión</h3>
+                        <p className="text-yellow-800 font-bold">18 de mayo de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-4 rounded-lg border-l-4 border-orange-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-orange-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-orange-900">Período de Correcciones</h3>
+                        <p className="text-orange-800 font-bold">18 - 24 de mayo de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 p-4 rounded-lg border-l-4 border-green-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-green-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-green-900">Notificación de Aceptación</h3>
+                        <p className="text-green-800 font-bold">28 - 31 de mayo de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-4 rounded-lg border-l-4 border-purple-600">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-purple-600 text-white rounded-full p-2 flex-shrink-0">
+                        <Calendar className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-purple-900">Difusión de Resultados</h3>
+                        <p className="text-purple-800 font-bold">02 al 04 de junio de 2026</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Costo de Publicación */}
+              <div className="conference-card bg-gradient-to-r from-green-50 to-emerald-50 backdrop-blur-sm border border-green-300 mb-8 p-6">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <DollarSign className="h-8 w-8 text-green-700" />
+                  <h2 className="text-2xl font-bold text-green-800">Costo de Publicación</h2>
+                </div>
+                <div className="text-center">
+                  <p className="text-4xl font-bold text-green-700 mb-2">$160 USD</p>
+                  <p className="text-green-800 text-lg">
+                    Hasta <strong>4 autores</strong> con afiliación universitaria
+                  </p>
+                  <p className="text-green-600 text-sm mt-2">
+                    Incluye publicación indexada, DOI y acceso abierto permanente
+                  </p>
                 </div>
               </div>
 
@@ -135,6 +256,18 @@ export default function NormativaPage() {
                   </h2>
                   <div className="space-y-3">
                     <a
+                      href="https://espochsedemorona.vercel.app/normativa"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
+                    >
+                      <div className="flex justify-between items-center">
+                        <span>Normativa y Lineamientos</span>
+                        <ExternalLink className="h-4 w-4 text-red-600 hover:text-green-600" />
+                      </div>
+                    </a>
+
+                    <a
                       href="https://espoch.edu.ec"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -142,18 +275,6 @@ export default function NormativaPage() {
                     >
                       <div className="flex justify-between items-center">
                         <span>Sitio Web ESPOCH</span>
-                        <ExternalLink className="h-4 w-4 text-red-600 hover:text-green-600" />
-                      </div>
-                    </a>
-
-                    <a
-                      href="https://docs.google.com/forms/d/1nnXSRjBYi_sJkxxJMIBRNQjL3hW44hCP5CcGuMBysUw/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
-                    >
-                      <div className="flex justify-between items-center">
-                        <span>Inscripción de Participantes</span>
                         <ExternalLink className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
                     </a>
@@ -171,7 +292,7 @@ export default function NormativaPage() {
                     </a>
 
                     <a
-                      href="https://www.esf.org/index.php?id=326"
+                      href="https://erihplus.hkdir.no/en/informationarticles/about"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-red-50 transition-colors text-red-600 hover:text-green-600 active:text-green-600"
@@ -181,6 +302,41 @@ export default function NormativaPage() {
                         <ExternalLink className="h-4 w-4 text-red-600 hover:text-green-600" />
                       </div>
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Información de Contacto */}
+              <div className="conference-card bg-white/95 backdrop-blur-sm border border-white/30 mb-8 p-6 md:p-8">
+                <h2 className="text-2xl font-bold text-[#c00000] mb-6">Información de Contacto</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-[#c00000] mt-1" />
+                      <div>
+                        <h3 className="font-semibold text-gray-800">Envío de Artículos</h3>
+                        <a href="mailto:investigo@istra.edu.ec" className="text-blue-600 hover:text-blue-800">
+                          investigo@istra.edu.ec
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-[#c00000] mt-1" />
+                      <div>
+                        <h3 className="font-semibold text-gray-800">Más Información</h3>
+                        <a href="mailto:carlav.haro@espoch.edu.ec" className="text-blue-600 hover:text-blue-800">
+                          carlav.haro@espoch.edu.ec
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h3 className="font-semibold text-blue-900 mb-2">¡Tu investigación merece ser publicada y reconocida!</h3>
+                    <p className="text-sm text-blue-800">
+                      Comparte tu conocimiento, fortalece la investigación científica y sé parte de un evento que impulsa el desarrollo académico y tecnológico.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -209,7 +365,7 @@ export default function NormativaPage() {
                     <div className="text-2xl font-bold text-purple-600 mb-1">3</div>
                     <h3 className="font-semibold text-gray-800 mb-2">Publicación</h3>
                     <p className="text-sm text-gray-600">
-                      Artículo indexado en ERIH PLUS con ISSN 2953-6367 y acceso abierto disponible
+                      Artículo indexado en ERIH PLUS y LATINDEX 2.0 con acceso abierto disponible
                     </p>
                   </div>
                 </div>
@@ -252,10 +408,18 @@ export default function NormativaPage() {
                     <li><strong>ISSN:</strong> 2953-6367</li>
                     <li><strong>Web:</strong> http://revistainvestigo.com</li>
                     <li><strong>Ubicación:</strong> Riobamba – Ecuador</li>
-                    <li><strong>Contacto:</strong> revisinvestigo@gmail.com / +593 97 911 9620</li>
-                    <li><strong>Indexación:</strong> ERIH PLUS (European Reference Index for the Humanities and Social Sciences)</li>
+                    <li><strong>Contacto:</strong> investigo@istra.edu.ec / carlav.haro@espoch.edu.ec</li>
+                    <li><strong>Indexación:</strong> ERIH PLUS (European Reference Index for the Humanities and Social Sciences) y LATINDEX 2.0</li>
+                    <li><strong>Evento:</strong> VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026 (CICTMS 2026)</li>
                   </ul>
                 </div>
+              </div>
+
+              {/* Hashtags */}
+              <div className="mt-8 text-center">
+                <p className="text-gray-300 text-sm drop-shadow">
+                  #ESPOCH #CICTMS2026 #SECTEI2026 #InvestigaciónCientífica #Publicaciones #Innovación #MoronaSantiago
+                </p>
               </div>
             </div>
           </section>
