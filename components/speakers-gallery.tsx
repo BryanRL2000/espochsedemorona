@@ -27,7 +27,7 @@ interface Speaker {
   countryCode: string | string[];
   day: "2026-06-02" | "2026-06-03" | "2026-06-04";
   time: string;
-  topic: string;
+  topic: string;  // ← Ahora se muestra COMPLETO
   modality: "Presencial" | "Virtual";
   expertise: string[];
   bio: string;
@@ -385,52 +385,56 @@ export function SpeakersGallery() {
   };
 
   return (
-    <section id="expositores" className="py-16 bg-gradient-to-br from-green-50 to-red-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+    <section id="expositores" className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-green-50 to-red-50">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        
+        {/* Hero - Responsivo */}
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 sm:mb-4 tracking-tight">
             Conferencias Magistrales
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2">
             VICICTMS 2026 • 2-4 de junio de 2026 • Expertos internacionales en ciencia, tecnología e innovación
           </p>
         </div>
 
-        {/* Buscador */}
-        <div className="max-w-md mx-auto mb-8">
+        {/* Buscador - Mejor touch target para móvil */}
+        <div className="max-w-md mx-auto mb-6 sm:mb-8 px-2">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
             <Input
               type="text"
               placeholder="Buscar por nombre, tema o institución..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 pr-4 py-2 w-full border-gray-300 rounded-xl focus:ring-2 focus:ring-[#006400] focus:border-transparent"
+              className="pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 w-full text-sm sm:text-base border-gray-300 rounded-xl focus:ring-2 focus:ring-[#006400] focus:border-transparent min-h-[44px]"
+              aria-label="Buscar conferencistas"
             />
           </div>
         </div>
 
-        {/* Botones de día */}
-        <div className="flex justify-center mb-12">
-          <div className="grid grid-cols-3 gap-2 p-1 bg-white rounded-xl shadow-sm border border-gray-200 max-w-md w-full">
+        {/* Botones de día - Scroll horizontal en móviles muy pequeños */}
+        <div className="flex justify-center mb-8 sm:mb-10 md:mb-12 px-2">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-2 p-1 bg-white rounded-xl shadow-sm border border-gray-200 w-full max-w-md">
             {[
-              { value: "2026-06-02" as const, label: "Martes 02 Jun", count: getDayCount("2026-06-02") },
-              { value: "2026-06-03" as const, label: "Miércoles 03 Jun", count: getDayCount("2026-06-03") },
-              { value: "2026-06-04" as const, label: "Jueves 04 Jun", count: getDayCount("2026-06-04") },
+              { value: "2026-06-02" as const, label: "Martes 02", shortLabel: "Mar 02", count: getDayCount("2026-06-02") },
+              { value: "2026-06-03" as const, label: "Miércoles 03", shortLabel: "Mié 03", count: getDayCount("2026-06-03") },
+              { value: "2026-06-04" as const, label: "Jueves 04", shortLabel: "Jue 04", count: getDayCount("2026-06-04") },
             ].map((day) => (
               <button
                 key={day.value}
                 onClick={() => setSelectedDay(day.value)}
-                className={`px-3 py-3 text-center text-sm font-medium transition-all duration-300 rounded-lg ${
+                className={`px-2 sm:px-3 py-2.5 sm:py-3 text-center text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg min-h-[44px] ${
                   selectedDay === day.value
                     ? "bg-[#006400] text-white shadow-md"
                     : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
                 }`}
+                aria-pressed={selectedDay === day.value}
               >
-                <div className="font-semibold">{day.label}</div>
-                <div className="text-xs mt-1 bg-green-100 text-green-700 px-2 py-0.5 rounded-full inline-block">
-                  {day.count} conferencistas
+                <div className="font-semibold hidden xs:block">{day.label}</div>
+                <div className="font-semibold xs:hidden">{day.shortLabel}</div>
+                <div className="text-[10px] sm:text-xs mt-0.5 sm:mt-1 bg-green-100 text-green-700 px-1.5 sm:px-2 py-0.5 rounded-full inline-block">
+                  {day.count}
                 </div>
               </button>
             ))}
@@ -438,36 +442,42 @@ export function SpeakersGallery() {
         </div>
 
         {/* Contenido */}
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           {filteredSpeakers.length === 0 ? (
-            <div className="text-center py-24 bg-white rounded-3xl shadow-lg border border-dashed border-gray-300">
-              <User className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-700 mb-2">No se encontraron resultados</h3>
-              <p className="text-gray-500 text-lg">Intenta con otros términos de búsqueda.</p>
+            <div className="text-center py-16 sm:py-20 md:py-24 bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-dashed border-gray-300 mx-2">
+              <User className="h-12 w-12 sm:h-16 sm:w-16 text-gray-400 mx-auto mb-3 sm:mb-4" />
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-700 mb-2 px-4">
+                No se encontraron resultados
+              </h3>
+              <p className="text-sm sm:text-base text-gray-500 px-4">
+                Intenta con otros términos de búsqueda.
+              </p>
             </div>
           ) : (
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-bold text-gray-800 pb-2 border-b-2 border-[#006400]">
+            <div className="space-y-6 sm:space-y-8">
+              <div className="flex items-center justify-between px-2">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 pb-2 border-b-2 border-[#006400]">
                   {getDayLabel(selectedDay)}
                 </h3>
-                <Badge variant="outline" className="text-sm">
+                <Badge variant="outline" className="text-xs sm:text-sm min-h-[28px]">
                   {filteredSpeakers.length} resultados
                 </Badge>
               </div>
 
-              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {/* Grid RESPONSIVO: 1 col móvil, 2 tablet, 3 desktop */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 {filteredSpeakers.map((speaker) => (
                   <Card
                     key={speaker.id}
-                    className="group cursor-pointer overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
+                    className="group cursor-pointer overflow-hidden bg-white border border-gray-200 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
                   >
-                    <div className="relative h-48 bg-gradient-to-br from-green-50 to-gray-100 flex items-center justify-center">
+                    {/* Imagen - Altura adaptable para móvil */}
+                    <div className="relative h-40 sm:h-48 bg-gradient-to-br from-green-50 to-gray-100 flex items-center justify-center">
                       {speaker.photo ? (
                         <img
                           src={speaker.photo}
                           alt={`Foto de ${speaker.name}`}
-                          className="max-h-full max-w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                          className="max-h-full max-w-full object-contain p-3 sm:p-4 transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
@@ -475,45 +485,54 @@ export function SpeakersGallery() {
                           loading="lazy"
                         />
                       ) : (
-                        <div className="text-center space-y-2">
-                          <div className="w-16 h-16 bg-gradient-to-r from-[#006400] to-[#c00000] rounded-full flex items-center justify-center shadow-lg">
-                            <User className="h-8 w-8 text-white" />
+                        <div className="text-center space-y-1.5 sm:space-y-2">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[#006400] to-[#c00000] rounded-full flex items-center justify-center shadow-lg">
+                            <User className="h-7 w-7 sm:h-8 sm:w-8 text-white" />
                           </div>
-                          <p className="text-xs text-gray-500 font-medium">Sin foto disponible</p>
+                          <p className="text-[10px] sm:text-xs text-gray-500 font-medium px-2">Sin foto</p>
                         </div>
                       )}
 
-                      <div className="absolute top-3 right-3 flex gap-2">
+                      {/* Badge de modalidad - Posición responsive */}
+                      <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
                         <Badge
-                          className={`px-2.5 py-1 text-xs font-medium rounded-full ${
+                          className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium rounded-full ${
                             speaker.modality === "Presencial"
                               ? "bg-green-100 text-green-800 border border-green-200"
                               : "bg-blue-100 text-blue-800 border border-blue-200"
                           }`}
                         >
                           {speaker.modality === "Presencial" ? (
-                            <MapPin className="h-3 w-3 mr-1 inline" />
+                            <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-0.5 sm:mr-1 inline" />
                           ) : (
-                            <Globe className="h-3 w-3 mr-1 inline" />
+                            <Globe className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-0.5 sm:mr-1 inline" />
                           )}
-                          {speaker.modality}
+                          <span className="hidden xs:inline">{speaker.modality}</span>
+                          <span className="xs:hidden">{speaker.modality === "Presencial" ? "P" : "V"}</span>
                         </Badge>
                       </div>
                     </div>
 
-                    <CardContent className="p-5 space-y-4">
-                      <div className="space-y-2">
-                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#006400] transition-colors line-clamp-2">
+                    <CardContent className="p-4 sm:p-5 space-y-3 sm:space-y-4">
+                      <div className="space-y-1.5 sm:space-y-2">
+                        {/* Nombre - SIN line-clamp para móvil */}
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#006400] transition-colors leading-snug">
                           {speaker.name}
                         </h3>
-                        <p className="text-sm text-gray-600 font-medium line-clamp-1">{speaker.title}</p>
                         
-                        <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
-                          <GraduationCap className="h-3.5 w-3.5 text-[#006400] flex-shrink-0" />
-                          <span className="line-clamp-1">{speaker.institution}</span>
+                        {/* Título profesional - SIN truncate */}
+                        <p className="text-xs sm:text-sm text-gray-600 font-medium leading-relaxed">
+                          {speaker.title}
+                        </p>
+                        
+                        {/* Institución - Wrap en móvil */}
+                        <div className="flex items-start gap-1.5 text-[10px] sm:text-xs text-gray-500">
+                          <GraduationCap className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#006400] flex-shrink-0 mt-0.5" />
+                          <span className="leading-relaxed">{speaker.institution}</span>
                         </div>
                         
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                        {/* País con banderas */}
+                        <div className="flex items-center gap-1.5 text-[10px] sm:text-xs text-gray-500 flex-wrap">
                           {Array.isArray(speaker.countryCode) ? (
                             <div className="flex items-center gap-0.5">
                               {speaker.countryCode.map((code) => (
@@ -521,7 +540,7 @@ export function SpeakersGallery() {
                                   key={code}
                                   countryCode={code}
                                   svg
-                                  style={{ width: '1em', height: '1em', borderRadius: '2px' }}
+                                  style={{ width: '0.9em', height: '0.9em', borderRadius: '2px' }}
                                   title={code}
                                 />
                               ))}
@@ -530,47 +549,54 @@ export function SpeakersGallery() {
                             <CountryFlag
                               countryCode={speaker.countryCode}
                               svg
-                              style={{ width: '1.2em', height: '1.2em', borderRadius: '2px' }}
+                              style={{ width: '1.1em', height: '1.1em', borderRadius: '2px' }}
                               title={speaker.countryCode}
                             />
                           )}
-                          <span className="line-clamp-1">{speaker.country}</span>
+                          <span className="leading-relaxed">{speaker.country}</span>
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2 bg-gray-100 p-2.5 rounded-lg">
-                          <Clock className="h-4 w-4 text-[#c00000] flex-shrink-0" />
-                          <span className="font-medium text-gray-800 text-sm">{speaker.time}</span>
+                      <div className="space-y-2 sm:space-y-2.5">
+                        {/* Hora */}
+                        <div className="flex items-center gap-2 bg-gray-100 p-2 rounded-lg">
+                          <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#c00000] flex-shrink-0" />
+                          <span className="font-medium text-gray-800 text-xs sm:text-sm">{speaker.time}</span>
                         </div>
-                        <div className="p-3 bg-gradient-to-r from-green-50 to-red-50 border border-green-100 rounded-xl">
-                          <h4 className="font-semibold text-gray-800 text-xs mb-1 uppercase tracking-wide">Tema</h4>
-                          <p className="text-gray-700 font-medium text-sm leading-relaxed line-clamp-2">
+                        
+                        {/* TEMA - SIN line-clamp, texto completo visible */}
+                        <div className="p-2.5 sm:p-3 bg-gradient-to-r from-green-50 to-red-50 border border-green-100 rounded-xl">
+                          <h4 className="font-semibold text-gray-800 text-[10px] sm:text-xs mb-1 uppercase tracking-wide">
+                            Tema
+                          </h4>
+                          <p className="text-gray-700 font-medium text-xs sm:text-sm leading-relaxed break-words">
                             {speaker.topic}
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-1.5">
-                        {speaker.expertise.slice(0, 2).map((exp, index) => (
+                      {/* Expertise badges - Scroll horizontal si hay muchos en móvil */}
+                      <div className="flex flex-wrap gap-1">
+                        {speaker.expertise.slice(0, 3).map((exp, index) => (
                           <Badge
                             key={index}
                             variant="outline"
-                            className="text-[10px] border-gray-300 text-gray-700 hover:bg-gray-100 px-2 py-0.5 rounded-full"
+                            className="text-[9px] sm:text-[10px] border-gray-300 text-gray-700 hover:bg-gray-100 px-1.5 sm:px-2 py-0.5 rounded-full"
                           >
                             {exp}
                           </Badge>
                         ))}
-                        {speaker.expertise.length > 2 && (
+                        {speaker.expertise.length > 3 && (
                           <Badge
                             variant="outline"
-                            className="text-[10px] border-gray-300 text-gray-500 px-2 py-0.5 rounded-full"
+                            className="text-[9px] sm:text-[10px] border-gray-300 text-gray-500 px-1.5 sm:px-2 py-0.5 rounded-full"
                           >
-                            +{speaker.expertise.length - 2}
+                            +{speaker.expertise.length - 3}
                           </Badge>
                         )}
                       </div>
 
+                      {/* Botón expandir - Touch-friendly */}
                       <Button
                         variant="ghost"
                         size="sm"
@@ -578,44 +604,60 @@ export function SpeakersGallery() {
                           e.stopPropagation();
                           toggleExpand(speaker.id);
                         }}
-                        className="w-full mt-1 text-[#006400] hover:text-[#004d00] hover:bg-green-50 font-medium rounded-xl border border-green-200 transition-all duration-300 flex items-center justify-center gap-1 text-sm"
+                        className="w-full mt-1 text-[#006400] hover:text-[#004d00] hover:bg-green-50 font-medium rounded-xl border border-green-200 transition-all duration-300 flex items-center justify-center gap-1 text-xs sm:text-sm min-h-[40px] px-3"
+                        aria-expanded={expandedSpeaker === speaker.id}
+                        aria-controls={`bio-${speaker.id}`}
                       >
                         {expandedSpeaker === speaker.id ? (
                           <>
-                            <ChevronUp className="h-4 w-4 transition-transform duration-300" /> Cerrar
+                            <ChevronUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300" /> 
+                            <span className="hidden xs:inline">Cerrar</span>
+                            <span className="xs:hidden">Ocultar</span>
                           </>
                         ) : (
                           <>
-                            <ChevronDown className="h-4 w-4 transition-transform duration-300" /> Ver biografía
+                            <ChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-300" /> 
+                            <span className="hidden xs:inline">Ver biografía</span>
+                            <span className="xs:hidden">Más</span>
                           </>
                         )}
                       </Button>
 
+                      {/* Biografía expandida */}
                       {expandedSpeaker === speaker.id && (
-                        <div className="mt-4 p-4 bg-red-50 rounded-xl border border-red-200 space-y-4 animate-in fade-in slide-in-from-top-2 duration-500">
+                        <div 
+                          id={`bio-${speaker.id}`}
+                          className="mt-3 sm:mt-4 p-3 sm:p-4 bg-red-50 rounded-xl border border-red-200 space-y-3 sm:space-y-4 animate-in fade-in slide-in-from-top-2 duration-500"
+                        >
                           <div>
-                            <h4 className="font-bold text-gray-800 text-sm mb-2">Biografía Profesional</h4>
-                            <p className="text-gray-700 text-sm leading-relaxed">{speaker.bio}</p>
+                            <h4 className="font-bold text-gray-800 text-xs sm:text-sm mb-1.5 sm:mb-2">
+                              Biografía Profesional
+                            </h4>
+                            <p className="text-gray-700 text-xs sm:text-sm leading-relaxed break-words">
+                              {speaker.bio}
+                            </p>
                           </div>
                           {(speaker.email || speaker.phone) && (
-                            <div className="pt-3 border-t border-red-200">
-                              <h4 className="font-bold text-gray-800 text-sm mb-2">Contacto</h4>
-                              <div className="space-y-1.5 text-sm">
+                            <div className="pt-2.5 sm:pt-3 border-t border-red-200">
+                              <h4 className="font-bold text-gray-800 text-xs sm:text-sm mb-1.5 sm:mb-2">
+                                Contacto
+                              </h4>
+                              <div className="space-y-1.5 text-xs sm:text-sm">
                                 {speaker.email && (
                                   <a
                                     href={`mailto:${speaker.email}`}
-                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors"
+                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors py-1"
                                   >
-                                    <Mail className="h-3.5 w-3.5 text-red-600" />
-                                    <span className="font-medium truncate">{speaker.email}</span>
+                                    <Mail className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-red-600 flex-shrink-0" />
+                                    <span className="font-medium break-all">{speaker.email}</span>
                                   </a>
                                 )}
                                 {speaker.phone && (
                                   <a
                                     href={`tel:${speaker.phone}`}
-                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors"
+                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors py-1"
                                   >
-                                    <span className="text-[#c00000]">📞</span>
+                                    <span className="text-[#c00000] flex-shrink-0">📞</span>
                                     <span className="font-medium">{speaker.phone}</span>
                                   </a>
                                 )}

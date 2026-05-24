@@ -56,7 +56,7 @@ export function HeroSection() {
           {/* Título principal mejorado */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-balance leading-tight mb-4 sm:mb-6">
             <span className="text-white block drop-shadow-lg">
-              LANZAMIENTO DEL VI CONGRESO INTERNACIONAL
+               VI CONGRESO INTERNACIONAL
             </span>
             <span className="text-[#f0c000] block drop-shadow-lg mt-1">
               DE CIENCIA Y TECNOLOGÍA
