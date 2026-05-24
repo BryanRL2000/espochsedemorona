@@ -34,7 +34,7 @@ export default function PonentesPage() {
         <div className="px-4 sm:px-6 lg:px-8 pb-16">
           <div className="max-w-7xl mx-auto">
             <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-lg border border-white/20">
-              <KeynoteCarousel />
+              
               <SpeakersGallery />
             </div>
           </div>

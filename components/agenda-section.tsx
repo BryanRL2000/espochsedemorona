@@ -14,135 +14,281 @@ interface AgendaItem {
   type: "keynote" | "presentation" | "panel" | "break" | "networking" | "opening" | "closing" | "workshop" | "fair"
   speaker?: string
   institution?: string
+  country?: string
   modality: "Presencial" | "Virtual" | "Híbrido"
   location?: string
   description?: string
 }
 
 const agendaData = {
-  "2025-10-14": [
+  "2026-06-02": [
     {
       id: "1",
       time: "08:00 - 08:30",
-      title: "Inauguración",
+      title: "Inauguración del VI Congreso Internacional de Ciencia y Tecnología Morona Santiago VICICTMS 2026",
       type: "opening" as const,
       modality: "Presencial" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Ceremonia de inauguración del V Congreso Internacional de Ciencia y Tecnología Morona Santiago",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Ceremonia de apertura del congreso",
     },
     {
       id: "2",
-      time: "08:30 - 13:00",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Matutina",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Primera sesión del congreso con conferencias magistrales y presentaciones",
+      time: "08:30 - 09:30",
+      title: "Ultrasonografía Doppler colorida del cuerpo lúteo para la detección precoz de búfalas Murrah no gestantes a los 24 días después de la IATF",
+      type: "keynote" as const,
+      speaker: "Nelson René Ortiz Naveda",
+      institution: "Universidad Federal Rural de Pernambuco (UFRPE)",
+      country: "Brasil",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Médico Veterinario Zootecnista. Especialista en reproducción bovina y Máster en Reproducción animal. Estudiante de Doctorado en Reproducción animal.",
     },
     {
       id: "3",
-      time: "10:00 - 12:00",
-      title: "Workshop: Área Ambiental",
-      type: "workshop" as const,
-      speaker: "Matías Peredo Parada",
+      time: "09:30 - 10:30",
+      title: "BEEF ON DAIRY. Una nueva tendencia mundial, una vieja tradición francesa",
+      type: "keynote" as const,
+      speaker: "Danien Bustamante H.",
+      institution: "Universidad de La Salle",
+      country: "Colombia",
       modality: "Virtual" as const,
-      location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
-      description: "Taller especializado en temas ambientales y caudal ecológico",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Zootecnista. Pionero en la inseminación artificial moderna, cuyas investigaciones permitieron perfeccionar la conservación del semen.",
     },
     {
       id: "4",
-      time: "14:00 - 18:00",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Vespertina",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Segunda sesión del congreso con más conferencias magistrales y presentaciones",
+      time: "11:00 - 12:00",
+      title: "Juzgamiento en ganado de leche / Juzgamiento en ganado de carne",
+      type: "keynote" as const,
+      speaker: "Fabián Augusto Almeida López",
+      institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Ingeniero Zootecnista. Máster en Reproducción Animal. Docente investigador de la ESPOCH en la Facultad de Ciencias Pecuarias.",
     },
-  ],
-  "2025-10-15": [
     {
       id: "5",
-      time: "08:00 - 12:00",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Matutina",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Segunda jornada del congreso con conferencias magistrales",
+      time: "12:00 - 13:00",
+      title: "La Administración de Justicia en un Estado Constitucional de Derechos y Justicia",
+      type: "keynote" as const,
+      speaker: "Dr. Germán Marcelo Mancheno Salazar",
+      institution: "Corte Superior de Justicia de Chimborazo / UNACH / UNIANDES",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Abogado y Msc. en Derecho Penal Procesal. Juez de la Unidad de lo Civil y Mercantil. Profesor Universitario.",
     },
     {
       id: "6",
-      time: "09:00 - 13:00",
-      title: "II Feria de Emprendimientos y Proyectos Científicos: Emprende ESPOCH",
-      type: "fair" as const,
-      modality: "Presencial" as const,
-      location: "Coliseo 29 de Mayo",
-      description: '"Ideas que nacen, carreras que inspiran" - Exhibición de proyectos emprendedores',
+      time: "14:30 - 15:30",
+      title: "Los desafíos de la interpretación jurídica",
+      type: "keynote" as const,
+      speaker: "Federico José Arena",
+      institution: "Barcelona Institute of Analytic Philosophy / CONICET",
+      country: "Italia / Argentina",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Abogado. Postdoctorado Università Bocconi, Milán. Doctor Europeo en Filosofía del Derecho y Bioética Jurídica.",
     },
     {
       id: "7",
-      time: "10:00 - 12:00",
-      title: "Workshop: Métodos para estimar el caudal ambiental",
-      type: "workshop" as const,
-      speaker: "Jacopo Seccatore",
+      time: "17:00 - 18:00",
+      title: "Pluralismo jurídico como un aporte para enfrentar el cambio climático",
+      type: "keynote" as const,
+      speaker: "Oscar Mauricio Sánchez Nivicela",
+      institution: "Universidad del Azuay / Fundación ENTSA",
       modality: "Presencial" as const,
-      location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
-      description: "Taller especializado en métodos de estimación de caudal ambiental",
-    },
-    {
-      id: "8",
-      time: "14:00 - 18:00",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Vespertina",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Continuación de las conferencias magistrales y presentaciones",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Doctor en Jurisprudencia. Magister en Cambio Climático, Sustentabilidad y Desarrollo.",
     },
   ],
-  "2025-10-16": [
+  "2026-06-03": [
+    {
+      id: "8",
+      time: "08:00 - 09:00",
+      title: "Potenciando la transformación de residuos orgánicos en energía: Uso de biocarbón y hierro para optimizar la digestión anaerobia con recirculación de CO₂",
+      type: "keynote" as const,
+      speaker: "Cristhian David Chicaiza Ortiz",
+      institution: "Shanghai Jiao Tong University (SJTU)",
+      country: "Ecuador / China",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "PhD en Ciencias e Ingeniería Ambiental. Máster en Environmental Engineering y en Cambio Climático.",
+    },
     {
       id: "9",
-      time: "08:00 - 12:30",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Matutina",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Última jornada matutina del congreso",
+      time: "09:00 - 10:00",
+      title: "Procesos de remediación de contaminantes emergentes y biocombustibles",
+      type: "keynote" as const,
+      speaker: "María Salomé Álvarez Álvarez",
+      institution: "Facultad de Química",
+      country: "España",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "PhD en Chemical Engineering. Vicedecana de calidad de la facultad de química.",
     },
     {
       id: "10",
-      time: "10:00 - 12:00",
-      title: "Workshop: Ataques DDoS y Técnicas de Protección",
-      type: "workshop" as const,
-      speaker: "Katherine Merino",
+      time: "10:30 - 11:30",
+      title: "Del páramo al río: el aluvión del 2022 en Quito como parte del ciclo hidrosocial de las quebradas",
+      type: "keynote" as const,
+      speaker: "Gabriela Antonieta Borja Pérez",
+      institution: "Investigadora independiente",
       modality: "Presencial" as const,
-      location: "Segundo Piso de la Biblioteca de la Sede Morona Santiago",
-      description: "Taller especializado en seguridad informática y protección contra ataques DDoS",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Socióloga. MSc. en Gestión Integrada de Recursos Hídricos.",
     },
     {
       id: "11",
-      time: "14:00 - 17:00",
-      title: "V Congreso Internacional Ciencia y Tecnología Morona Santiago - Sesión Vespertina Final",
-      type: "presentation" as const,
-      modality: "Híbrido" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Última sesión de conferencias del congreso",
+      time: "11:30 - 12:30",
+      title: "Ciberdelincuencia en jóvenes: diagnóstico exploratorio, huella digital y riesgos desde un enfoque OSINT",
+      type: "keynote" as const,
+      speaker: "Ruth Genoveva Barba Vera",
+      institution: "ESPOCH / PUCP",
+      country: "Ecuador / Perú",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Doctora en Ingeniería. Magíster en Interconectividad de Redes. Experta en ciberseguridad con más de 15 años de experiencia.",
     },
     {
       id: "12",
-      time: "17:00 - 17:30",
-      title: "Clausura V Congreso Internacional Ciencia y Tecnología Morona Santiago",
-      type: "closing" as const,
+      time: "14:00 - 15:00",
+      title: "¿Cómo ven las máquinas el mundo real?",
+      type: "keynote" as const,
+      speaker: "Xavier Soria Poma",
+      institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
+      country: "Ecuador / España",
       modality: "Presencial" as const,
-      location: "Salón Azul – Consejo Provincial",
-      description: "Ceremonia de clausura del congreso",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Doctor en Informática. Doctor en Ciencias de la Computación por la Universidad Autónoma de Barcelona. Líder del grupo EspochAI.",
     },
     {
       id: "13",
-      time: "18:00 - ...",
+      time: "15:00 - 16:00",
+      title: "What Engineers Do Now - how AI is changing the software engineer's craft",
+      type: "keynote" as const,
+      speaker: "Edward Mays",
+      institution: "Thoughtworks",
+      country: "Estados Unidos",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Senior Technical Mentor. Principal Consultant at Thoughtworks. Writing software since 1997.",
+    },
+    {
+      id: "14",
+      time: "10:00 - 12:00",
+      title: "Workshop: Huella Digital y OSINT: cómo la información pública puede convertirse en un riesgo",
+      type: "workshop" as const,
+      speaker: "Ing. Ruth Barba Vera Ph.D.",
+      modality: "Presencial" as const,
+      location: "Laboratorio de informática de la Sede Morona Santiago",
+      description: "Taller especializado en huella digital y OSINT",
+    },
+  ],
+  "2026-06-04": [
+    {
+      id: "15",
+      time: "08:00 - 09:00",
+      title: "Cierre de Canteras de Materiales de la Construcción en Cuba, una solución a la Sostenibilidad Minera",
+      type: "keynote" as const,
+      speaker: "Julio Montero Matos",
+      country: "Cuba",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Doctor en Ciencias Técnica en Minería. Máster en Minería.",
+    },
+    {
+      id: "16",
+      time: "09:00 - 10:00",
+      title: "Flotación de minerales: fundamentos y aplicaciones industriales",
+      type: "keynote" as const,
+      speaker: "Eduardo Andrés Luna Méndez",
+      institution: "Universidad del Azuay",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Magíster en Ingeniería de Recursos Minerales. Ingeniero en Minas. Docente a tiempo completo.",
+    },
+    {
+      id: "17",
+      time: "10:30 - 11:30",
+      title: "Planificación minera a corto plazo",
+      type: "keynote" as const,
+      speaker: "Valeria Loor Cárdenas",
+      institution: "Universidad de Chile",
+      country: "Chile",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Magíster en Minería con distinción máxima. Ingeniera en Minas.",
+    },
+    {
+      id: "18",
+      time: "11:30 - 12:30",
+      title: "El impacto de la inteligencia artificial en la Contabilidad y Auditoría en la Actualidad",
+      type: "keynote" as const,
+      speaker: "Francisco Benito Castro Chavez",
+      institution: "Cooperativa de Ahorro y Crédito Las Naves / AUDICAST",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Lcdo. Contabilidad y Auditoría. Mgtr. Administración de Empresa MBA. Más de 20 años de experiencia.",
+    },
+    {
+      id: "19",
+      time: "14:00 - 15:00",
+      title: "Auditoría digital, inteligencia artificial y cumplimiento: gestión de riesgos en entornos públicos y privados",
+      type: "keynote" as const,
+      speaker: "Iciar López-Vdriero Tejedor",
+      institution: "ICEF Consultores / Universidad Carlos III de Madrid",
+      country: "España",
+      modality: "Virtual" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Licenciada en Derecho. Máster en Telecomunicaciones y Nuevas Tecnologías. Auditora Jefe ISO 27001.",
+    },
+    {
+      id: "20",
+      time: "15:00 - 16:00",
+      title: "Tiempos de Sostenibilidad empresarial: Gestión Compliance y Antisoborno",
+      type: "keynote" as const,
+      speaker: "María del Carmen Jácome Yambay",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Maestría en Gestión y Automatización de Procesos. Maestría en Big Data y Business Intelligence.",
+    },
+    {
+      id: "21",
+      time: "16:00 - 17:00",
+      title: "Afectación del cambio climático con la gestión de riesgo",
+      type: "keynote" as const,
+      speaker: "Carolina Alejandra Lozano Haro",
+      institution: "Secretaría Nacional de Gestión de Riesgos (SNGR)",
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Economista y magíster en Administración de Negocios. Secretaria Nacional de Gestión de Riesgos.",
+    },
+    {
+      id: "22",
+      time: "10:00 - 12:00",
+      title: "Workshop: Características lineales en el Juzgamiento bovino de leche y carne",
+      type: "workshop" as const,
+      speaker: "Ing. Fabian Almeida López",
+      modality: "Presencial" as const,
+      location: "Laboratorio de informática de la Sede Morona Santiago",
+      description: "Taller especializado en juzgamiento ganadero",
+    },
+    {
+      id: "23",
+      time: "17:00 - 17:30",
+      title: "Clausura VI Congreso Internacional Ciencia y Tecnología Morona Santiago",
+      type: "closing" as const,
+      modality: "Presencial" as const,
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
+      description: "Ceremonia de clausura del congreso",
+    },
+    {
+      id: "24",
+      time: "17:30 - 18:00",
       title: "Noche Cultural",
       type: "networking" as const,
       modality: "Presencial" as const,
-      location: "Salón Azul – Consejo Provincial",
+      location: "Salón Azul del GAD Provincial de Morona Santiago",
       description: "Evento cultural de cierre del congreso",
     },
   ],
@@ -234,15 +380,15 @@ const carouselImages = [
   },
   {
     src: "/martes.png",
-    alt: "Martes - Día 1 del Congreso",
+    alt: "Martes 02 de junio - Día 1 del Congreso",
   },
   {
     src: "/miercoles.png",
-    alt: "Miércoles - Día 2 del Congreso",
+    alt: "Miércoles 03 de junio - Día 2 del Congreso",
   },
   {
     src: "/jueves.png",
-    alt: "Jueves - Día 3 del Congreso",
+    alt: "Jueves 04 de junio - Día 3 del Congreso",
   },
   {
     src: "/final.png",
@@ -251,7 +397,7 @@ const carouselImages = [
 ]
 
 export function AgendaSection() {
-  const [selectedDay, setSelectedDay] = useState("2025-10-14")
+  const [selectedDay, setSelectedDay] = useState("2026-06-02")
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -290,11 +436,11 @@ export function AgendaSection() {
 
   const getBackgroundByDay = (day: string) => {
     switch (day) {
-      case "2025-10-14":
+      case "2026-06-02":
         return "from-red-50/80 via-white/90 to-red-100/80";
-      case "2025-10-15":
+      case "2026-06-03":
         return "from-green-50/80 via-white/90 to-green-100/80";
-      case "2025-10-16":
+      case "2026-06-04":
         return "from-red-50/80 via-white/90 to-red-100/80";
       default:
         return "from-blue-50/80 via-white/90 to-slate-100/80";
@@ -321,7 +467,8 @@ export function AgendaSection() {
           <div className="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-white/40 max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Programa del Congreso</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto text-pretty mb-8">
-              Tres días intensivos de conferencias magistrales, workshops especializados y feria de emprendimientos
+              VI Congreso Internacional de Ciencia y Tecnología Morona Santiago 2026<br />
+              02 al 04 de junio de 2026
             </p>
             <Button
               onClick={downloadAgenda}
@@ -343,25 +490,25 @@ export function AgendaSection() {
           <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/40 p-2 mb-8">
             <TabsList className="grid w-full grid-cols-3 bg-white border-b border-gray-200">
               <TabsTrigger
-                value="2025-10-14"
+                value="2026-06-02"
                 className="flex flex-col gap-1 data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-t-lg transition-colors duration-300"
               >
                 <span className="font-semibold text-gray-800">Martes</span>
-                <span className="text-xs text-gray-600">14 Oct</span>
+                <span className="text-xs text-gray-600">02 Jun</span>
               </TabsTrigger>
               <TabsTrigger
-                value="2025-10-15"
+                value="2026-06-03"
                 className="flex flex-col gap-1 data-[state=active]:bg-green-500 data-[state=active]:text-white rounded-t-lg transition-colors duration-300"
               >
                 <span className="font-semibold text-gray-800">Miércoles</span>
-                <span className="text-xs text-gray-600">15 Oct</span>
+                <span className="text-xs text-gray-600">03 Jun</span>
               </TabsTrigger>
               <TabsTrigger
-                value="2025-10-16"
+                value="2026-06-04"
                 className="flex flex-col gap-1 data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-t-lg transition-colors duration-300"
               >
                 <span className="font-semibold text-gray-800">Jueves</span>
-                <span className="text-xs text-gray-600">16 Oct</span>
+                <span className="text-xs text-gray-600">04 Jun</span>
               </TabsTrigger>
             </TabsList>
           </div>
@@ -441,9 +588,14 @@ export function AgendaSection() {
 
                           {item.speaker && (
                             <div className="mb-2">
-                              <p className="font-medium text-green-700 flex items-center gap-1">
+                              <p className="font-medium text-green-700 flex items-center gap-1 flex-wrap">
                                 👤 {item.speaker}
                                 {item.institution && <span className="text-sm text-gray-500">({item.institution})</span>}
+                                {item.country && (
+                                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">
+                                    {item.country}
+                                  </span>
+                                )}
                               </p>
                             </div>
                           )}
@@ -460,14 +612,13 @@ export function AgendaSection() {
                               </div>
                             )}
 
-                            <div className="flex items-center gap-1 px-2 py-1 rounded-full"
-                              className={
+                            <div className={`flex items-center gap-1 px-2 py-1 rounded-full ${
                                 item.modality === "Virtual"
                                   ? "bg-blue-50 text-blue-700"
                                   : item.modality === "Híbrido"
                                   ? "bg-purple-50 text-purple-700"
                                   : "bg-green-50 text-green-700"
-                              }
+                              }`}
                             >
                               {item.modality === "Virtual" ? (
                                 <Globe className="h-3 w-3" />
@@ -501,18 +652,14 @@ export function AgendaSection() {
               <div className="space-y-3">
                 <div>
                   <p className="font-medium text-gray-800">📍 Sede Principal</p>
-                  <p className="text-sm text-gray-600">Salón Azul – Consejo Provincial</p>
+                  <p className="text-sm text-gray-600">Salón Azul del GAD Provincial de Morona Santiago</p>
                   <p className="text-sm text-gray-600">Morona Santiago, Ecuador</p>
                 </div>
                 <div>
                   <p className="font-medium text-gray-800">📚 Workshops</p>
                   <p className="text-sm text-gray-600">
-                    Segundo Piso de la Biblioteca de la Sede Morona Santiago
+                    Laboratorio de informática de la Sede Morona Santiago
                   </p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-800">🎪 Feria de Emprendimientos</p>
-                  <p className="text-sm text-gray-600">Coliseo 29 de Mayo</p>
                 </div>
               </div>
             </CardContent>
@@ -530,9 +677,8 @@ export function AgendaSection() {
                 <div>
                   <p className="font-medium text-gray-800">🌐 Modalidad Híbrida</p>
                   <p className="text-sm text-gray-600">
-                    Participación presencial y virtual disponible para las sesiones principales
+                    Participación presencial y virtual disponible para las conferencias magistrales
                   </p>
-                  {/* ✅ Botón de Zoom agregado aquí */}
                   <div className="mt-2">
                     <Button
                       variant="outline"
@@ -554,13 +700,13 @@ export function AgendaSection() {
                 <div>
                   <p className="font-medium text-gray-800">🔧 Workshops Especializados</p>
                   <p className="text-sm text-gray-600">
-                    Talleres prácticos en seguridad informática, caudal ambiental y área ambiental
+                    Talleres prácticos en OSINT, juzgamiento ganadero y más
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-gray-800">🎉 Gala cultural de cierre  </p>
+                  <p className="font-medium text-gray-800">🎉 Noche Cultural de Cierre</p>
                   <p className="text-sm text-gray-600">
-                    Culminamos el congreso con un evento cultural y social
+                    Jueves 04 de junio - 17:30 a 18:00
                   </p>
                 </div>
               </div>

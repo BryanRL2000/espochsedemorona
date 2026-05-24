@@ -62,7 +62,10 @@ export function HeroSection() {
               DE CIENCIA Y TECNOLOGÍA
             </span>
             <span className="text-[#03c003] block drop-shadow-lg mt-1">
-              MORONA SANTIAGO 2026
+              MORONA SANTIAGO 2026 
+            </span>
+            <span className="text-[#d4d717] block drop-shadow-lg mt-1">
+              INNOVA AMAZONIA-CONCURSO DE EMPRENDIMIENTOS
             </span>
           </h1>
 
@@ -101,13 +104,13 @@ export function HeroSection() {
               <div className="relative">
                 <div className="flex items-center gap-2 text-white mb-2">
                   <Calendar className="h-5 w-5" />
-                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Lanzamiento</h3>
+                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Fecha del Evento:</h3>
                 </div>
                 <p className="text-white font-black text-xl sm:text-2xl leading-tight mb-1">
-                  14 de Abril 2026
+                  02,03 04  de Junio 2026
                 </p>
                 <p className="text-red-100 text-xs sm:text-sm font-semibold">
-                  12:00  • Macas
+                  Macas   • Morona Santiago
                 </p>
               </div>
             </div>
@@ -135,10 +138,10 @@ export function HeroSection() {
               <div className="relative">
                 <div className="flex items-center gap-2 text-white mb-2">
                   <Calendar className="h-5 w-5" />
-                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Congreso</h3>
+                  <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Innova Emprendimiento</h3>
                 </div>
                 <p className="text-white font-black text-2xl sm:text-3xl leading-tight mb-1">
-                  02, 03 y 04 Junio
+                  05 de Junio
                 </p>
                 <p className="text-yellow-100 text-xs sm:text-sm font-semibold">
                   08:00  • Morona Santiago
@@ -154,8 +157,9 @@ export function HeroSection() {
               className="bg-gradient-to-r from-[#c00000] to-[#f00f0f] hover:from-red-700 hover:to-[#c00000] text-white font-bold px-8 sm:px-10 py-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 w-full sm:w-auto text-lg border-2 border-white/20 hover:scale-105"
               asChild
             >
-              <Link href="https://docs.google.com/forms/d/1nnXSRjBYi_sJkxxJMIBRNQjL3hW44hCP5CcGuMBysUw/viewform" target="_blank">
+              <Link href="https://docs.google.com/forms/d/e/1FAIpQLSd10lmAzo13t4ZmFTP5xqJRS2yOOaMU7M1M8lQ0eO-ghV3iBA/viewform" target="_blank">
                 Inscribirse Ahora
+                
               </Link>
             </Button>
             <Button

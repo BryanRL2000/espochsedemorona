@@ -14,7 +14,9 @@ import {
   Clock,
   ChevronDown,
   ChevronUp,
+  Globe,
 } from "lucide-react";
+import CountryFlag from "react-country-flag";
 
 interface Speaker {
   id: number;
@@ -22,8 +24,8 @@ interface Speaker {
   title: string;
   institution: string;
   country: string;
-  countryCode?: string;
-  day: "2025-10-14" | "2025-10-15" | "2025-10-16";
+  countryCode: string | string[];
+  day: "2026-06-02" | "2026-06-03" | "2026-06-04";
   time: string;
   topic: string;
   modality: "Presencial" | "Virtual";
@@ -35,435 +37,348 @@ interface Speaker {
 }
 
 export const speakers: Speaker[] = [
-  // =============== MARTES 14 DE OCTUBRE ===============
+  // =============== MARTES 02 DE JUNIO DE 2026 ===============
   {
     id: 1,
-    name: "Moises Oswaldo Bustamante Rúa",
-    photo: "/FOTOGRAFIA_OSWALDO BUSTAMANTE.png",
-    title: "Doctor en Ciencias de la Ingeniería, mención Metalurgia Extractiva",
-    institution: "Universidad Nacional de Colombia, sede Medellín",
-    country: "Colombia",
-    countryCode: "CO",
-    day: "2025-10-14",
+    name: "Nelson René Ortiz Naveda",
+    photo: "/NELSON_ORTIZ.jpg",
+    title: "Médico Veterinario Zootecnista | Est. Doctorado en Reproducción Animal",
+    institution: "Universidad Federal Rural de Pernambuco (UFRPE) - Brasil",
+    country: "Brasil / Ecuador",
+    countryCode: ["BR", "EC"],
+    day: "2026-06-02",
     time: "08:30 – 09:30",
-    topic: "Conminución",
+    topic: "Ultrasonografía Doppler colorida del cuerpo lúteo para la detección precoz de búfalas Murrah no gestantes a los 24 días después de la IATF",
     modality: "Virtual",
-    expertise: ["Reología de suspensiones", "Procesamiento de minerales", "Geomecánica"],
-    bio: "Moises Oswaldo Bustamante Rúa es Ingeniero de Minas y Metalurgia por la Universidad Nacional de Colombia y Doctor en Ciencias de la Ingeniería con mención en Metalurgia Extractiva por la Universidad de Concepción en Chile. Es Profesor Titular de la Universidad Nacional de Colombia, donde ha dirigido múltiples cursos de pregrado y posgrado. Actualmente es Director del Instituto de Minerales CIMEX. Su experiencia se centra en la concentración y beneficio de minerales, reología de suspensiones, geomecánica y modelamiento de procesos mineros. Ha liderado importantes proyectos de investigación, publicado numerosos artículos científicos y ha sido reconocido por su excelencia académica en varias ocasiones.",
-    email: "mobustam@unal.edu.co",
-    phone: "+57 3113289565",
+    expertise: ["Reproducción bovina", "Ultrasonografía", "Biotecnología reproductiva", "IATF"],
+    bio: "Médico Veterinario formado en la Universidad Técnica de Cotopaxi (2009), Especialista en Reproducción Bovina por la UCE (2015) y Máster en Reproducción Animal por la Universidad de Cuenca (2017). Actualmente cursa Doctorado en Ciencia Veterinaria con énfasis en Reprodução Animal en Brasil. Ha participado en proyectos de investigación en Ecuador y Brasil enfocados en fisiología reproductiva, biotécnicas reproductivas y eficiencia productiva en sistemas pecuarios tropicales.",
+    email: "nelson.ortiz@ufrpe.br",
   },
   {
     id: 2,
-    name: "Gabriela Jacqueline Contreras Sinchi",
-    photo: "/FOTOGRAFIA_GABRIELA CONTRERAS.png",
-    title: "Magíster en Ingeniería – Recursos Minerales",
-    institution: "Instituto de Minerales CIMEX – Universidad Nacional de Colombia",
+    name: "Danien Bustamante H.",
+    photo: "/placeholder-speaker-2.png",
+    title: "Zootecnista",
+    institution: "Universidad de La Salle - Colombia",
     country: "Colombia",
     countryCode: "CO",
-    day: "2025-10-14",
+    day: "2026-06-02",
     time: "09:30 – 10:30",
-    topic: "Caracterización química superficial de minerales",
-    modality: "Presencial",
-    expertise: ["Flotación de minerales", "Química de superficies", "Procesamiento de minerales"],
-    bio: "Gabriela Contreras Sinchi es Ingeniera en Minas por la Universidad del Azuay y Magíster en Ingeniería – Recursos Minerales por la Universidad Nacional de Colombia. Actualmente se desempeña como investigadora e ingeniera de procesos en el Instituto de Minerales CIMEX. Su experiencia abarca flotación de minerales, caracterización fisicoquímica, reprocesamiento de relaves y optimización de procesos. Ha participado como consultora y coordinadora de cooperación interinstitucional en convenios entre universidades de Colombia y Ecuador. También colabora como docente asistente en áreas como química de superficies y sistemas particulados.",
-    email: "gcontrerass@unal.edu.co",
-    phone: "+57 3116678545",
+    topic: "BEEF ON DAIRY. Una nueva tendencia mundial, una vieja tradición francesa.",
+    modality: "Virtual",
+    expertise: ["Inseminación artificial", "Genética bovina", "Producción de leche", "Conservación de semen"],
+    bio: "Pionero en la inseminación artificial moderna, cuyas investigaciones permitieron perfeccionar la conservación del semen. Amplia experiencia en genética bovina y transferencia de tecnologías reproductivas en sistemas de producción de leche y carne.",
+    email: "dbustamante@lasalle.edu.co",
   },
   {
     id: 3,
-    name: "Jacopo Seccatore",
-    photo: "/FOTOGRAFIA_JACOPO_SECCATORE.png",
-    title: "Doctor en Ingeniería de Minas",
-    institution: "Universidad Católica del Norte, Chile",
-    country: "Chile",
-    countryCode: "CL",
-    day: "2025-10-14",
-    time: "11:00 – 12:00",
-    topic: "A new variable for tunnel drill & blast efficiency: the angles of breakage",
-    modality: "Presencial",
-    expertise: ["Voladuras en minería", "Optimización minera", "Mecánica de rocas"],
-    bio: "Jacopo Seccatore es ingeniero civil con magíster en ingeniería ambiental por el Politécnico de Torino (Italia) y doctor en ingeniería de minas por la Universidad de São Paulo (Brasil). Actualmente es profesor en la Universidad Católica del Norte en Chile, especializado en voladuras, diseño de minas subterráneas y sostenibilidad en pequeña minería. Ha sido director de centros de investigación minera y ha liderado más de 30 proyectos internacionales en Brasil, Chile, Ecuador, Perú y África. Ha colaborado con organismos como el PNUD, CIRDI y universidades de prestigio. Es autor de múltiples artículos y libros, y miembro de sociedades científicas como ISEE, SOMP y SME.",
-    email: "jacopo.seccatore@gmail.com",
-    phone: "+56 9 85135252",
-  },
-  {
-    id: 4,
-    name: "Josué David González Coronel",
-    photo: "/josue_gonzales.jpg",
-    title: "Magíster en Minas, Estudiante de Doctorado",
-    institution: "Universidad de Chile",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-14",
-    time: "12:00 – 13:00",
-    topic: "Planificación Minera: Tecnologías de Descarbonización, Fully Mobile Crusher and Conveyor Systems",
-    modality: "Virtual",
-    expertise: ["Planificación Minera", "Optimización", "Procesos metalúrgicos", "IPCC"],
-    bio: "Josué David González Coronel es Ingeniero en Minas por la Universidad del Azuay (Ecuador) y Magíster en Minería por la Universidad de Chile. Actualmente es estudiante de Doctorado en Minas. Ha sido Jefe de Operaciones en EMICOR C.A., liderando procesos de flotación y lixiviación, y colaboró como investigador en el AMTC de la Universidad de Chile en proyectos sobre planificación minera y tecnologías IPCC. Sus áreas de interés abarcan los procesos metalúrgicos, la optimización de operaciones, la innovación tecnológica en minería y la formación de nuevos profesionales.",
-    email: "josue.gonzalez.cor@gmail.com",
-  },
-  {
-    id: 5,
-    name: "Diego Geovanny Barzallo Granizo",
-    photo: "/DiegoBarzallo.jpg",
-    title: "Doctor en Ciencia y Tecnología Química",
-    institution: "Universidad de las Islas Baleares, España",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-14",
-    time: "14:00 – 15:00",
-    topic: "Materiales avanzados y tecnologías de impresión 3D para la detección y eliminación sostenible de contaminantes emergentes en aguas",
-    modality: "Virtual",
-    expertise: ["Química analítica ambiental", "Sensores portátiles", "Impresión 3D", "Antibióticos en agua", "Biochar", "Extracción en fase sólida"],
-    bio: "Diego Barzallo es Doctor en Ciencia y Tecnología Química por la Universidad de las Islas Baleares (España), con calificación Sobresaliente Cum Laude y Mención Internacional. Realizó una estancia de investigación en la Universidade Estadual Paulista (Brasil) enfocada en el desarrollo de metodologías miniaturizadas y materiales avanzados para la detección de antibióticos en aguas. Posee dos maestrías en Ciencia y Tecnología Química, y en Sistemas de Gestión de la Calidad, Medio Ambiente y Responsabilidad Social. Es Ingeniero Químico por la Escuela Superior Politécnica de Chimborazo (Ecuador). Ha sido docente universitario e investigador en España y Ecuador, autor de múltiples artículos científicos en revistas indexadas y conferencista en eventos internacionales. Actualmente se desempeña como investigador postdoctoral en la Universidad de las Islas Baleares, donde trabaja en sensores portátiles y métodos de extracción basados en materiales avanzados.",
-    email: "diego.barzallo@espoch.edu.ec",
-    phone: "+593 985675145",
-  },
-  {
-    id: 6,
-    name: "Douglas Guzmán Amoroso",
-    photo: "douglas_guzman.jpg",
-    title: "Doctor en Dirección de Proyectos",
-    institution: "GAD del Cantón Pastaza, Ecuador",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-14",
-    time: "15:00 – 16:00",
-    topic: "Implementación de estrategias sostenibles en proyectos de ingeniería ambiental en zonas amazónicas",
-    modality: "Presencial",
-    expertise: ["Gestión ambiental", "Sostenibilidad", "Dirección de proyectos", "Remediación"],
-    bio: "Douglas Guzmán es Ingeniero Ambiental con amplia trayectoria en gestión ambiental, sostenibilidad y dirección de proyectos. Posee maestrías en Gestión de Proyectos y en Gestión Ambiental mención Sostenibilidad, además de un doctorado en Dirección de Proyectos. Ha ejercido cargos de liderazgo en instituciones públicas y privadas, incluyendo su actual función como Director del GAD del Cantón Pastaza. Su experiencia combina la gestión territorial, la consultoría ambiental y la docencia universitaria. Ha participado en proyectos de remediación, conservación de cuencas y desarrollo sostenible, así como en eventos académicos internacionales. Autor de publicaciones sobre desarrollo socioeconómico de comunidades indígenas amazónicas, destaca por su compromiso con la sostenibilidad y la innovación en la gestión ambiental.",
-    email: "douguzman9@gmail.com",
-    phone: "+593 987899818",
-  },
-  {
-    id: 7,
-    name: "Luis Alberto Quevedo Báez",
-    photo: "/LuisQuevedo.jpg",
-    title: "Doctor en Cambio Climático",
-    institution: "Universidad Nacional de Chimborazo, Ecuador",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-14",
-    time: "16:30 – 17:30",
-    topic: "Biomimesis, oportunidades y desafíos en la Amazonía ecuatoriana",
-    modality: "Presencial",
-    expertise: ["Turismo rural comunitario", "Cambio climático", "Desarrollo sostenible", "Bioindicadores", "Gestión ambiental", "Biomimética"],
-    bio: "Luis Alberto Quevedo Báez es Doctor en Cambio Climático por la Universitat Rovira i Virgili (España), con amplia trayectoria académica e investigadora en temas de sostenibilidad ambiental, turismo y desarrollo territorial. Posee una maestría en Administración Ambiental por la Universidad Nacional de Chimborazo (Ecuador) y un diplomado en Gestión Sostenible del Turismo por la Universidad Nacional del Centro del Perú. Es Ingeniero en Ecoturismo por la Escuela Superior Politécnica de Chimborazo, donde se desempeña como docente e investigador. Ha sido autor y coautor de numerosas publicaciones científicas en revistas internacionales indexadas y capítulos de libros en temas relacionados con turismo sostenible, biodiversidad y cambio climático. Es director del Centro de Investigación para el Desarrollo Sostenible (CIDES) y consultor en proyectos de planificación ambiental y turismo comunitario.",
-    email: "lquevedo@espoch.edu.ec",
-    phone: "+593 995711232",
-  },
-
-  // =============== MIÉRCOLES 15 DE OCTUBRE ===============
-  {
-    id: 8,
-    name: "Matías Peredo Parada",
-    photo: "/Matias-Peredo.png",
-    title: "Doctor en Ingeniería Hidráulica y Medio Ambiente",
-    institution: "EcoHyd – Plataforma de Investigación en Ecohidrología y Ecohidráulica",
-    country: "Chile",
-    countryCode: "CL",
-    day: "2025-10-15",
-    time: "08:00 – 09:00",
-    topic: "Caudal Ambiental: la forma más robusta de dotar de seguridad hídrica a los ecosistemas acuáticos en una gestión integrada de recursos hídricos",
-    modality: "Presencial",
-    expertise: ["Ecohidráulica", "Caudales ambientales", "Gestión hídrica", "Modelación de contaminantes"],
-    bio: "Matías Peredo Parada es Ingeniero Civil Hidráulico por la Universidad de Chile y Doctor en Ingeniería Hidráulica y Medio Ambiente por la Universidad Politécnica de Valencia. Se desempeña como Gerente General de EcoHyd y consultor UNESCO en caudales ambientales, ecohidrología y soluciones basadas en la naturaleza. Cuenta con más de 20 años de experiencia en proyectos nacionales e internacionales de gestión hídrica, energía, minería y conservación ambiental. Ha liderado numerosos estudios de modelación de calidad de agua, dispersión de contaminantes y determinación de caudales ecológicos. Sus publicaciones científicas en revistas indexadas y congresos internacionales consolidan su trayectoria académica y profesional.",
-  },
-  {
-    id: 9,
-    name: "Hugo de Jesús López Inzunza",
-    photo: "/Hugo-Lopez.png",
-    title: "Doctor en Ciencias Veterinarias especializado en Nutrición",
-    institution: "Universidad Autónoma de Sinaloa, México",
-    country: "México",
-    countryCode: "MX",
-    day: "2025-10-15",
-    time: "09:00 – 10:00",
-    topic: "Utilización de enzimas exógenas en la finalización de bovinos en confinamiento",
-    modality: "Virtual",
-    expertise: ["Nutrición de Rumiantes", "Ecología Ruminal", "Producción Animal"],
-    bio: "El Dr. Hugo de Jesús López Inzunza es un destacado Ingeniero Agrónomo Zootecnista por la Universidad Autónoma de Sinaloa, México, y Doctor en Ciencias Veterinarias especializado en Nutrición por la Universidad Agraria de la Habana, Cuba. Se desempeña como Profesor Investigador Titular de Tiempo Completo en la Facultad de Agronomía de la Universidad Autónoma de Sinaloa desde 2018, impartiendo cátedras clave en Zootecnia y Nutrición Pecuaria. Es líder del Grupo Disciplinario “Producción y Nutrición Animal” y del Laboratorio de Bromatología y Nutrición Animal. Su experiencia internacional incluye ser asesor y consultor en producción pecuaria y actualmente representa a una consultora internacional especializada en nutrición de bovinos. Ha sido ponente en congresos internacionales y es autor de publicaciones científicas en revistas indexadas y libros, además de haber dirigido y colaborado en diversos proyectos de investigación.",
-    email: "hugolopez.fa@uas.edu.mx",
-    phone: "+52 1669 245 8978",
-  },
-  {
-    id: 10,
-    name: "Jorge Ricardo Guerrero López",
-    photo: "Jorge-Guerrero.png",
-    title: "Magíster en Producción Animal con mención en Nutrición Animal",
-    institution: "Universidad Técnica de Ambato",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-15",
-    time: "10:30 – 11:30",
-    topic: "Alternativas de antibióticos promotores del crecimiento y resistencia bacteriana",
-    modality: "Presencial",
-    expertise: ["Producción Animal", "Patología Aviar", "Resistencia microbiana", "Probióticos"],
-    bio: "El Profesor Jorge Ricardo Guerrero López es un Ingeniero Zootecnista con una destacada trayectoria en el ámbito académico y profesional. Posee un Magíster en Producción Animal con mención en Nutrición Animal, y Diplomas Superiores en Patología Aviar e Informática Educativa Universitaria. Desde 2001, se desempeña como Profesor Titular en la Facultad de Ciencias Agropecuarias de la Universidad Técnica de Ambato. Su vasta experiencia abarca el sector avícola, con experticia en sanidad y producción animal. Ha realizado importantes contribuciones a través de numerosas publicaciones científicas sobre nutrición, resistencia microbiana y probióticos, y es coautor de libros en avicultura y reproducción. Es reconocido como un referente en el sector agropecuario.",
-    email: "jr.guerrero@uta.edu.ec",
-    phone: "+593 99 715 0013",
-  },
-  {
-    id: 11,
-    name: "Carlos Andrés Mancheno Herrera",
-    photo: "/Andres-Mancheno.png",
-    title: "Magíster en Reproducción Animal",
-    institution: "ESPOCH",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-15",
-    time: "11:30 – 12:30",
-    topic: "Hormona antimulleriana (HAM), usos como biomarcador de fertilidad en programas de transferencia de embriones bovinos",
-    modality: "Presencial",
-    expertise: ["Reproducción Animal", "Biotecnología Reproductiva", "Producción bovina"],
-    bio: "Carlos Andrés Mancheno Herrera: Ingeniero Zootecnista, Magíster en Reproducción Animal. Asesor comercial y técnico desarrollista empresa el Agro 2015 – 2016; técnico docente responsable del Laboratorio de Reproducción Animal de la FCP – ESPOCH – 2016 – 2020; Docente de programas de grado y postgrado; Asesor técnico en ganaderías; CEO de la empresa BEST BREED GENETICS, dedicada a la criopreservación de material genético animal; Editor Jefe Revista Científica RECIENA indexada en Latindex Catálogo 2.0 y Erihplus 2023 – 2024; Ponente en Congresos Internacionales; publicación de libros y artículos científicos en revistas de alto impacto.",
-    email: "andres.mancheno@espoch.edu.ec",
-    phone: "0984353812",
-  },
-  {
-    id: 12,
-    name: "Luis Antonio Aguirre Mendoza",
-    photo: "/Luis-Aguirre.png",
-    title: "Doctor en Ciencias Veterinarias",
-    institution: "Universidad Nacional de Loja, Ecuador",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-15",
-    time: "14:00 – 15:00",
-    topic: "Alternativas para el desarrollo de una ganadería sostenible en la Amazonia ecuatoriana",
-    modality: "Virtual",
-    expertise: ["Nutrición animal", "Biotecnologías alimentarias", "Ganadería amazónica"],
-    bio: "Luis Antonio Aguirre Mendoza es un destacado Médico Veterinario Zootecnista con una amplia trayectoria académica y profesional. Posee una sólida formación de posgrado, que incluye el título de Especialista en Nutrición y Alimentación Animal, dos maestrías en Administración para el Desarrollo Educativo y Producción Animal por la Universidad Nacional de Loja, Ecuador, y un Doctorado en Ciencias Veterinarias otorgado por la Universidad Agraria de La Habana, Cuba. Desde 1994, se desempeña como docente titular principal en la carrera de Medicina Veterinaria y Zootecnia. Su experiencia se extiende como director e investigador principal en seis proyectos de investigación, y actualmente lidera dos proyectos clave en nutrición y alimentación de animales menores y desarrollo de tecnologías para bovinos en la Amazonía ecuatoriana. Es un prolífico autor y coautor de 18 publicaciones científicas en revistas indexadas y un reconocido conferencista a nivel internacional. Sus áreas de especialización se centran en la nutrición y producción animal, incluyendo biotecnologías aplicadas a alimentos.",
-    email: "luis.aguirre@unl.edu.ec",
-    phone: "0992286390",
-  },
-  {
-    id: 13,
-    name: "Ruth Barba Vera",
-    photo: "/RuthBarba.jpg",
-    title: "Doctora en Ingeniería",
+    name: "Fabián Augusto Almeida López",
+    photo: "/placeholder-speaker-3.png",
+    title: "Ingeniero Zootecnista | Máster en Reproducción Animal",
     institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
     country: "Ecuador",
     countryCode: "EC",
-    day: "2025-10-15",
-    time: "15:00 – 16:00",
-    topic: "Cuando la amenaza está dentro: riesgos internos en intranets universitarias – Lecciones desde la ESPOCH (Ecuador)",
+    day: "2026-06-02",
+    time: "11:00 – 12:00",
+    topic: "Juzgamiento en ganado de leche / Juzgamiento en ganado de carne",
     modality: "Presencial",
-    expertise: ["Ciberseguridad", "Riesgos internos", "Seguridad informática", "Intranets universitarias", "Redes SDN", "Digitalización"],
-    bio: "Ruth Genoveva Barba Vera es Técnica Docente en la Facultad de Informática y Electrónica de la ESPOCH. Es Doctora en Ingeniería por la Pontificia Universidad Católica del Perú, Magíster en Interconectividad de Redes e Ingeniera en Electrónica y Computación por la ESPOCH. Con más de 15 años de experiencia docente, lidera proyectos de investigación en seguridad de redes, tecnologías de la información y digitalización de archivos fotográficos. Participa en iniciativas de transformación digital del comercio justo alineadas con la declaratoria de la ESPOCH como Universidad por el Comercio Justo. Es Investigadora Senior y Coordinadora Subrogante del Grupo de Investigación en Seguridad Informática y Telemática (SEGINTE), autora de más de 15 artículos científicos en revistas indexadas y ponente en congresos nacionales e internacionales.",
+    expertise: ["Juzgamiento ganadero", "Reproducción bovina", "Producción lechera", "Docencia universitaria"],
+    bio: "Magíster en Reproducción Animal Mención Bovinos de Leche. Administrador de haciendas productoras de leche, Gerente Técnico en Balanceados Balanfarina SA, y Gerente de HENOMAQ SA. Juez certificado en concursos ganaderos nacionales. Instructor en cursos de juzgamiento en múltiples provincias. Docente investigador en la Facultad de Ciencias Pecuarias de la ESPOCH.",
+    email: "fabian.almeida@espoch.edu.ec",
+    phone: "+593 99 XXX XXXX",
+  },
+  {
+    id: 4,
+    name: "Dr. Germán Marcelo Mancheno Salazar Msg.",
+    photo: "/placeholder-speaker-4.png",
+    title: "Abogado | Msc. en Derecho Procesal Penal",
+    institution: "Corte Superior de Justicia de Chimborazo / UNACH / UNIANDES",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2026-06-02",
+    time: "12:00 – 13:00",
+    topic: "La Administración de Justicia en un Estado Constitucional de Derechos y Justicia",
+    modality: "Presencial",
+    expertise: ["Derecho procesal", "Función judicial", "Derecho penal", "Docencia universitaria"],
+    bio: "Abogado y Msc. en Derecho Penal Procesal. Su trabajo articula la docencia y la Función Judicial en la Corte Superior de Justicia de Chimborazo. Actualmente ejerce funciones jurisdiccionales como Juez de la Unidad de lo Civil y Mercantil. Profesor Universitario de Pregrado y Posgrado en UNACH y UNIANDES.",
+    email: "gmancheno@funcionjudicial.gob.ec",
+  },
+  {
+    id: 5,
+    name: "Federico José Arena",
+    photo: "/placeholder-speaker-5.png",
+    title: "Abogado | Postdoctorado en Filosofía del Derecho",
+    institution: "Barcelona Institute of Analytic Philosophy / CONICET / Universidad Blas Pascal",
+    country: "Italia / Argentina",
+    countryCode: ["IT", "AR"],
+    day: "2026-06-02",
+    time: "14:30 – 15:30",
+    topic: "Los desafíos de la interpretación jurídica",
+    modality: "Virtual",
+    expertise: ["Filosofía del derecho", "Teoría de la interpretación", "Razonamiento probatorio", "Bioética jurídica"],
+    bio: "Investigador y académico especializado en filosofía del derecho, teoría de la interpretación jurídica y razonamiento probatorio. Investigador Postdoctoral Senior en el Barcelona Institute of Analytic Philosophy e Investigador Independiente del CONICET. Director del Doctorado en Derecho de la Universidad Blas Pascal, Argentina.",
+    email: "federico.arena@ubp.edu.ar",
+  },
+  {
+    id: 6,
+    name: "Oscar Mauricio Sánchez Nivicela",
+    photo: "/placeholder-speaker-6.png",
+    title: "Doctor en Jurisprudencia | Msc. en Cambio Climático",
+    institution: "Universidad del Azuay / Fundación ENTSA",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2026-06-02",
+    time: "17:00 – 18:00",
+    topic: "Pluralismo jurídico como un aporte para enfrentar el cambio climático",
+    modality: "Presencial",
+    expertise: ["Derecho ambiental", "Cambio climático", "Derechos de la naturaleza", "Pluralismo jurídico"],
+    bio: "Graduado con mención sobresaliente de la Universidad del Azuay. Magíster en Cambio Climático, Sustentabilidad y Desarrollo con beca por mérito académico. Experiencia en derecho ambiental, cambio climático, derechos de la naturaleza y pluralismo jurídico. Revisor invitado de la revista EUNOMÍA de la Universidad Carlos III de Madrid.",
+    email: "oscar.sanchez@entsa.org",
+  },
+
+  // =============== MIÉRCOLES 03 DE JUNIO DE 2026 ===============
+  {
+    id: 7,
+    name: "Cristhian David Chicaiza Ortiz",
+    photo: "/placeholder-speaker-7.png",
+    title: "PhD en Ciencias e Ingeniería Ambiental",
+    institution: "Shanghai Jiao Tong University (SJTU)",
+    country: "Ecuador / China",
+    countryCode: ["EC", "CN"],
+    day: "2026-06-03",
+    time: "08:00 – 09:00",
+    topic: "Potenciando la transformación de residuos orgánicos en energía: Uso de biocarbón y hierro para optimizar la digestión anaerobia con recirculación de CO₂",
+    modality: "Virtual",
+    expertise: ["Ingeniería ambiental", "Digestión anaerobia", "Biocarbón", "Descarbonización"],
+    bio: "PhD en Ciencias e Ingeniería Ambiental por Shanghai Jiao Tong University, Máster en Environmental Engineering y Máster en Cambio Climático, Sustentabilidad y Desarrollo. Su experiencia abarca la consultoría ambiental y el diseño de estrategias de descarbonización.",
+    email: "cristhian.chicaiza@sjtu.edu.cn",
+  },
+  {
+    id: 8,
+    name: "María Salomé Álvarez Álvarez",
+    photo: "/placeholder-speaker-8.png",
+    title: "PhD en Chemical Engineering",
+    institution: "Facultad de Química - España",
+    country: "España",
+    countryCode: "ES",
+    day: "2026-06-03",
+    time: "09:00 – 10:00",
+    topic: "Procesos de remediación de contaminantes emergentes y biocombustibles",
+    modality: "Virtual",
+    expertise: ["Remediación ambiental", "Contaminantes emergentes", "Biocombustibles", "Ingeniería química"],
+    bio: "Degree in Chemistry, Master's y PhD en Chemical Engineering. Enfocada en investigación en remediación de contaminantes emergentes y biocombustibles. Actualmente Vicedecana de Calidad de la Facultad de Química.",
+    email: "msalome.alvarez@universidad.es",
+  },
+  {
+    id: 9,
+    name: "Gabriela Antonieta Borja Pérez",
+    photo: "/placeholder-speaker-9.png",
+    title: "Socióloga | MSc. Gestión Integrada de Recursos Hídricos",
+    institution: "Investigadora independiente - Ecuador",
+    country: "Ecuador",
+    countryCode: "EC",
+    day: "2026-06-03",
+    time: "10:30 – 11:30",
+    topic: "Del páramo al río: el aluvión del 2022 en Quito como parte del ciclo hidrosocial de las quebradas",
+    modality: "Presencial",
+    expertise: ["Ecología política del agua", "Gobernanza comunitaria", "Justicia hídrica", "Páramos"],
+    bio: "Socióloga y MSc. en Gestión Integrada de Recursos Hídricos, docente e investigadora enfocada en ecología política del agua y gobernanza comunitaria de páramos en Ecuador. Su trabajo articula justicia hídrica, saberes locales y sostenibilidad.",
+    email: "gabriela.borja@investigacion.ec",
+  },
+  {
+    id: 10,
+    name: "Ruth Genoveva Barba Vera",
+    photo: "/placeholder-speaker-10.png",
+    title: "Doctora en Ingeniería | Magíster en Interconectividad de Redes",
+    institution: "ESPOCH / Pontificia Universidad Católica del Perú (PUCP)",
+    country: "Ecuador / Perú",
+    countryCode: ["EC", "PE"],
+    day: "2026-06-03",
+    time: "11:30 – 12:30",
+    topic: "Ciberdelincuencia en jóvenes: diagnóstico exploratorio, huella digital y riesgos desde un enfoque OSINT",
+    modality: "Presencial",
+    expertise: ["Ciberseguridad", "OSINT", "Redes SDN", "Tecnologías de la información"],
+    bio: "Experta con más de 15 años de experiencia en docencia e investigación en ciberseguridad, redes de nueva generación (SDN) y tecnologías de la información. Investigadora Senior y Coordinadora Subrogante del grupo SEGINTE. Coordinadora del proyecto de vinculación 'CIBERJÓVENES'.",
     email: "ruth.barba@espoch.edu.ec",
-    phone: "+593 99 123 4567",
+    phone: "+593 99 XXX XXXX",
+  },
+  {
+    id: 11,
+    name: "Xavier Soria Poma",
+    photo: "/placeholder-speaker-11.png",
+    title: "Doctor en Informática | Magíster en Informática Educativa",
+    institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
+    country: "Ecuador / España",
+    countryCode: ["EC", "ES"],
+    day: "2026-06-03",
+    time: "14:00 – 15:00",
+    topic: "¿Cómo ven las máquinas el mundo real?",
+    modality: "Presencial",
+    expertise: ["Visión artificial", "Deep learning", "Inteligencia artificial", "Informática educativa"],
+    bio: "Doctor en Ciencias de la Computación (2019) por la Universidad Autónoma de Barcelona, España, con énfasis en visión artificial y deep learning. Más de 15 publicaciones científicas. Líder del grupo EspochAI en la ESPOCH.",
+    email: "xavier.soria@espoch.edu.ec",
+  },
+  {
+    id: 12,
+    name: "Edward Mays",
+    photo: "/placeholder-speaker-12.png",
+    title: "Senior Technical Mentor",
+    institution: "Thoughtworks",
+    country: "Estados Unidos",
+    countryCode: "US",
+    day: "2026-06-03",
+    time: "15:00 – 16:00",
+    topic: "What Engineers Do Now - how AI is changing the software engineer's craft",
+    modality: "Virtual",
+    expertise: ["Ingeniería de software", "Inteligencia artificial", "Modernización de legacy", "Plataformas cloud"],
+    bio: "Ed Mays has been writing software since 1997. Principal Consultant at Thoughtworks, working across new development, legacy modernization, and platform migration. In this talk he discusses what the AI wave is changing about the work, and what it isn't.",
+    email: "ed.mays@thoughtworks.com",
+  },
+
+  // =============== JUEVES 04 DE JUNIO DE 2026 ===============
+  {
+    id: 13,
+    name: "Julio Montero Matos",
+    photo: "/placeholder-speaker-13.png",
+    title: "Doctor en Ciencias Técnicas en Minería | Máster en Minería",
+    institution: "Institución minera - Cuba",
+    country: "Cuba",
+    countryCode: "CU",
+    day: "2026-06-04",
+    time: "08:00 – 09:00",
+    topic: "Cierre de Canteras de Materiales de la Construcción en Cuba, una solución a la Sostenibilidad Minera",
+    modality: "Virtual",
+    expertise: ["Sostenibilidad minera", "Cierre de operaciones", "Gestión ambiental", "Materiales de construcción"],
+    bio: "Doctor en Ciencias Técnicas en Minería con amplia experiencia en sostenibilidad minera, cierre de operaciones y gestión ambiental en el sector de materiales de construcción. Investigador y consultor en proyectos de minería responsable en Cuba y Latinoamérica.",
+    email: "jmontero@mineria.cu",
   },
   {
     id: 14,
-    name: "Juan Manuel Mashinkiash Chinkias",
-    photo: "/JuanManuel.jpg", // asumido
-    title: "Magíster en Educación Intercultural",
-    institution: "Subsecretaría Técnica de Educación Intercultural Bilingüe y la Etnoeducación (SEIBE)",
+    name: "Eduardo Andrés Luna Méndez",
+    photo: "/placeholder-speaker-14.png",
+    title: "Magíster en Ingeniería de Recursos Minerales | Ingeniero en Minas",
+    institution: "Universidad del Azuay",
     country: "Ecuador",
     countryCode: "EC",
-    day: "2025-10-15",
-    time: "16:00 – 17:00",
-    topic: "Interculturalidad",
+    day: "2026-06-04",
+    time: "09:00 – 10:00",
+    topic: "Flotación de minerales: fundamentos y aplicaciones industriales",
     modality: "Presencial",
-    expertise: ["Educación Intercultural", "Etnoeducación", "Políticas educativas", "Cultura Shuar"],
-    bio: "Juan Manuel Mashinkiash Chinkias, originario de Sucúa, provincia de Morona Santiago, pertenece a la nacionalidad Shuar. Es Magíster en Educación con mención en Educación Intercultural y Licenciado en Ciencias de la Educación e Investigación de las Culturas Amazónicas por la Universidad Católica de Cuenca. Ha desempeñado funciones como facilitador de liderazgo comunitario en la CONFENIAE, Analista Distrital de Regulación Educativa, Coordinador técnico pedagógico de educación intercultural bilingüe, Investigador en el Departamento de Estudios Interculturales de la Universidad de Cuenca y Rector encargado de la Unidad Educativa Indígena Intercultural Bilingüe “Yamaram Tsawaa”. Actualmente ocupa el cargo de Subsecretario Técnico de Educación Intercultural Bilingüe y la Etnoeducación (SEIBE). Es autor de varias publicaciones, entre ellas la serie “Sabiduría Amazónica” y obras sobre etnoeducación y cultura Shuar.",
-    email: "juan.mashinkiash@educacion.gob.ec", // asumido
+    expertise: ["Flotación de minerales", "Procesos mineralúrgicos", "Docencia universitaria", "Investigación minera"],
+    bio: "Ingeniero en Minas, Magíster en Ingeniería de Recursos Minerales y Especialista en Docencia Universitaria. Amplia experiencia en docencia, investigación y formación académica en el área minera, particularmente en flotación. Docente a tiempo completo en la Universidad del Azuay.",
+    email: "eluna@uazuay.edu.ec",
   },
   {
     id: 15,
-    name: "Miguel Ángel Osorio Rivera",
-    photo: "/miguel_osorio.jpg",
-    title: "Ingeniero Ambiental, Magíster",
-    institution: "Escuela Superior Politécnica de Chimborazo – Sede Morona Santiago",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-15",
-    time: "17:00 – 17:30",
-    topic: "Gestión ambiental y sostenibilidad en la Amazonía",
-    modality: "Presencial",
-    expertise: ["Gestión ambiental", "Calidad del agua", "Residuos sólidos", "Cambio climático", "Bioindicadores"],
-    bio: "Ingeniero Ambiental por la Universidad Nacional de Chimborazo y Máster Universitario en Ingeniería para el Ambiente y el Territorio por la Università della Calabria (Italia). Ha ejercido funciones académicas en la Escuela Superior Politécnica de Chimborazo – Sede Morona Santiago desde 2016 como profesor ocasional a tiempo completo, dictando asignaturas como Hidrología, Contaminación y Tratamiento del Suelo, Tratamiento de Residuos, Microbiología Ambiental, Sistemas de Información Geográfica, entre otras. Se ha desempeñado como Coordinador de la Carrera de Ingeniería Ambiental entre 2021 y 2023, y actualmente ejerce el cargo de Director de la Sede Morona Santiago. Posee experiencia profesional como Técnico Ambiental en el Consorcio Cevallos y Cevallos – Producción e Ingeniería. Ha dirigido trabajos de titulación orientados al tratamiento de aguas residuales, manejo de residuos sólidos y calidad del agua mediante bioindicadores.",
-    email: "miguel.osorio@espoch.edu.ec",
-    phone: "+593 984577604", // asumido
+    name: "Valeria Loor Cárdenas",
+    photo: "/placeholder-speaker-15.png",
+    title: "Magíster en Minería con Distinción Máxima | Ingeniera en Minas",
+    institution: "Universidad de Chile",
+    country: "Chile",
+    countryCode: "CL",
+    day: "2026-06-04",
+    time: "10:30 – 11:30",
+    topic: "Planificación minera a corto plazo",
+    modality: "Virtual",
+    expertise: ["Planificación minera", "Perforación y tronadura", "Software minero", "Optimización operacional"],
+    bio: "Magíster en Minería con distinción máxima por la Universidad de Chile. Experiencia en planificación minera, perforación y tronadura en Minera Los Pelambres y Anglo American. Reconocida con mejor tesis de magíster y pasantía internacional en South Dakota School of Mines & Technology.",
+    email: "vloor@mining.uchile.cl",
   },
-
-  // =============== JUEVES 16 DE OCTUBRE ===============
   {
     id: 16,
-    name: "María Dolores Santos Vidal",
-    photo: "/maria_santos.jpg",
-    title: "Magíster en Relaciones Internacionales",
-    institution: "ISOCMONITOREO CIA. LTDA.",
+    name: "Francisco Benito Castro Chavez",
+    photo: "/placeholder-speaker-16.png",
+    title: "Lcdo. Contabilidad y Auditoría | Mgtr. MBA",
+    institution: "Cooperativa de Ahorro y Crédito Las Naves / AUDICAST Y ASOCIADOS S.A.S",
     country: "Ecuador",
     countryCode: "EC",
-    day: "2025-10-16",
-    time: "08:00 – 09:00",
-    topic: "Fuerza laboral en tiempos de Inteligencia Artificial: Desafíos, habilidades clave y oportunidades",
-    modality: "Virtual",
-    expertise: ["Inteligencia Artificial", "Mercado Laboral", "Relaciones Internacionales", "Ciberseguridad"],
-    bio: "Magíster en relaciones internacionales e ingeniera en sistemas informáticos. Experta en administración empresarial, políticas cibernéticas y seguridad multidimensional. Ha publicado en Springer y es presidenta de AFCEA Internacional - Capítulo Ecuador. Certificada en ciberseguridad, terrorismo, crimen organizado y género en operaciones de paz.",
-    email: "mariadolores.santos.v@gmail.com",
-    phone: "0984577604",
+    day: "2026-06-04",
+    time: "11:30 – 12:30",
+    topic: "El impacto de la inteligencia artificial en la Contabilidad y Auditoría en la Actualidad",
+    modality: "Presencial",
+    expertise: ["Auditoría financiera", "Inteligencia artificial", "Control interno", "Gestión de riesgos"],
+    bio: "Más de 20 años de experiencia en auditoría, contabilidad y administración financiera. Gerente General, Auditor Externo, Auditor Interno y Liquidador calificado por la SEPS. Capacitador en auditoría, riesgos y control interno para el sector financiero y solidario.",
+    email: "fcastro@audicast.com",
+    phone: "+593 99 XXX XXXX",
   },
   {
     id: 17,
-    name: "Mary Carmen Vargas Cisneros",
-    photo: "/mary_vargas.jpg",
-    title: "Magíster en Seguridad Informática",
-    institution: "ISOCMONITOREO CIA. LTDA.",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-16",
-    time: "09:00 – 10:00",
-    topic: "Gestión de Incidentes de Seguridad",
+    name: "Iciar López-Vdriero Tejedor",
+    photo: "/placeholder-speaker-17.png",
+    title: "Licenciada en Derecho | Máster en Telecomunicaciones y Nuevas Tecnologías",
+    institution: "ICEF Consultores / Universidad Carlos III de Madrid",
+    country: "España",
+    countryCode: "ES",
+    day: "2026-06-04",
+    time: "14:00 – 15:00",
+    topic: "Auditoría digital, inteligencia artificial y cumplimiento: gestión de riesgos en entornos públicos y privados",
     modality: "Virtual",
-    expertise: ["Seguridad Informática", "Gestión de Incidentes", "Ciberseguridad Industrial", "ISO 27001"],
-    bio: "Ingeniera Informática con más de 20 años de trayectoria en ciberseguridad IT/OT, gestión de riesgos y control interno en sectores críticos. Directora de TIC y Coordinadora del Centro de Ciberseguridad Industrial en Ecuador. Ponente internacional en foros de ciberseguridad en infraestructuras críticas. Reconocida como Líder Destacada en Seguridad de la Información (2022, 2024) y Women in Energy (2023).",
-    email: "mcvc75@gmail.com",
-    phone: "0984340202",
+    expertise: ["Privacidad y protección de datos", "Ciberseguridad", "Compliance", "Auditoría ISO 27001"],
+    bio: "Abogada especializada en privacidad, ciberseguridad y transformación digital. Socia de ICEF Consultores. Auditora Jefe ISO 27001 y Delegada de Protección de Datos. Profesora en universidades de España y Latinoamérica. Autora de publicaciones en derecho digital y privacidad.",
+    email: "iciar.lopez@icefconsultores.com",
   },
   {
     id: 18,
-    name: "Katherine Merino",
-    photo: "/katherine_merino.jpg",
-    title: "Ingeniera en Electrónica, Magíster en Seguridad Telemática",
-    institution: "ESPOCH, Sede Morona Santiago",
+    name: "María del Carmen Jácome Yambay",
+    photo: "/placeholder-speaker-18.png",
+    title: "Mgtr. en Gestión y Automatización de Procesos | Mgtr. en Big Data y Business Intelligence",
+    institution: "Consultora independiente - Ecuador",
     country: "Ecuador",
     countryCode: "EC",
-    day: "2025-10-16",
-    time: "10:00 – 12:00",
-    topic: "Ataques DDoS y Técnicas de Protección",
+    day: "2026-06-04",
+    time: "15:00 – 16:00",
+    topic: "Tiempos de Sostenibilidad empresarial: Gestión Compliance y Antisoborno",
     modality: "Presencial",
-    expertise: ["Ciberseguridad", "Ataques DDoS", "Seguridad Telemática", "Conectividad en la Amazonía"],
-    bio: "Ingeniera en Electrónica, Telecomunicaciones y Redes por la ESPOCH, Magíster en Seguridad Telemática y Máster en Dirección y Gestión de TIC por la Universidad Europea de Madrid. Profesora a tiempo completo en la ESPOCH, sede Morona Santiago. Integra el grupo de investigación ESPOCH IA, con publicaciones en revistas indexadas sobre ISO 27001, reciclaje electrónico y calidad del agua amazónica con aprendizaje automático.",
-    phone: "+593 983270118",
+    expertise: ["Sistemas de Gestión ISO", "Compliance", "Automatización de procesos", "Big Data"],
+    bio: "Amplia experiencia en diseño, desarrollo, implementación, auditoría y capacitación de Sistemas de Gestión ISO. Especialista en compliance, gestión de riesgos y sostenibilidad empresarial para sectores público y privado.",
+    email: "mjacome@consultora.ec",
   },
   {
     id: 19,
-    name: "Alejandra Guerrón",
-    photo: "/alejandra_guerron.jpg",
-    title: "MSc. en Electrónica e Ingeniería Artificial",
-    institution: "Tyndall National Institute, Irlanda",
+    name: "Carolina Alejandra Lozano Haro",
+    photo: "/placeholder-speaker-19.png",
+    title: "Economista | Mgtr. en Administración de Negocios",
+    institution: "Secretaría Nacional de Gestión de Riesgos (SNGR) - Ecuador",
     country: "Ecuador",
     countryCode: "EC",
-    day: "2025-10-16",
-    time: "10:30 – 11:30",
-    topic: "Diseño, implementación y evaluación de un sistema de monitoreo de calidad del aire de bajo costo basado en sensores electroquímicos",
-    modality: "Virtual",
-    expertise: ["Electrónica", "Inteligencia Artificial", "Sensores ambientales", "Monitoreo de calidad del aire"],
-    bio: "Estudiante de Doctorado en Tecnologías de la Información y la Comunicación en la Universidad de Calabria (Italia), con una estancia de investigación en Tyndall National Institute (Irlanda, 2025). Posee una maestría en Sistemas de Información – Business Intelligence y Big Data Analytics (UIE – Nebrija, 2021) y un título de Ingeniera Electrónica -Cum Laude por la Universidad San Francisco de Quito (2016). Su investigación doctoral se centra en el diseño de un sistema de monitoreo de calidad del aire de bajo costo y bajo consumo energético, basado en sensores electroquímicos.",
-    email: "alejandra.guerron@tyndall.ie",
-  },
-  {
-    id: 20,
-    name: "Maritza Fernanda Santillán Escobar",
-    photo: "/Maritza-Santillan.png",
-    title: "Magíster en Contabilidad y Auditoría",
-    institution: "Cooperativa de Ahorro y Crédito San Jorge Ltda.",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-16",
-    time: "11:30 – 12:30",
-    topic: "Importancia del Control Interno en las organizaciones financieras reguladas por la SEPS",
-    modality: "Virtual",
-    expertise: ["Control Interno", "Auditoría", "Riesgo Operativo", "Normativa SEPS"],
-    bio: "Mgs. Maritza Fernanda Santillán Escobar es Licenciada en Auditoría y Contabilidad, es Contadora Pública Autorizada con una Maestría en Auditoría y Contabilidad en la Universidad Nacional de Chimborazo. Cuenta con más de 5 años de experiencia en auditoría interna y externa, especialmente en cooperativas de los segmentos 1, 3 y 4. Está especializada NIA, control interno y cumplimiento normativo SEPS. Ha liderado procesos de implementación de Estructuración de Procesos y Continuidad del Negocios. Actualmente, se desempeña como Auditora Interna en una Cooperativa de Ahorro y Crédito del segmento 3 y es consultora Junior en una empresa de servicios complementarios.",
-    email: "maritzasantillane@gmail.com",
-    phone: "0993520532",
-  },
-  {
-    id: 21,
-    name: "Donal Raúl Gavilanes Aucay",
-    photo: "/DONAL.jpeg",
-    title: "Magíster en Auditoría Gubernamental y Control",
-    institution: "Contraloría General del Estado",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-16",
+    day: "2026-06-04",
     time: "16:00 – 17:00",
-    topic: "Normas de Control Interno en la Administración Pública",
+    topic: "Afectación del cambio climático con la gestión de riesgo",
     modality: "Presencial",
-    expertise: ["Auditoría Gubernamental", "Control Interno", "Gestión Pública", "Peculado"],
-    bio: "Especialista Provincial de Auditoría con amplia experiencia en planificación de auditoría, gestión financiera y control en el sector público. Ex Director Provincial de la Contraloría en Morona Santiago. Autor de publicaciones como 'Gestión Financiera y Peculado en GAD Municipal'.",
-    email: "donal.gavilanes@hotmail.com",
-    phone: "0980097122",
-  },
-  {
-    id: 22,
-    name: "Carlos Gabriel López Bravo",
-    photo: "/Carlos-Lopez.png",
-    title: "Magíster en Administración de Empresas",
-    institution: "Cooperativa Gualaquiza",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-16",
-    time: "15:00 – 16:00",
-    topic: " Decisiones financiera inteligentes",
-    modality: "Presencial",
-    expertise: ["Administración de Empresas", "Gestión Cooperativa", "Riesgos Financieros", "Transformación Digital"],
-    bio: "Gerente General de Cooperativa Gualaquiza con amplia experiencia en gestión de riesgos, inteligencia de negocios y administración cooperativa. Magíster en Administración de Empresas por la PUCE. Ha implementado modelos de análisis y prevención de riesgos conforme a normativa de la SEPS. Certificado en Transformación Digital y Gerencia de Cooperativas.",
-    email: "karlopez_14@hotmail.es",
-    phone: "+593 99 139 3075",
-  },
-  {
-    id: 23,
-    name: "Jhonnatan Fabián Carguaytongo Silva",
-    photo: "/JHONATAN.JPG",
-    title: "Magíster en Gestión Financiera y Riesgos",
-    institution: "Cooperativa de Ahorro y Crédito Marcabelí Ltda.",
-    country: "Ecuador",
-    countryCode: "EC",
-    day: "2025-10-16",
-    time: "14:00 – 15:00",
-    topic: " La labor de auditoría en las cooperativas de ahorro y crédito ",
-    modality: "Presencial",
-    expertise: ["Auditoría", "Gestión de Riesgos", "Análisis Financiero", "Normas SEPS"],
-    bio: "Jhonnatan Fabián Carguaytongo Silva es Ingeniero en Contabilidad y Auditoría por la ESPOCH, Magíster en Contabilidad y Auditoría por la UTA y Magíster en Gestión Financiera y Riesgos por la UESS. Actualmente cursa el Doctorado en Economía y Finanzas. Cuenta con amplia experiencia como auditor interno y externo en cooperativas y empresas del sector financiero. Es presidente fundador de la firma de Auditoría CONSULTORES Y AUDITORES C&SCONAUD CIA.LTDA. Ha impartido talleres en temas de auditoría, control interno y análisis financiero. Autor del artículo 'La presión fiscal y la rentabilidad en las cooperativas de ahorro y crédito'.",
-    email: "jcarguaytongo@hotmail.com",
-    phone: "0967708388",
-  },
-  {
-    id: 24,
-    name: "Victor Vimos",
-    photo: "/victor_vimos.jpg",
-    title: "Candidato Doctoral en Estudios Literarios y Culturales Latinoamericanos",
-    institution: "The Ohio State University",
-    country: "Perú",
-    countryCode: "PE",
-    day: "2025-10-16",
-    time: "17:00 – 18:00",
-    topic: "Relación entre especies y sus contextos de diálogo con el medioambiente y la cultura",
-    modality: "Virtual",
-    expertise: ["Estudios indígenas", "Humanidades en el Antropoceno", "Ritualidad andina", "Literatura latinoamericana"],
-    bio: "Víctor Vimos es candidato a doctor en el programa de Estudios Literarios y Culturales Latinoamericanos en The Ohio State University. Sus áreas de especialización son la cultura y la literatura en Latinoamérica en el siglo XXI, y los rituales y la violencia en la región andina. Sus principales intereses de investigación incluyen el enfoque interdisciplinario entre la antropología y la literatura para la investigación de la actividad ritual en comunidades indígenas. Específicamente, investiga cómo el ritual media la interacción entre humanos y no humanos.",
-    email: "vimosvimos.1@buckeyemail.osu.edu",
-    phone: "+1 513 629 0540",
+    expertise: ["Gestión de riesgos", "Planificación estratégica", "Políticas públicas", "Cambio climático"],
+    bio: "Economista y magíster en Administración de Negocios. Amplia experiencia en sectores regulados, planificación estratégica y gestión administrativa. Ha impulsado iniciativas regionales en materia de competencia y gestión de riesgos. Visión centrada en eficiencia, transparencia y servicio a la ciudadanía.",
+    email: "clozano@gestionderiesgos.gob.ec",
   },
 ];
 
 export function SpeakersGallery() {
-  const [selectedDay, setSelectedDay] = useState("2025-10-14");
+  const [selectedDay, setSelectedDay] = useState<"2026-06-02" | "2026-06-03" | "2026-06-04">("2026-06-02");
   const [expandedSpeaker, setExpandedSpeaker] = useState<number | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredSpeakers = speakers.filter((speaker) => speaker.day === selectedDay);
+  const filteredSpeakers = speakers.filter(
+    (speaker) =>
+      speaker.day === selectedDay &&
+      (speaker.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        speaker.topic.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        speaker.institution.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
-  const getDayLabel = (day: string) => {
+  const getDayLabel = (day: "2026-06-02" | "2026-06-03" | "2026-06-04") => {
     switch (day) {
-      case "2025-10-14":
-        return "Martes 14 de Octubre";
-      case "2025-10-15":
-        return "Miércoles 15 de Octubre";
-      case "2025-10-16":
-        return "Jueves 16 de Octubre";
+      case "2026-06-02":
+        return "Martes 02 de Junio";
+      case "2026-06-03":
+        return "Miércoles 03 de Junio";
+      case "2026-06-04":
+        return "Jueves 04 de Junio";
       default:
         return day;
     }
   };
 
-  const getDayCount = (day: string) => speakers.filter((s) => s.day === day).length;
+  const getDayCount = (day: "2026-06-02" | "2026-06-03" | "2026-06-04") =>
+    speakers.filter((s) => s.day === day).length;
 
   const toggleExpand = (id: number) => {
     setExpandedSpeaker(expandedSpeaker === id ? null : id);
@@ -473,23 +388,36 @@ export function SpeakersGallery() {
     <section id="expositores" className="py-16 bg-gradient-to-br from-green-50 to-red-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Ponentes 
+        <div className="text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+            Conferencias Magistrales
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Expertos internacionales que compartirán conocimiento, innovación y experiencias durante los tres días del
-            congreso.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            VICICTMS 2026 • 2-4 de junio de 2026 • Expertos internacionales en ciencia, tecnología e innovación
           </p>
+        </div>
+
+        {/* Buscador */}
+        <div className="max-w-md mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Input
+              type="text"
+              placeholder="Buscar por nombre, tema o institución..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 pr-4 py-2 w-full border-gray-300 rounded-xl focus:ring-2 focus:ring-[#006400] focus:border-transparent"
+            />
+          </div>
         </div>
 
         {/* Botones de día */}
         <div className="flex justify-center mb-12">
           <div className="grid grid-cols-3 gap-2 p-1 bg-white rounded-xl shadow-sm border border-gray-200 max-w-md w-full">
             {[
-              { value: "2025-10-14", label: "Martes 14 Oct", count: getDayCount("2025-10-14") },
-              { value: "2025-10-15", label: "Miércoles 15 Oct", count: getDayCount("2025-10-15") },
-              { value: "2025-10-16", label: "Jueves 16 Oct", count: getDayCount("2025-10-16") },
+              { value: "2026-06-02" as const, label: "Martes 02 Jun", count: getDayCount("2026-06-02") },
+              { value: "2026-06-03" as const, label: "Miércoles 03 Jun", count: getDayCount("2026-06-03") },
+              { value: "2026-06-04" as const, label: "Jueves 04 Jun", count: getDayCount("2026-06-04") },
             ].map((day) => (
               <button
                 key={day.value}
@@ -502,7 +430,7 @@ export function SpeakersGallery() {
               >
                 <div className="font-semibold">{day.label}</div>
                 <div className="text-xs mt-1 bg-green-100 text-green-700 px-2 py-0.5 rounded-full inline-block">
-                  {day.count} ponentes
+                  {day.count} conferencistas
                 </div>
               </button>
             ))}
@@ -514,21 +442,27 @@ export function SpeakersGallery() {
           {filteredSpeakers.length === 0 ? (
             <div className="text-center py-24 bg-white rounded-3xl shadow-lg border border-dashed border-gray-300">
               <User className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-700 mb-2">No se encontraron ponentes</h3>
-              <p className="text-gray-500 text-lg">Prueba cambiando de día.</p>
+              <h3 className="text-2xl font-semibold text-gray-700 mb-2">No se encontraron resultados</h3>
+              <p className="text-gray-500 text-lg">Intenta con otros términos de búsqueda.</p>
             </div>
           ) : (
             <div className="space-y-8">
-              <h3 className="text-2xl font-bold text-gray-800 text-center mb-8 pb-2 border-b-2 border-[#006400]">
-                {getDayLabel(selectedDay)}
-              </h3>
-              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+              <div className="flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-gray-800 pb-2 border-b-2 border-[#006400]">
+                  {getDayLabel(selectedDay)}
+                </h3>
+                <Badge variant="outline" className="text-sm">
+                  {filteredSpeakers.length} resultados
+                </Badge>
+              </div>
+
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredSpeakers.map((speaker) => (
                   <Card
                     key={speaker.id}
-                    className="group cursor-pointer overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 relative"
+                    className="group cursor-pointer overflow-hidden bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500"
                   >
-                    <div className="relative h-56 bg-gradient-to-br from-green-50 to-gray-100 flex items-center justify-center">
+                    <div className="relative h-48 bg-gradient-to-br from-green-50 to-gray-100 flex items-center justify-center">
                       {speaker.photo ? (
                         <img
                           src={speaker.photo}
@@ -538,6 +472,7 @@ export function SpeakersGallery() {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
                           }}
+                          loading="lazy"
                         />
                       ) : (
                         <div className="text-center space-y-2">
@@ -548,62 +483,90 @@ export function SpeakersGallery() {
                         </div>
                       )}
 
-                      <div className="absolute top-4 right-4">
+                      <div className="absolute top-3 right-3 flex gap-2">
                         <Badge
-                          className={`px-3 py-1.5 text-xs font-medium rounded-full ${
+                          className={`px-2.5 py-1 text-xs font-medium rounded-full ${
                             speaker.modality === "Presencial"
                               ? "bg-green-100 text-green-800 border border-green-200"
                               : "bg-blue-100 text-blue-800 border border-blue-200"
                           }`}
                         >
+                          {speaker.modality === "Presencial" ? (
+                            <MapPin className="h-3 w-3 mr-1 inline" />
+                          ) : (
+                            <Globe className="h-3 w-3 mr-1 inline" />
+                          )}
                           {speaker.modality}
                         </Badge>
                       </div>
                     </div>
 
-                    <CardContent className="p-6 space-y-4">
+                    <CardContent className="p-5 space-y-4">
                       <div className="space-y-2">
-                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#006400] transition-colors">
+                        <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#006400] transition-colors line-clamp-2">
                           {speaker.name}
                         </h3>
-                        <p className="text-sm text-gray-600 font-medium">{speaker.title}</p>
-                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                          <GraduationCap className="h-4 w-4 text-[#006400]" />
-                          <span>{speaker.institution}</span>
+                        <p className="text-sm text-gray-600 font-medium line-clamp-1">{speaker.title}</p>
+                        
+                        <div className="flex items-center gap-2 text-xs text-gray-500 flex-wrap">
+                          <GraduationCap className="h-3.5 w-3.5 text-[#006400] flex-shrink-0" />
+                          <span className="line-clamp-1">{speaker.institution}</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-gray-500">
-                          <MapPin className="h-4 w-4 text-gray-400" />
-                          <span>{speaker.country}</span>
+                        
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
+                          {Array.isArray(speaker.countryCode) ? (
+                            <div className="flex items-center gap-0.5">
+                              {speaker.countryCode.map((code) => (
+                                <CountryFlag
+                                  key={code}
+                                  countryCode={code}
+                                  svg
+                                  style={{ width: '1em', height: '1em', borderRadius: '2px' }}
+                                  title={code}
+                                />
+                              ))}
+                            </div>
+                          ) : (
+                            <CountryFlag
+                              countryCode={speaker.countryCode}
+                              svg
+                              style={{ width: '1.2em', height: '1.2em', borderRadius: '2px' }}
+                              title={speaker.countryCode}
+                            />
+                          )}
+                          <span className="line-clamp-1">{speaker.country}</span>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg">
+                        <div className="flex items-center gap-2 bg-gray-100 p-2.5 rounded-lg">
                           <Clock className="h-4 w-4 text-[#c00000] flex-shrink-0" />
-                          <span className="font-medium text-gray-800">{speaker.time}</span>
+                          <span className="font-medium text-gray-800 text-sm">{speaker.time}</span>
                         </div>
-                        <div className="p-4 bg-gradient-to-r from-green-50 to-red-50 border border-green-100 rounded-xl">
-                          <h4 className="font-semibold text-gray-800 text-sm mb-1">Tema</h4>
-                          <p className="text-gray-700 font-medium text-sm leading-relaxed">{speaker.topic}</p>
+                        <div className="p-3 bg-gradient-to-r from-green-50 to-red-50 border border-green-100 rounded-xl">
+                          <h4 className="font-semibold text-gray-800 text-xs mb-1 uppercase tracking-wide">Tema</h4>
+                          <p className="text-gray-700 font-medium text-sm leading-relaxed line-clamp-2">
+                            {speaker.topic}
+                          </p>
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-2">
-                        {speaker.expertise.slice(0, 3).map((exp, index) => (
+                      <div className="flex flex-wrap gap-1.5">
+                        {speaker.expertise.slice(0, 2).map((exp, index) => (
                           <Badge
                             key={index}
                             variant="outline"
-                            className="text-xs border-gray-300 text-gray-700 hover:bg-gray-100 px-2.5 py-1 rounded-full"
+                            className="text-[10px] border-gray-300 text-gray-700 hover:bg-gray-100 px-2 py-0.5 rounded-full"
                           >
                             {exp}
                           </Badge>
                         ))}
-                        {speaker.expertise.length > 3 && (
+                        {speaker.expertise.length > 2 && (
                           <Badge
                             variant="outline"
-                            className="text-xs border-gray-300 text-gray-500 hover:bg-gray-100 px-2.5 py-1 rounded-full"
+                            className="text-[10px] border-gray-300 text-gray-500 px-2 py-0.5 rounded-full"
                           >
-                            +{speaker.expertise.length - 3}
+                            +{speaker.expertise.length - 2}
                           </Badge>
                         )}
                       </div>
@@ -615,7 +578,7 @@ export function SpeakersGallery() {
                           e.stopPropagation();
                           toggleExpand(speaker.id);
                         }}
-                        className="w-full mt-2 text-[#006400] hover:text-[#004d00] hover:bg-green-50 font-medium rounded-xl border border-green-200 transition-all duration-300 flex items-center justify-center gap-1"
+                        className="w-full mt-1 text-[#006400] hover:text-[#004d00] hover:bg-green-50 font-medium rounded-xl border border-green-200 transition-all duration-300 flex items-center justify-center gap-1 text-sm"
                       >
                         {expandedSpeaker === speaker.id ? (
                           <>
@@ -623,32 +586,38 @@ export function SpeakersGallery() {
                           </>
                         ) : (
                           <>
-                            <ChevronDown className="h-4 w-4 transition-transform duration-300" /> Ver más
+                            <ChevronDown className="h-4 w-4 transition-transform duration-300" /> Ver biografía
                           </>
                         )}
                       </Button>
 
                       {expandedSpeaker === speaker.id && (
-                        <div className="mt-4 p-5 bg-red-50 rounded-xl border border-red-200 space-y-5 animate-in fade-in slide-in-from-top-2 duration-500">
+                        <div className="mt-4 p-4 bg-red-50 rounded-xl border border-red-200 space-y-4 animate-in fade-in slide-in-from-top-2 duration-500">
                           <div>
                             <h4 className="font-bold text-gray-800 text-sm mb-2">Biografía Profesional</h4>
                             <p className="text-gray-700 text-sm leading-relaxed">{speaker.bio}</p>
                           </div>
                           {(speaker.email || speaker.phone) && (
-                            <div className="pt-4 border-t border-red-200">
-                              <h4 className="font-bold text-gray-800 text-sm mb-3">Contacto</h4>
-                              <div className="space-y-2 text-sm">
+                            <div className="pt-3 border-t border-red-200">
+                              <h4 className="font-bold text-gray-800 text-sm mb-2">Contacto</h4>
+                              <div className="space-y-1.5 text-sm">
                                 {speaker.email && (
-                                  <div className="flex items-center gap-3 text-gray-700">
-                                    <Mail className="h-4 w-4 text-red-600" />
-                                    <span className="font-medium">{speaker.email}</span>
-                                  </div>
+                                  <a
+                                    href={`mailto:${speaker.email}`}
+                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors"
+                                  >
+                                    <Mail className="h-3.5 w-3.5 text-red-600" />
+                                    <span className="font-medium truncate">{speaker.email}</span>
+                                  </a>
                                 )}
                                 {speaker.phone && (
-                                  <div className="flex items-center gap-3 text-gray-700">
+                                  <a
+                                    href={`tel:${speaker.phone}`}
+                                    className="flex items-center gap-2 text-gray-700 hover:text-[#006400] transition-colors"
+                                  >
                                     <span className="text-[#c00000]">📞</span>
                                     <span className="font-medium">{speaker.phone}</span>
-                                  </div>
+                                  </a>
                                 )}
                               </div>
                             </div>

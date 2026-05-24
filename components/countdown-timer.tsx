@@ -19,8 +19,8 @@ export function CountdownTimer() {
   const [hasStarted, setHasStarted] = useState(false)
 
   useEffect(() => {
-    // 🗓️ Fecha actualizada: 14 de abril de 2026, 12:00 PM, Ecuador (UTC-5)
-    const eventDate = new Date("2026-04-14T12:00:00-05:00")
+    // 
+    const eventDate = new Date("2026-06-03T12:00:00-05:00")
 
     const calculateTimeLeft = () => {
       const now = new Date()

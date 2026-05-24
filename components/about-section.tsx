@@ -42,7 +42,7 @@ export function AboutSection() {
               </div>
               <div className="relative h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-red-50">
                 <Image
-                  src="/congreso-ciencia-tecnologia.jpeg"
+                  src="/INNOVA.jpg"
                   alt="Logo Congreso Ciencia y Tecnología Morona Santiago 2025"
                   width={400}
                   height={300}
@@ -413,6 +413,46 @@ export function AboutSection() {
                 <Image
                   src="/LOGO-INVESTIGO.png"
                   alt="Investigo"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+              {/* Auspiciante 5 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/grupo_investigacion.jpeg"
+                  alt="Grupo de Investigacion IITMS"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+               {/* Auspiciante 6 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/centro_emprendimiento.jpeg"
+                  alt="Centro de Emprendimiento "
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+              {/* Auspiciante 7 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/diseño_Ti.jpeg"
+                  alt="Diseño de TI"
+                  width={200}
+                  height={100}
+                  className="max-w-full h-auto object-contain"
+                />
+              </div>
+              {/* Auspiciante 8 */}
+              <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
+                <Image
+                  src="/raman.jpeg"
+                  alt="Red Agropecuaria Medio Ambiante e Inteligencia Artificial"
                   width={200}
                   height={100}
                   className="max-w-full h-auto object-contain"
