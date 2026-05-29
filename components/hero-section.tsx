@@ -42,7 +42,7 @@ export function HeroSection() {
               {/* Logo VI CICTMS - Sin fondo blanco */}
               <div className="p-2 sm:p-3">
                 <Image
-                  src="/Logo-cictms-vi.jpeg" 
+                  src="/LogoVI1.png" 
                   alt="VI Congreso Internacional de Ciencia y Tecnología - CICTMS Morona Santiago 2026"
                   width={500}
                   height={200}
@@ -65,7 +65,10 @@ export function HeroSection() {
               MORONA SANTIAGO 2026 
             </span>
             <span className="text-[#d4d717] block drop-shadow-lg mt-1">
-              INNOVA AMAZONIA-CONCURSO DE EMPRENDIMIENTOS
+              INNOVA AMAZONIA
+            </span>
+            <span className="text-[#d4d717] block drop-shadow-lg mt-1">
+              CONCURSO DE EMPRENDIMIENTOS
             </span>
           </h1>
 
@@ -110,7 +113,7 @@ export function HeroSection() {
                   02,03 04  de Junio 2026
                 </p>
                 <p className="text-red-100 text-xs sm:text-sm font-semibold">
-                  Macas   • Morona Santiago
+                  VI  Congreso CICTMS
                 </p>
               </div>
             </div>
@@ -127,7 +130,7 @@ export function HeroSection() {
                   Salón Azul Consejo Provincial
                 </p>
                 <p className="text-green-100 text-xs sm:text-sm font-semibold">
-                  Morona Santiago • Ecuador
+                  Macas, Morona Santiago
                 </p>
               </div>
             </div>
@@ -144,7 +147,7 @@ export function HeroSection() {
                   05 de Junio
                 </p>
                 <p className="text-yellow-100 text-xs sm:text-sm font-semibold">
-                  08:00  • Morona Santiago
+                  08:00  • Coliseo los Canelos
                 </p>
               </div>
             </div>

@@ -282,15 +282,7 @@ const agendaData = {
       location: "Salón Azul del GAD Provincial de Morona Santiago",
       description: "Ceremonia de clausura del congreso",
     },
-    {
-      id: "24",
-      time: "17:30 - 18:00",
-      title: "Noche Cultural",
-      type: "networking" as const,
-      modality: "Presencial" as const,
-      location: "Salón Azul del GAD Provincial de Morona Santiago",
-      description: "Evento cultural de cierre del congreso",
-    },
+    
   ],
 }
 
@@ -371,24 +363,28 @@ const getTypeLabel = (type: AgendaItem["type"]) => {
 
 const carouselImages = [
   {
-    src: "/espoch1.png",
+    src: "/espoch-macas.jpg",
     alt: "Campus ESPOCH Morona Santiago",
   },
   {
-    src: "/fondo-agenda.png",
+    src: "/INNOVA.jpg",
     alt: "Banner del Congreso",
   },
   {
-    src: "/martes.png",
+    src: "/MARTES.png",
     alt: "Martes 02 de junio - Día 1 del Congreso",
   },
   {
-    src: "/miercoles.png",
+    src: "/MIERCOLE.png",
     alt: "Miércoles 03 de junio - Día 2 del Congreso",
   },
   {
-    src: "/jueves.png",
+    src: "/JUEVES.png",
     alt: "Jueves 04 de junio - Día 3 del Congreso",
+  },
+  {
+    src: "/VIERNES.png",
+    alt: "Viernes 05 de junio - Día 4 del Congreso",
   },
   {
     src: "/final.png",
@@ -429,8 +425,8 @@ export function AgendaSection() {
 
   const downloadAgenda = () => {
     const link = document.createElement('a');
-    link.href = '/docs/Agenda.pdf';
-    link.download = 'Agenda.pdf';
+    link.href = '/docs/Agenda_VI_Congreso.pdf';
+    link.download = 'Agenda_VI_Congreso.pdf';
     link.click();
   }
 
@@ -613,12 +609,12 @@ export function AgendaSection() {
                             )}
 
                             <div className={`flex items-center gap-1 px-2 py-1 rounded-full ${
-                                item.modality === "Virtual"
-                                  ? "bg-blue-50 text-blue-700"
-                                  : item.modality === "Híbrido"
-                                  ? "bg-purple-50 text-purple-700"
-                                  : "bg-green-50 text-green-700"
-                              }`}
+                              item.modality === "Virtual"
+                                ? "bg-blue-50 text-blue-700"
+                                : item.modality === "Híbrido"
+                                ? "bg-purple-50 text-purple-700"
+                                : "bg-green-50 text-green-700"
+                            }`}
                             >
                               {item.modality === "Virtual" ? (
                                 <Globe className="h-3 w-3" />
@@ -687,7 +683,7 @@ export function AgendaSection() {
                       asChild
                     >
                       <a
-                        href="https://cedia.zoom.us/j/89891762102"
+                        href="https://cedia.zoom.us/j/83348825153"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
@@ -704,9 +700,9 @@ export function AgendaSection() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-gray-800">🎉 Noche Cultural de Cierre</p>
+                  <p className="font-medium text-gray-800">Clausura del Evento</p>
                   <p className="text-sm text-gray-600">
-                    Jueves 04 de junio - 17:30 a 18:00
+                    Jueves 04 de junio - 17:00 a 17:30
                   </p>
                 </div>
               </div>

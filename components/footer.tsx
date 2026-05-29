@@ -1,70 +1,83 @@
 import { Button } from "@/components/ui/button"
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Home, Youtube } from "lucide-react"
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-gradient-to-b from-primary to-primary/95 text-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="py-12 md:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          
           {/* Event Info */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
-              <h3 className="text-lg font-semibold mb-4">VI CICTMS 2026</h3>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <h3 className="text-xl font-bold mb-3 text-white drop-shadow-lg">
+                VI CICTMS 2026
+              </h3>
+              <p className="text-white/95 text-sm leading-relaxed font-medium">
                 VI Congreso Internacional de Ciencia y Tecnología Morona Santiago
               </p>
             </div>
-            <div className="space-y-2 text-sm">
-
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-4 w-4 text-secondary" />
-                <span className="text-white/80">Macas, Morona Santiago</span>
+            
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-3 group">
+                <div className="p-2 rounded-lg bg-white/20 group-hover:bg-secondary/30 transition-colors duration-300">
+                  <MapPin className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-white font-medium group-hover:text-secondary transition-colors">Macas, Morona Santiago</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-secondary" />
-                <span className="text-white/80"> Lanzamiento 14 de Abril 2026</span>
+              <div className="flex items-center gap-3 group">
+                <div className="p-2 rounded-lg bg-white/20 group-hover:bg-secondary/30 transition-colors duration-300">
+                  <Phone className="h-4 w-4 text-white" />
+                </div>
+                <span className="text-white font-medium group-hover:text-secondary transition-colors">02-05 de Junio 2026</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-white/80 hover:text-secondary transition-colors">
-                  Inicio
-                </Link>
-              </li>
-              {/*<li> Quick Links 
-                <Link href="/agenda" className="text-white/80 hover:text-secondary transition-colors">
-                  Agenda
-                </Link>
-              </li>
-              <li>
-                <Link href="/ponente" className="text-white/80 hover:text-secondary transition-colors">
-                  Ponentes
-                </Link>
-              </li>*/}
-              <li>
-                <Link href="/normativa" className="text-white/80 hover:text-secondary transition-colors">
-                  Normativa
-                </Link>
-              </li>
-              <li>
-                <Link href="/contactos" className="text-white/80 hover:text-secondary transition-colors">
-                  Contactos
-                </Link>
-              </li>
+            <h3 className="text-lg font-bold mb-5 flex items-center gap-2 text-white">
+              <span className="w-1 h-5 bg-secondary rounded-full shadow-lg shadow-secondary/50" />
+              Enlaces Rápidos
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              {[
+                { href: "/", label: "Inicio" },
+                { href: "/agenda", label: "Agenda" },
+                { href: "/ponente", label: "Ponentes" },
+                { href: "/normativa", label: "Normativa" },
+                { href: "/contactos", label: "Contactos" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link 
+                    href={link.href} 
+                    className="group flex items-center gap-2 text-white hover:text-secondary transition-all duration-300 font-medium"
+                  >
+                    <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-secondary" />
+                    <span className="border-b border-transparent group-hover:border-white/50 pb-0.5 transition-colors">
+                      {link.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* ESPOCH SMS Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">ESPOCH Sede Morona Santiago</h3>
-            <p className="text-white/80 text-sm leading-relaxed mb-3">
+            <h3 className="text-lg font-bold mb-5 flex items-center gap-2 text-white">
+              <span className="w-1 h-5 bg-secondary rounded-full shadow-lg shadow-secondary/50" />
+              ESPOCH Sede Morona Santiago
+            </h3>
+            <p className="text-white/95 text-sm leading-relaxed mb-4 font-medium">
               Ubicada en Macas, ofrece un entorno único de aprendizaje con carreras en Tecnologías de la Información,
               Minas, Contabilidad y Auditoría, Ambiental, Zootecnia y Derecho.
             </p>
@@ -72,138 +85,96 @@ export function Footer() {
               href="https://www.espoch.edu.ec/sms-2/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-white/80 transition-colors text-sm font-medium"
+              className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-secondary transition-colors group"
             >
-              Más información →
+              Más información
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </div>
 
           {/* Contact & Social */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-2">
-                <Mail className="h-4 w-4 text-secondary mt-0.5" />
-                <a
-                  href="mailto:vcictms2025@espoch.edu.ec"
-                  className="text-white/80 hover:text-secondary transition-colors"
-                >
-                  investigo@istra.edu.ec / carlav.haro@espoch.edu.ec
-                </a>
-              </div>
-              <div className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 text-secondary mt-0.5" />
-                <span className="text-white/80">+593 (03) 2998-200</span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-secondary mt-0.5" />
-                <a
-                  href="https://maps.app.goo.gl/m684oT3mBDNNzJ17A"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/80 hover:text-secondary transition-colors"
-                >
-                  ESPOCH SMS, Macas
-                </a>
-              </div>
+            <h3 className="text-lg font-bold mb-5 flex items-center gap-2 text-white">
+              <span className="w-1 h-5 bg-secondary rounded-full shadow-lg shadow-secondary/50" />
+              Contacto
+            </h3>
+            <div className="space-y-4 text-sm">
+              {[
+                { icon: Mail, content: "investigo@istra.edu.ec / carlav.haro@espoch.edu.ec", href: "mailto:vcictms2025@espoch.edu.ec" },
+                { icon: Phone, content: "+593 (03) 2998-200", href: null },
+                { icon: MapPin, content: "ESPOCH SMS, Macas", href: "https://maps.app.goo.gl/m684oT3mBDNNzJ17A" },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3 group">
+                  <div className="p-2 rounded-lg bg-white/20 group-hover:bg-secondary/30 transition-colors duration-300 shrink-0">
+                    <item.icon className="h-4 w-4 text-white" />
+                  </div>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? "_blank" : undefined}
+                      rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                      className="text-white hover:text-secondary transition-colors flex-1 font-medium"
+                    >
+                      {item.content}
+                    </a>
+                  ) : (
+                    <span className="text-white flex-1 font-medium">{item.content}</span>
+                  )}
+                </div>
+              ))}
             </div>
 
             {/* Social Media */}
-            <div className="mt-6">
-              <h4 className="font-medium mb-3">Síguenos</h4>
-              <div className="flex space-x-3">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
-                  asChild
-                >
-                  <a href="https://www.facebook.com/espochms/?ref=bookmarks" target="_blank" rel="noopener noreferrer">
-                    <Facebook className="h-8 w-8" />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
-                  asChild
-                >
-                  <a href="https://x.com/EspochRio" target="_blank" rel="noopener noreferrer">
-                    <Twitter className="h-8 w-8" />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
-                  asChild
-                >
-                  <a href="https://www.instagram.com/espoch.edu.ec/?hl=es" target="_blank" rel="noopener noreferrer">
-                    <Instagram className="h-8 w-8" />
-                  </a>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="h-12 w-12 p-0 text-white/70 hover:text-secondary hover:bg-white/10 transition-all duration-200"
-                  asChild
-                >
-                  <a href="https://www.youtube.com/watch?v=K7aQgWWc8uE" target="_blank" rel="noopener noreferrer">
-                    <Youtube className="h-8 w-8" />
-                  </a>
-                </Button>
-                
+            <div className="mt-7">
+              <h4 className="font-bold mb-4 text-white text-base">Síguenos</h4>
+              <div className="flex gap-3">
+                {[
+                  { href: "https://www.facebook.com/espochms/?ref=bookmarks", icon: Facebook, label: "Facebook" },
+                  { href: "https://x.com/EspochRio", icon: Twitter, label: "Twitter" },
+                  { href: "https://www.instagram.com/espoch.edu.ec/?hl=es", icon: Instagram, label: "Instagram" },
+                  { href: "https://www.youtube.com/watch?v=K7aQgWWc8uE", icon: Youtube, label: "YouTube" },
+                ].map((social) => (
+                  <Button
+                    key={social.label}
+                    variant="ghost"
+                    size="sm"
+                    className="h-11 w-11 p-0 text-white bg-white/10 hover:text-white hover:bg-secondary hover:scale-110 transition-all duration-300 rounded-xl shadow-lg"
+                    asChild
+                  >
+                    <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                      <social.icon className="h-5 w-5" />
+                    </a>
+                  </Button>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="py-8 border-t border-white/20">
-          <h3 className="text-lg font-semibold text-center mb-6">Ubicación del Evento</h3>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.628592957677!2d-78.113586!3d-2.29122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d20f81d725080f%3A0x6b99948c4cba120!2sEscuela%20Superior%20Polit%C3%A9cnica%20de%20Chimborazo%20-%20Sede%20Morona%20Santiago!5e0!3m2!1ses-419!2sec!4v1758122536666!5m2!1ses-419!2sec"
-                width="100%"
-                height="300"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ubicación ESPOCH Sede Morona Santiago"
-              />
-            </div>
-            <div className="text-center mt-4">
-              <a
-                href="https://maps.app.goo.gl/m684oT3mBDNNzJ17A"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-white/60 hover:text-secondary transition-colors"
-              >
-                <MapPin className="h-4 w-4" />
-                <span>Ver en Google Maps</span>
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* Divider */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/40 to-transparent my-8" />
 
         {/* Bottom Footer */}
-        <div className="py-6 border-t border-white/20">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-white/60">
-              © 2026 VI Congreso Internacional de Ciencia y Tecnología Morona Santiago. Todos los derechos reservados.
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a  className="text-white/60 hover:text-secondary transition-colors">
-                Política de Privacidad
+        <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p className="text-white/90 font-medium text-center md:text-left">
+            © 2026 VI Congreso Internacional de Ciencia y Tecnología Morona Santiago. 
+            <span className="hidden sm:inline"> Todos los derechos reservados.</span>
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-white/90">
+            {[
+              { href: "/privacidad", label: "Política de Privacidad" },
+              { href: "/terminos", label: "Términos de Uso" },
+              { href: "/conducta", label: "Código de Conducta" },
+            ].map((link) => (
+              <a 
+                key={link.href}
+                href={link.href} 
+                className="hover:text-white transition-colors relative group font-medium"
+              >
+                {link.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white group-hover:w-full transition-all duration-300" />
               </a>
-              <a className="text-white/60 hover:text-secondary transition-colors">
-                Términos de Uso
-              </a>
-              <a  className="text-white/60 hover:text-secondary transition-colors">
-                Código de Conducta
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </div>

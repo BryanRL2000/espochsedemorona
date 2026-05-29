@@ -27,7 +27,7 @@ interface Speaker {
   countryCode: string | string[];
   day: "2026-06-02" | "2026-06-03" | "2026-06-04";
   time: string;
-  topic: string;  // ← Ahora se muestra COMPLETO
+  topic: string;
   modality: "Presencial" | "Virtual";
   expertise: string[];
   bio: string;
@@ -57,7 +57,7 @@ export const speakers: Speaker[] = [
   {
     id: 2,
     name: "Danien Bustamante H.",
-    photo: "/placeholder-speaker-2.png",
+    photo: "/DANIEN.png",
     title: "Zootecnista",
     institution: "Universidad de La Salle - Colombia",
     country: "Colombia",
@@ -73,7 +73,7 @@ export const speakers: Speaker[] = [
   {
     id: 3,
     name: "Fabián Augusto Almeida López",
-    photo: "/placeholder-speaker-3.png",
+    photo: "/FABIAN.jpg",
     title: "Ingeniero Zootecnista | Máster en Reproducción Animal",
     institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
     country: "Ecuador",
@@ -85,12 +85,12 @@ export const speakers: Speaker[] = [
     expertise: ["Juzgamiento ganadero", "Reproducción bovina", "Producción lechera", "Docencia universitaria"],
     bio: "Magíster en Reproducción Animal Mención Bovinos de Leche. Administrador de haciendas productoras de leche, Gerente Técnico en Balanceados Balanfarina SA, y Gerente de HENOMAQ SA. Juez certificado en concursos ganaderos nacionales. Instructor en cursos de juzgamiento en múltiples provincias. Docente investigador en la Facultad de Ciencias Pecuarias de la ESPOCH.",
     email: "fabian.almeida@espoch.edu.ec",
-    phone: "+593 99 XXX XXXX",
+    
   },
   {
     id: 4,
     name: "Dr. Germán Marcelo Mancheno Salazar Msg.",
-    photo: "/placeholder-speaker-4.png",
+    photo: "/GERMAN.png",
     title: "Abogado | Msc. en Derecho Procesal Penal",
     institution: "Corte Superior de Justicia de Chimborazo / UNACH / UNIANDES",
     country: "Ecuador",
@@ -106,7 +106,7 @@ export const speakers: Speaker[] = [
   {
     id: 5,
     name: "Federico José Arena",
-    photo: "/placeholder-speaker-5.png",
+    photo: "/FEDERICO.png",
     title: "Abogado | Postdoctorado en Filosofía del Derecho",
     institution: "Barcelona Institute of Analytic Philosophy / CONICET / Universidad Blas Pascal",
     country: "Italia / Argentina",
@@ -122,7 +122,7 @@ export const speakers: Speaker[] = [
   {
     id: 6,
     name: "Oscar Mauricio Sánchez Nivicela",
-    photo: "/placeholder-speaker-6.png",
+    photo: "/OSCAR.jpg",
     title: "Doctor en Jurisprudencia | Msc. en Cambio Climático",
     institution: "Universidad del Azuay / Fundación ENTSA",
     country: "Ecuador",
@@ -140,7 +140,7 @@ export const speakers: Speaker[] = [
   {
     id: 7,
     name: "Cristhian David Chicaiza Ortiz",
-    photo: "/placeholder-speaker-7.png",
+    photo: "/CRISTHIAN.jpg",
     title: "PhD en Ciencias e Ingeniería Ambiental",
     institution: "Shanghai Jiao Tong University (SJTU)",
     country: "Ecuador / China",
@@ -156,7 +156,7 @@ export const speakers: Speaker[] = [
   {
     id: 8,
     name: "María Salomé Álvarez Álvarez",
-    photo: "/placeholder-speaker-8.png",
+    photo: "/MARIA.png",
     title: "PhD en Chemical Engineering",
     institution: "Facultad de Química - España",
     country: "España",
@@ -167,12 +167,12 @@ export const speakers: Speaker[] = [
     modality: "Virtual",
     expertise: ["Remediación ambiental", "Contaminantes emergentes", "Biocombustibles", "Ingeniería química"],
     bio: "Degree in Chemistry, Master's y PhD en Chemical Engineering. Enfocada en investigación en remediación de contaminantes emergentes y biocombustibles. Actualmente Vicedecana de Calidad de la Facultad de Química.",
-    email: "msalome.alvarez@universidad.es",
+    email: "msaa@uvigo.es",
   },
   {
     id: 9,
     name: "Gabriela Antonieta Borja Pérez",
-    photo: "/placeholder-speaker-9.png",
+    photo: "/GABRIELA.png",
     title: "Socióloga | MSc. Gestión Integrada de Recursos Hídricos",
     institution: "Investigadora independiente - Ecuador",
     country: "Ecuador",
@@ -183,12 +183,12 @@ export const speakers: Speaker[] = [
     modality: "Presencial",
     expertise: ["Ecología política del agua", "Gobernanza comunitaria", "Justicia hídrica", "Páramos"],
     bio: "Socióloga y MSc. en Gestión Integrada de Recursos Hídricos, docente e investigadora enfocada en ecología política del agua y gobernanza comunitaria de páramos en Ecuador. Su trabajo articula justicia hídrica, saberes locales y sostenibilidad.",
-    email: "gabriela.borja@investigacion.ec",
+    email: "gaborja@uce.edu.ec",
   },
   {
     id: 10,
     name: "Ruth Genoveva Barba Vera",
-    photo: "/placeholder-speaker-10.png",
+    photo: "/RUTH.png",
     title: "Doctora en Ingeniería | Magíster en Interconectividad de Redes",
     institution: "ESPOCH / Pontificia Universidad Católica del Perú (PUCP)",
     country: "Ecuador / Perú",
@@ -200,12 +200,12 @@ export const speakers: Speaker[] = [
     expertise: ["Ciberseguridad", "OSINT", "Redes SDN", "Tecnologías de la información"],
     bio: "Experta con más de 15 años de experiencia en docencia e investigación en ciberseguridad, redes de nueva generación (SDN) y tecnologías de la información. Investigadora Senior y Coordinadora Subrogante del grupo SEGINTE. Coordinadora del proyecto de vinculación 'CIBERJÓVENES'.",
     email: "ruth.barba@espoch.edu.ec",
-    phone: "+593 99 XXX XXXX",
+    
   },
   {
     id: 11,
     name: "Xavier Soria Poma",
-    photo: "/placeholder-speaker-11.png",
+    photo: "/XAVIER.png",
     title: "Doctor en Informática | Magíster en Informática Educativa",
     institution: "Escuela Superior Politécnica de Chimborazo (ESPOCH)",
     country: "Ecuador / España",
@@ -221,7 +221,7 @@ export const speakers: Speaker[] = [
   {
     id: 12,
     name: "Edward Mays",
-    photo: "/placeholder-speaker-12.png",
+    photo: "/EDWARD.png",
     title: "Senior Technical Mentor",
     institution: "Thoughtworks",
     country: "Estados Unidos",
@@ -239,7 +239,7 @@ export const speakers: Speaker[] = [
   {
     id: 13,
     name: "Julio Montero Matos",
-    photo: "/placeholder-speaker-13.png",
+    photo: "/JULIO.jpg",
     title: "Doctor en Ciencias Técnicas en Minería | Máster en Minería",
     institution: "Institución minera - Cuba",
     country: "Cuba",
@@ -255,7 +255,7 @@ export const speakers: Speaker[] = [
   {
     id: 14,
     name: "Eduardo Andrés Luna Méndez",
-    photo: "/placeholder-speaker-14.png",
+    photo: "/EDUARDO_LUNA.png",
     title: "Magíster en Ingeniería de Recursos Minerales | Ingeniero en Minas",
     institution: "Universidad del Azuay",
     country: "Ecuador",
@@ -271,7 +271,7 @@ export const speakers: Speaker[] = [
   {
     id: 15,
     name: "Valeria Loor Cárdenas",
-    photo: "/placeholder-speaker-15.png",
+    photo: "/VALERIA.jpg",
     title: "Magíster en Minería con Distinción Máxima | Ingeniera en Minas",
     institution: "Universidad de Chile",
     country: "Chile",
@@ -287,7 +287,7 @@ export const speakers: Speaker[] = [
   {
     id: 16,
     name: "Francisco Benito Castro Chavez",
-    photo: "/placeholder-speaker-16.png",
+    photo: "/FRANCISCO.jpg",
     title: "Lcdo. Contabilidad y Auditoría | Mgtr. MBA",
     institution: "Cooperativa de Ahorro y Crédito Las Naves / AUDICAST Y ASOCIADOS S.A.S",
     country: "Ecuador",
@@ -299,12 +299,12 @@ export const speakers: Speaker[] = [
     expertise: ["Auditoría financiera", "Inteligencia artificial", "Control interno", "Gestión de riesgos"],
     bio: "Más de 20 años de experiencia en auditoría, contabilidad y administración financiera. Gerente General, Auditor Externo, Auditor Interno y Liquidador calificado por la SEPS. Capacitador en auditoría, riesgos y control interno para el sector financiero y solidario.",
     email: "fcastro@audicast.com",
-    phone: "+593 99 XXX XXXX",
+    
   },
   {
     id: 17,
     name: "Iciar López-Vdriero Tejedor",
-    photo: "/placeholder-speaker-17.png",
+    photo: "/ICIAR.png",
     title: "Licenciada en Derecho | Máster en Telecomunicaciones y Nuevas Tecnologías",
     institution: "ICEF Consultores / Universidad Carlos III de Madrid",
     country: "España",
@@ -320,7 +320,7 @@ export const speakers: Speaker[] = [
   {
     id: 18,
     name: "María del Carmen Jácome Yambay",
-    photo: "/placeholder-speaker-18.png",
+    photo: "/MARIA.png",
     title: "Mgtr. en Gestión y Automatización de Procesos | Mgtr. en Big Data y Business Intelligence",
     institution: "Consultora independiente - Ecuador",
     country: "Ecuador",
@@ -336,7 +336,7 @@ export const speakers: Speaker[] = [
   {
     id: 19,
     name: "Carolina Alejandra Lozano Haro",
-    photo: "/placeholder-speaker-19.png",
+    photo: "/CAROLINA.jpg",
     title: "Economista | Mgtr. en Administración de Negocios",
     institution: "Secretaría Nacional de Gestión de Riesgos (SNGR) - Ecuador",
     country: "Ecuador",
@@ -493,22 +493,22 @@ export function SpeakersGallery() {
                         </div>
                       )}
 
-                      {/* Badge de modalidad - Posición responsive */}
+                      {/* ✅ Badge de modalidad - TEXTO COMPLETO SIEMPRE VISIBLE */}
                       <div className="absolute top-2 sm:top-3 right-2 sm:right-3">
                         <Badge
-                          className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium rounded-full ${
+                          className={`px-2 py-0.5 sm:px-2.5 sm:py-1 text-[10px] sm:text-xs font-medium rounded-full whitespace-nowrap ${
                             speaker.modality === "Presencial"
                               ? "bg-green-100 text-green-800 border border-green-200"
                               : "bg-blue-100 text-blue-800 border border-blue-200"
                           }`}
                         >
                           {speaker.modality === "Presencial" ? (
-                            <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-0.5 sm:mr-1 inline" />
+                            <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1 inline" />
                           ) : (
-                            <Globe className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-0.5 sm:mr-1 inline" />
+                            <Globe className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1 inline" />
                           )}
-                          <span className="hidden xs:inline">{speaker.modality}</span>
-                          <span className="xs:hidden">{speaker.modality === "Presencial" ? "P" : "V"}</span>
+                          {/* ✅ TEXTO COMPLETO - Sin versiones cortas */}
+                          <span>{speaker.modality}</span>
                         </Badge>
                       </div>
                     </div>

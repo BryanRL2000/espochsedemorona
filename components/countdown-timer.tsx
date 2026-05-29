@@ -61,7 +61,7 @@ export function CountdownTimer() {
         {hasStarted ? (
           <div className="text-center">
             <h3 className="text-lg font-semibold mb-4 text-green-800 bg-white/95 rounded-lg py-2 px-4 shadow-md inline-block">
-              🎉 ¡El lanzamiento del congreso está en curso!
+              🎉 ¡El congreso está en curso!
             </h3>
             <p className="mt-2 text-gray-800 bg-white/90 py-2 px-4 rounded-lg font-medium">
               Se parte del congreso VICICTMS 2026.
@@ -70,7 +70,7 @@ export function CountdownTimer() {
         ) : (
           <>
             <h3 className="text-lg font-semibold text-center mb-4 text-green-800 bg-white/95 rounded-lg py-2 px-4 shadow-md">
-              Lanzamiento del VICICTMS 2026 en:
+              Inicio del congreso del VICICTMS 2026 en:
             </h3>
             <div className="grid grid-cols-4 gap-4 text-center">
               {[
