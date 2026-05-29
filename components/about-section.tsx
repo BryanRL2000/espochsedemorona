@@ -229,7 +229,7 @@ export function AboutSection() {
                 <div>
                   <h4 className="text-xl font-bold text-[#c00000] mb-3 flex items-center gap-2">
                     <MapPin className="h-5 w-5" />
-                    Workshops: Biblioteca – ESPOCH Sede
+                    Workshops: Laboratorio – ESPOCH Sede
                   </h4>
                   <p className="text-gray-700 mb-4">
                     <strong>Dirección:</strong><br />
@@ -317,8 +317,8 @@ export function AboutSection() {
                     <TreePine className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="font-bold text-lg text-purple-800">Gala cultural de cierre</p>
-                    <p className="text-purple-700 mt-1">Culminamos el congreso con un evento cultural y social</p>
+                    <p className="font-bold text-lg text-purple-800">Clausura del Congreso</p>
+                    <p className="text-purple-700 mt-1">Espacio de integración final para fortalecer vínculos académicos, profesionales y de investigación</p>
                   </div>
                 </div>
               </div>

@@ -130,7 +130,7 @@ export function HeroSection() {
                   Salón Azul Consejo Provincial
                 </p>
                 <p className="text-green-100 text-xs sm:text-sm font-semibold">
-                  Macas, Morona Santiago
+                  24 de Mayo y Bolívar, Macas, Morona Santiago
                 </p>
               </div>
             </div>
