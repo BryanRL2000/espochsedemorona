@@ -53,7 +53,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Título principal mejorado */}
+          {/* Título principal mejorado - CON ESPACIO PARA INNOVA */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-balance leading-tight mb-4 sm:mb-6">
             <span className="text-white block drop-shadow-lg">
                VI CONGRESO INTERNACIONAL
@@ -64,7 +64,9 @@ export function HeroSection() {
             <span className="text-[#03c003] block drop-shadow-lg mt-1">
               MORONA SANTIAGO 2026 
             </span>
-            <span className="text-[#d4d717] block drop-shadow-lg mt-1">
+            
+            {/* === ESPACIO AGREGADO PARA INNOVA AMAZONIA === */}
+            <span className="text-[#d4d717] block drop-shadow-lg mt-4 sm:mt-6 md:mt-8">
               INNOVA AMAZONIA
             </span>
             <span className="text-[#d4d717] block drop-shadow-lg mt-1">
@@ -110,10 +112,10 @@ export function HeroSection() {
                   <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide">Fecha del Evento:</h3>
                 </div>
                 <p className="text-white font-black text-xl sm:text-2xl leading-tight mb-1">
-                  02,03 04  de Junio 2026
+                  02, 03 y 04 de Junio 2026
                 </p>
                 <p className="text-red-100 text-xs sm:text-sm font-semibold">
-                  VI  Congreso CICTMS
+                  VI Congreso CICTMS
                 </p>
               </div>
             </div>
@@ -147,7 +149,7 @@ export function HeroSection() {
                   05 de Junio
                 </p>
                 <p className="text-yellow-100 text-xs sm:text-sm font-semibold">
-                  08:00  • Coliseo los Canelos
+                  08:00 • Coliseo los Canelos
                 </p>
               </div>
             </div>
@@ -162,7 +164,6 @@ export function HeroSection() {
             >
               <Link href="https://docs.google.com/forms/d/e/1FAIpQLSd10lmAzo13t4ZmFTP5xqJRS2yOOaMU7M1M8lQ0eO-ghV3iBA/viewform" target="_blank">
                 Inscribirse Ahora
-                
               </Link>
             </Button>
             <Button

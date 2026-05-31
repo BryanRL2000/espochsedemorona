@@ -158,7 +158,7 @@ export const speakers: Speaker[] = [
     name: "María Salomé Álvarez Álvarez",
     photo: "/MARIA.png",
     title: "PhD en Chemical Engineering",
-    institution: "Facultad de Química - España",
+    institution: "Escuela de Ingeniería de Minas y Energía, Universidad de Vigo, España",
     country: "España",
     countryCode: "ES",
     day: "2026-06-03",
