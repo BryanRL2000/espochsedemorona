@@ -402,7 +402,7 @@ export function AboutSection() {
               {/* Auspiciante 7 */}
               <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
                 <Image
-                  src="/diseño_Ti.jpeg"
+                  src="/diseño_TI.jpeg"
                   alt="Diseño de TI"
                   width={200}
                   height={100}
@@ -413,7 +413,7 @@ export function AboutSection() {
               {/* Auspiciante 8 */}
               <div className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow">
                 <Image
-                  src="/raman.jpeg"
+                  src="/Raman.jpeg"
                   alt="Red Agropecuaria Medio Ambiente e Inteligencia Artificial"
                   width={200}
                   height={100}
